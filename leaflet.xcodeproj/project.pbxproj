@@ -13,6 +13,8 @@
 		DB09CEB51AD2729000E831B7 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB41AD2729000E831B7 /* PersistencyManager.swift */; };
 		DB09CEB71AD276DF00E831B7 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB61AD276DF00E831B7 /* HTTPClient.swift */; };
 		DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */; };
+		DB0F17891AD5F1D3002275C3 /* StoriesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0F17881AD5F1D3002275C3 /* StoriesMenuViewController.swift */; };
+		DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CD2C1AD5F745006D1A11 /* PointsOfInterestListViewController.swift */; };
 		DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D621AD0CEF800FFB42D /* AppDelegate.swift */; };
 		DBC30D651AD0CEF800FFB42D /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D641AD0CEF800FFB42D /* OverviewViewController.swift */; };
 		DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D661AD0CEF800FFB42D /* MapViewController.swift */; };
@@ -35,6 +37,8 @@
 		DBC30DA11AD1EE1700FFB42D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC30DA01AD1EE1700FFB42D /* QuartzCore.framework */; };
 		DBC30DA31AD1EE1E00FFB42D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC30DA21AD1EE1E00FFB42D /* SystemConfiguration.framework */; };
 		DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */; };
+		DBE150471AD4ECBE00DB03AF /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE150461AD4ECBE00DB03AF /* SWRevealViewController.m */; };
+		DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE150481AD5E65200DB03AF /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,8 @@
 		DB09CEB41AD2729000E831B7 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
 		DB09CEB61AD276DF00E831B7 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		DB0F17881AD5F1D3002275C3 /* StoriesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesMenuViewController.swift; sourceTree = "<group>"; };
+		DB32CD2C1AD5F745006D1A11 /* PointsOfInterestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsOfInterestListViewController.swift; sourceTree = "<group>"; };
 		DBC30D5D1AD0CEF800FFB42D /* leaflet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leaflet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC30D611AD0CEF800FFB42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC30D621AD0CEF800FFB42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +87,9 @@
 		DBC30DA21AD1EE1E00FFB42D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DBC30DA41AD1EEC100FFB42D /* leaflet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leaflet-Bridging-Header.h"; sourceTree = "<group>"; };
 		DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
+		DBE150451AD4ECBE00DB03AF /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DBE150461AD4ECBE00DB03AF /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DBE150481AD5E65200DB03AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +142,13 @@
 		DB09CEB01AD2717E00E831B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DBE150441AD4ECA700DB03AF /* SWRevealViewController */,
 				DBC30D661AD0CEF800FFB42D /* MapViewController.swift */,
 				DBC30D641AD0CEF800FFB42D /* OverviewViewController.swift */,
 				DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */,
+				DBE150481AD5E65200DB03AF /* MenuViewController.swift */,
+				DB0F17881AD5F1D3002275C3 /* StoriesMenuViewController.swift */,
+				DB32CD2C1AD5F745006D1A11 /* PointsOfInterestListViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +244,15 @@
 				DBC30D861AD1DCD200FFB42D /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBE150441AD4ECA700DB03AF /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBE150451AD4ECBE00DB03AF /* SWRevealViewController.h */,
+				DBE150461AD4ECBE00DB03AF /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,13 +366,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0F17891AD5F1D3002275C3 /* StoriesMenuViewController.swift in Sources */,
+				DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */,
 				DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */,
 				DB09CEAE1AD2711500E831B7 /* FecPoiView.swift in Sources */,
 				DB09CEB71AD276DF00E831B7 /* HTTPClient.swift in Sources */,
 				DB09CEB31AD2721800E831B7 /* LibraryAPI.swift in Sources */,
 				DB09CEAB1AD2703100E831B7 /* FecPoi.swift in Sources */,
+				DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */,
 				DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */,
 				DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */,
+				DBE150471AD4ECBE00DB03AF /* SWRevealViewController.m in Sources */,
 				DBC30D651AD0CEF800FFB42D /* OverviewViewController.swift in Sources */,
 				DB09CEB51AD2729000E831B7 /* PersistencyManager.swift in Sources */,
 			);

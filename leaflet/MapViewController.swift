@@ -11,8 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
-    @IBOutlet weak var tabBarView: UITabBarItem!
-
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var mapView: GMSMapView!
     let locationManager = CLLocationManager()
     
@@ -26,6 +25,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         setMyLocation()
         self.mapView.padding = UIEdgeInsets(top: self.topLayoutGuide.length, left: 0, bottom: 49, right: 0)
         mapView.settings.myLocationButton = true
+
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
 
     }
 
