@@ -71,7 +71,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             if let address = response?.firstResult() {
                 
                 // 3
-                let lines = address.lines as [String]
+                let lines = address.lines as! [String]
 //                self.addressLabel.text = join("\n", lines)
                 println(join("\n", lines))
                 

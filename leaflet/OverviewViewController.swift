@@ -45,7 +45,7 @@ class OverviewViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TypeCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TypeCell", forIndexPath: indexPath) as! UITableViewCell
         let poi = allPois[indexPath.row]
         cell.textLabel?.text = poi.title
 //        cell.imageView?.image = UIImage(named: key)
@@ -56,12 +56,12 @@ class OverviewViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "DetailedViewSegue" {
-            let cell = sender as UITableViewCell
+            let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let selectedIndex = indexPath?.row
             if let index = selectedIndex {
                 let selectedPoi = allPois[index]
-                let detailedViewController = segue.destinationViewController.topViewController as DetailedViewController
+                let detailedViewController = segue.destinationViewController.topViewController as! DetailedViewController
                 detailedViewController.selectedPoi = selectedPoi
             }
 

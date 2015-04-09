@@ -18,8 +18,8 @@ class FecPoiView: UIView {
     }
     */
     
-    private let picture: UIImageView!
-    private let indicator: UIActivityIndicatorView!
+    private var picture: UIImageView!
+    private var indicator: UIActivityIndicatorView!
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

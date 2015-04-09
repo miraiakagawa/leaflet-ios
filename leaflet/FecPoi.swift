@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectiveC
 
 class FecPoi: NSObject {
    
@@ -21,7 +22,7 @@ class FecPoi: NSObject {
         self.pictureUrl = pictureUrl
     }
     
-    func description() -> String {
+    override var description : String {
         return "title: \(title)"
     }
 }

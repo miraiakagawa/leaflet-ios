@@ -34,6 +34,7 @@
 		DBC30D9F1AD1EE0F00FFB42D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC30D9E1AD1EE0F00FFB42D /* OpenGLES.framework */; };
 		DBC30DA11AD1EE1700FFB42D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC30DA01AD1EE1700FFB42D /* QuartzCore.framework */; };
 		DBC30DA31AD1EE1E00FFB42D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC30DA21AD1EE1E00FFB42D /* SystemConfiguration.framework */; };
+		DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		DBC30DA01AD1EE1700FFB42D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DBC30DA21AD1EE1E00FFB42D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DBC30DA41AD1EEC100FFB42D /* leaflet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leaflet-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		DBC30D601AD0CEF800FFB42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */,
 				DBC30D611AD0CEF800FFB42D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -281,6 +284,9 @@
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 9VUC3R8D65;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
@@ -320,6 +326,7 @@
 				DBC30D6F1AD0CEF800FFB42D /* LaunchScreen.xib in Resources */,
 				DBC30D6C1AD0CEF800FFB42D /* Images.xcassets in Resources */,
 				DBC30D8C1AD1ED8800FFB42D /* GoogleMaps.bundle in Resources */,
+				DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
