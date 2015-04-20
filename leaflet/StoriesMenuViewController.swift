@@ -8,12 +8,61 @@
 
 import UIKit
 
+struct Story {
+    var title: String
+    var description: String
+    var pointsOfInterest: [PointOfInterest]
+    var color: UIColor
+}
+
 class StoriesMenuViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    var stories: [Story] = [
+        Story(title: "Water",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.blueColor()
+            ),
+        Story(title: "Energy",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.orangeColor()
+        ),
+        Story(title: "Heat",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.redColor()
+        ),
+        Story(title: "Plants",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.greenColor()
+        ),
+        Story(title: "Living Building",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.grayColor()
+        )
+    ]
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("story") as? StoriesListViewCell ?? StoriesListViewCell()
+        var story = self.stories[indexPath.row]
+        
+        cell.storyName.text = story.title
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.stories.count
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -27,6 +76,21 @@ class StoriesMenuViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "storyViewDisplay":
+                let navVC = segue.destinationViewController as! UINavigationController
+                let storyVC = navVC.viewControllers.first as! StoryViewController
+                if var cell = sender as? StoriesListViewCell {
+                    var storySearch = filter(stories) { (s: Story) in s.title == cell.storyName.text! }
+                    print(storySearch[0].title)
+                    storyVC.title = storySearch[0].title
+                }
+        default:
+            break
+        }
+        
+    }
     
     
     // MARK: - Table view data source
