@@ -15,6 +15,22 @@ struct Story {
     var color: UIColor
 }
 
+extension UIColor {
+    
+    convenience init(hex: Int) {
+        
+        let components = (
+            R: CGFloat((hex >> 16) & 0xff) / 255,
+            G: CGFloat((hex >> 08) & 0xff) / 255,
+            B: CGFloat((hex >> 00) & 0xff) / 255
+        )
+        
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
+        
+    }
+    
+}
+
 class StoriesMenuViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -23,7 +39,7 @@ class StoriesMenuViewController: UITableViewController {
         Story(title: "Water",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.blueColor()
+            color: UIColor(hex: 0x2EA9FC)
             ),
         Story(title: "Energy",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
@@ -83,8 +99,9 @@ class StoriesMenuViewController: UITableViewController {
                 let storyVC = navVC.viewControllers.first as! StoryViewController
                 if var cell = sender as? StoriesListViewCell {
                     var storySearch = filter(stories) { (s: Story) in s.title == cell.storyName.text! }
-                    print(storySearch[0].title)
                     storyVC.title = storySearch[0].title
+                    storyVC.storyDescriptionText = storySearch[0].description
+                    storyVC.backgroundNavColor = storySearch[0].color
                 }
         default:
             break

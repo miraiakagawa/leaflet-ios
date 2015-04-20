@@ -11,10 +11,15 @@ import UIKit
 class StoryViewController: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var storyDescription: UITextView!
+    var storyDescriptionText: String = ""
+    var backgroundNavColor: UIColor = UIColor(hex: 0x61CE72)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = backgroundNavColor
+        self.storyDescription.text = storyDescriptionText
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
