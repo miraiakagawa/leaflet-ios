@@ -14,12 +14,14 @@ class FecPoi: NSObject {
     var title : String!
     var content: String!
     var pictureUrl : String!
+    var beaconMajor: Int!
     
-    init(title: String, content: String, pictureUrl: String) {
+    init(title: String, content: String, pictureUrl: String, beaconMajor: Int) {
         super.init()
         self.title = title
         self.content = content
         self.pictureUrl = pictureUrl
+        self.beaconMajor = beaconMajor
     }
     
     override var description : String {

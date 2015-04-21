@@ -13,17 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     // CONSTANTS
     let googleMapsApiKey = "AIzaSyAoKcrRBul4PmuGDzUfPKAi1_KoA0StmJQ"
-    let uuidString = "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"
+    // Default uuid string for estimote beacons
+    let uuidString = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
     let beaconIdentifier = "parks-and-rec.cmu.edu.Leaflet"
     
     var window: UIWindow?
     var locationManager: CLLocationManager?
-    var lastProximity: CLProximity?
+
+    var knownBeacons = [NSNumber: CLProximity]()
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey(googleMapsApiKey)
+//        GMSServices.provideAPIKey(googleMapsApiKey)
         
         let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)!
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
@@ -51,9 +53,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             )
         }
         
+        if let options = launchOptions {
+            if let notification = options[UIApplicationLaunchOptionsLocalNotificationKey] as? [NSObject : AnyObject] {
+                println("So now it works.")
+                //notification found mean that you app is opened from notification
+            }
+        }
+        
         return true
     }
 
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        NSLog("FIREEEEEEE")
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -80,69 +93,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 }
 
 extension AppDelegate: CLLocationManagerDelegate {
+    
+
+    // actual method that registers the local notification.
     func sendLocalNotificationWithMessage(message: String!, playSound: Bool) {
+        
         let notification:UILocalNotification = UILocalNotification()
         notification.alertBody = message
         
         if(playSound) {
-            // classic star trek communicator beep
-            //	http://www.trekcore.com/audio/
-            //
-            // note: convert mp3 and wav formats into caf using:
-            //	"afconvert -f caff -d LEI16@44100 -c 1 in.wav out.caf"
-            // http://stackoverflow.com/a/10388263
-            
             notification.soundName = "tos_beep.caf";
         }
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
-    func locationManager(manager: CLLocationManager!,
-        didRangeBeacons beacons: [AnyObject]!,
-        inRegion region: CLBeaconRegion!) {
-//            let viewController:ViewController = window!.rootViewController as ViewController
-//            viewController.beacons = beacons as [CLBeacon]?
-//            viewController.tableView!.reloadData()
+    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+        //            let viewController:ViewController = window!.rootViewController as ViewController
+        //            viewController.beacons = beacons as [CLBeacon]?
+        //            viewController.tableView!.reloadData()
+
+        NSLog("didRangeBeacons: \(beacons.count)");
+        var message:String = ""
+        var foundBeacon:CLBeacon
+        
+        for beacon in beacons {
             
-            NSLog("didRangeBeacons");
-            var message:String = ""
+            foundBeacon = beacon as! CLBeacon
             
-            var playSound = false
-            
-            if(beacons.count > 0) {
-                let nearestBeacon:CLBeacon = beacons[0] as! CLBeacon
-                
-                if(nearestBeacon.proximity == lastProximity ||
-                    nearestBeacon.proximity == CLProximity.Unknown) {
-                        return;
+            if foundBeacon.proximity == CLProximity.Near || foundBeacon.proximity == CLProximity.Immediate {
+                let prevProximity = knownBeacons[foundBeacon.major]
+                if  prevProximity == nil || prevProximity != foundBeacon.proximity {
+                    var poi:FecPoi? = LibraryAPI.sharedInstance.getPoiByBeaconMajor(foundBeacon.major.integerValue)
+                    message = "Your are near the " + poi!.title + "!"
+//                    message = "You are near beacon with major \(foundBeacon.major) and minor \(foundBeacon.minor)"
+                    sendLocalNotificationWithMessage(message, playSound: true)
                 }
-                lastProximity = nearestBeacon.proximity;
-                
-                switch nearestBeacon.proximity {
-                case CLProximity.Far:
-                    message = "You are far away from the beacon"
-                    playSound = true
-                case CLProximity.Near:
-                    message = "You are near the beacon"
-                case CLProximity.Immediate:
-                    message = "You are in the immediate proximity of the beacon"
-                case CLProximity.Unknown:
-                    return
-                }
-            } else {
-                
-                if(lastProximity == CLProximity.Unknown) {
-                    return;
-                }
-                
-                message = "No beacons are nearby"
-                playSound = true
-                lastProximity = CLProximity.Unknown
             }
-            
-            NSLog("%@", message)
-            sendLocalNotificationWithMessage(message, playSound: playSound)
+            knownBeacons[foundBeacon.major] = foundBeacon.proximity
+//            } else {
+//                knownBeacons[foundBeacon.major] = foundBeacon.proximity
+//            }
+            NSLog("beacon \(foundBeacon.major): proximity: \(foundBeacon.proximity.rawValue)")
+        }
+
+        NSLog("known beacons: \(knownBeacons.count)")
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -151,15 +146,15 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.startUpdatingLocation()
             
             NSLog("You entered the region")
-            sendLocalNotificationWithMessage("You entered the region", playSound: false)
+            sendLocalNotificationWithMessage("You entered the region", playSound: true)
     }
     
     func locationManager(manager: CLLocationManager!,
         didExitRegion region: CLRegion!) {
             manager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
             manager.stopUpdatingLocation()
-            
+            knownBeacons = [:]
             NSLog("You exited the region")
-            sendLocalNotificationWithMessage("You exited the region", playSound: true)
+            sendLocalNotificationWithMessage("You exited the region", playSound: false)
     }
 }

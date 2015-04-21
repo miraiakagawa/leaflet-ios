@@ -38,6 +38,16 @@ class LibraryAPI: NSObject {
         return persistencyManager.getPois()
     }
     
+    func getPoiByBeaconMajor(major: Int) -> FecPoi? {
+        var allPois = persistencyManager.getPois()
+        for poi in allPois {
+            if poi.beaconMajor == major {
+                return poi
+            }
+        }
+        return nil
+    }
+    
 //    func addAlbum(album: Album, index: Int) {
 //        persistencyManager.addAlbum(album, index: index)
 //        if isOnline {
