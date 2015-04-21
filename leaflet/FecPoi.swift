@@ -15,9 +15,11 @@ class FecPoi: NSObject {
     var content: String!
     var pictureUrl : String!
     var beaconMajor: Int!
+    var visit: Bool!
     
     init(title: String, content: String, pictureUrl: String, beaconMajor: Int) {
         super.init()
+        self.visit = false
         self.title = title
         self.content = content
         self.pictureUrl = pictureUrl
@@ -26,5 +28,9 @@ class FecPoi: NSObject {
     
     override var description : String {
         return "title: \(title)"
+    }
+    
+    func setVisiting(visit: Bool) {
+        self.visit = visit
     }
 }

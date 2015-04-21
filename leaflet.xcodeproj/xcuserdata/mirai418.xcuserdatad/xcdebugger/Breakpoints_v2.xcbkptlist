@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "leaflet/FecPoi.swift"
-            timestampString = "451340970.089503"
+            timestampString = "451353051.781064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "init(title:content:pictureUrl:beaconMajor:)"
             landmarkType = "5">
          </BreakpointContent>

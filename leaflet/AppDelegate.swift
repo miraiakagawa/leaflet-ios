@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        GMSServices.provideAPIKey(googleMapsApiKey)
+        GMSServices.provideAPIKey(googleMapsApiKey)
         
         let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)!
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,
@@ -125,9 +125,13 @@ extension AppDelegate: CLLocationManagerDelegate {
                 let prevProximity = knownBeacons[foundBeacon.major]
                 if  prevProximity == nil || prevProximity != foundBeacon.proximity {
                     var poi:FecPoi? = LibraryAPI.sharedInstance.getPoiByBeaconMajor(foundBeacon.major.integerValue)
-                    message = "Your are near the " + poi!.title + "!"
-//                    message = "You are near beacon with major \(foundBeacon.major) and minor \(foundBeacon.minor)"
-                    sendLocalNotificationWithMessage(message, playSound: true)
+                    if (poi?.visit == false) {
+                        message = "Your are near the " + poi!.title + "!"
+                        //                    message = "You are near beacon with major \(foundBeacon.major) and minor \(foundBeacon.minor)"
+                        sendLocalNotificationWithMessage(message, playSound: true)
+                    }
+                    poi?.setVisiting(true)
+
                 }
             }
             knownBeacons[foundBeacon.major] = foundBeacon.proximity
@@ -146,7 +150,7 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.startUpdatingLocation()
             
             NSLog("You entered the region")
-            sendLocalNotificationWithMessage("You entered the region", playSound: true)
+//            sendLocalNotificationWithMessage("You entered the region", playSound: true)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -155,6 +159,6 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.stopUpdatingLocation()
             knownBeacons = [:]
             NSLog("You exited the region")
-            sendLocalNotificationWithMessage("You exited the region", playSound: false)
+//            sendLocalNotificationWithMessage("You exited the region", playSound: false)
     }
 }
