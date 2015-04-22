@@ -51,8 +51,8 @@ class SideMenuTableViewController: UITableViewController {
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
             cell!.backgroundColor = UIColor.clearColor()
-            cell!.textLabel?.textColor = UIColor.blackColor()
-            cell!.textLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
+            cell!.textLabel?.textColor = UIColor(hex: GlobalConstants.menuTextColor)
+            cell!.textLabel?.font = GlobalConstants.defaultFont
             let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView

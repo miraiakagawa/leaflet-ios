@@ -15,7 +15,7 @@ class MapViewController: UIViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x61CE72)
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
     }

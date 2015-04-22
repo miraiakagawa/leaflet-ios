@@ -14,6 +14,7 @@
 		DB09CEB71AD276DF00E831B7 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB61AD276DF00E831B7 /* HTTPClient.swift */; };
 		DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */; };
 		DB0F17891AD5F1D3002275C3 /* StoriesMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0F17881AD5F1D3002275C3 /* StoriesMenuViewController.swift */; };
+		DB25A5AE1AE7F5ED007939FF /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */; };
 		DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CD2C1AD5F745006D1A11 /* PointsOfInterestListViewController.swift */; };
 		DB338F721AE47E5900B818CC /* PointsOfInterestListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB338F711AE47E5900B818CC /* PointsOfInterestListViewCell.swift */; };
 		DB338F741AE488D000B818CC /* StoriesListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB338F731AE488D000B818CC /* StoriesListViewCell.swift */; };
@@ -77,6 +78,7 @@
 		DB09CEB61AD276DF00E831B7 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		DB0F17881AD5F1D3002275C3 /* StoriesMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesMenuViewController.swift; sourceTree = "<group>"; };
+		DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		DB32CD2C1AD5F745006D1A11 /* PointsOfInterestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsOfInterestListViewController.swift; sourceTree = "<group>"; };
 		DB338F711AE47E5900B818CC /* PointsOfInterestListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsOfInterestListViewCell.swift; sourceTree = "<group>"; };
 		DB338F731AE488D000B818CC /* StoriesListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesListViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				DB09CEAA1AD2703100E831B7 /* FecPoi.swift */,
+				DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */,
 				DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */,
 				DB338F741AE488D000B818CC /* StoriesListViewCell.swift in Sources */,
+				DB25A5AE1AE7F5ED007939FF /* GlobalConstants.swift in Sources */,
 				DB338F721AE47E5900B818CC /* PointsOfInterestListViewCell.swift in Sources */,
 				DB4D5BAF1AE73C7E009AF66F /* SideMenuTableViewController.swift in Sources */,
 				DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */,

@@ -27,6 +27,8 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.navigationBar.barTintColor = backgroundNavColor
         self.storyDescription.textContainerInset = UIEdgeInsetsMake(20, 20, 20, 20);
         self.storyDescription.text = storyDescriptionText
+        self.storyDescription.scrollEnabled = false
+        self.storyDescription.font = GlobalConstants.subHeadingFont
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()

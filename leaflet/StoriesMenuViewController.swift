@@ -77,7 +77,9 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         var storyVC : StoryViewController
         storyVC = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
         storyVC.title = stories[indexPath.row].title
+        
         storyVC.storyDescriptionText = stories[indexPath.row].description
+        
         storyVC.backgroundNavColor = stories[indexPath.row].color
     
         sideMenuController()?.setContentViewController(storyVC)
@@ -86,7 +88,7 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x61CE72)
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
