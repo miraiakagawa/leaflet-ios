@@ -13,7 +13,7 @@ struct PointOfInterest {
     var content: String
 }
 
-class PointsOfInterestListViewController: UITableViewController {
+class PointsOfInterestListViewController: UITableViewController, ENSideMenuDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     var pointsOfInterests: [PointOfInterest] = [
@@ -53,12 +53,10 @@ class PointsOfInterestListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x61CE72)
         
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
         
     }
     
@@ -67,35 +65,25 @@ class PointsOfInterestListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.identifier! {
-            //        case "tableToDisplay":
-            //            if var secondViewController = segue.destinationViewController as? RestaurantDisplayViewController {
-            //                if var cell = sender as? RestaurantCellTableViewCell {
-            //                    secondViewController.nameString = cell.restaurantName.text!
-            //                }
-            //            }
-//        case "newRestaurantDisplay":
-//            if var thirdViewController = segue.destinationViewController as? RestaurantNewViewController {
-//                thirdViewController.delegate = self
-//            }
-//        case "restaurantDisplay":
-//            if var fourthViewController = segue.destinationViewController as? DishTableViewController {
-//                fourthViewController.delegate = self
-//                if var cell = sender as? RestaurantCellTableViewCell {
-//                    fourthViewController.restaurantName.title = cell.restaurantName.text!
-//                    var index = 0
-//                    while (cell.restaurantName.text != self.restaurants[index].name && index < self.restaurants.count) {
-//                        index = index + 1
-//                    }
-//                    fourthViewController.dishes = restaurants[index].dishes!
-//                }
-//            }
-        default:
-            break
-        }
-        
+    @IBAction func revealMapView(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+        sideMenuController()?.setContentViewController(destViewController)
     }
+    
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        switch segue.identifier! {
+//            
+//        default:
+//            break
+//        }
+//        
+//    }
     
     
     

@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     // CONSTANTS
-    let googleMapsApiKey = "AIzaSyAoKcrRBul4PmuGDzUfPKAi1_KoA0StmJQ"
     // Default uuid string for estimote beacons
     let uuidString = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
     let beaconIdentifier = "parks-and-rec.cmu.edu.Leaflet"
@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey(googleMapsApiKey)
         
         let beaconUUID:NSUUID = NSUUID(UUIDString: uuidString)!
         let beaconRegion:CLBeaconRegion = CLBeaconRegion(proximityUUID: beaconUUID,

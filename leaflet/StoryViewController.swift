@@ -8,9 +8,8 @@
 
 import UIKit
 
-class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ENSideMenuDelegate {
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var storyDescription: UITextView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,12 +28,8 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.storyDescription.textContainerInset = UIEdgeInsetsMake(20, 20, 20, 20);
         self.storyDescription.text = storyDescriptionText
         
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,6 +53,14 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedPoi = allPois[indexPath.row]
         self.performSegueWithIdentifier("ShowPoiDetail", sender: selectedPoi)
+    }
+    
+    @IBAction func backToMenu(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var menuVC : StoriesMenuViewController
+        menuVC = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView") as! StoriesMenuViewController
+        
+        sideMenuController()?.setContentViewController(menuVC)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CPb-kf-hrw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mp-I4-dRc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -30,7 +30,7 @@
         <!--Frick Environmental Center-->
         <scene sceneID="rmZ-5L-9aQ">
             <objects>
-                <tableViewController id="mNX-aG-1zn" customClass="PointsOfInterestListViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="listView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mNX-aG-1zn" customClass="PointsOfInterestListViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="sfc-uv-cB7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,10 +60,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Frick Environmental Center" id="hhB-No-X1H">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="8x1-Jp-dc8"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="8x1-Jp-dc8">
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="mNX-aG-1zn" id="AjI-Gz-jLu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map" id="uYi-Wm-EZj">
                             <connections>
-                                <segue destination="9Mp-I4-dRc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="by2-Cq-fOZ"/>
+                                <action selector="revealMapView:" destination="mNX-aG-1zn" id="5Si-eu-psX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -75,156 +79,10 @@
             </objects>
             <point key="canvasLocation" x="2397" y="845"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="l2z-7c-2rd">
-            <objects>
-                <navigationController id="HRE-sG-pfE" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zQg-s9-RfE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32549019607843138" green="0.78431372549019607" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mNX-aG-1zn" kind="relationship" relationship="rootViewController" id="hIv-eQ-yUK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbp-HD-bXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1583" y="845"/>
-        </scene>
-        <!--Reveal View Controller-->
-        <scene sceneID="jWj-gQ-fHn">
-            <objects>
-                <viewController id="CPb-kf-hrw" customClass="SWRevealViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oX2-Re-Iw5"/>
-                        <viewControllerLayoutGuide type="bottom" id="pDK-Gj-UI9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ihk-52-oMT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="dm8-bq-f5Z" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Fin-0H-IPJ"/>
-                        <segue destination="9Mp-I4-dRc" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="cPW-g7-5lp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qTW-44-8DT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-789" y="2489"/>
-        </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="6R7-HX-HzJ">
-            <objects>
-                <tableViewController id="dm8-bq-f5Z" customClass="MenuViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5Wr-rE-A6Z">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="tC3-UT-Tnq">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mapButton" id="hkW-NQ-M3W">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkW-NQ-M3W" id="3dT-gg-WgK">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJy-3m-GMv">
-                                                    <rect key="frame" x="17" y="11" width="293" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="9Mp-I4-dRc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="nMR-Yw-6Jd"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="storiesButton" id="WxX-gn-qdb">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WxX-gn-qdb" id="a0c-8p-7OZ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-AY-Pj0">
-                                                    <rect key="frame" x="17" y="11" width="304" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="ySo-d6-Wcq" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="tt2-ek-6ZY"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="badgesButton" id="QdS-OO-Rd9">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QdS-OO-Rd9" id="vjW-wZ-4po">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Badges" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVl-mD-YeD">
-                                                    <rect key="frame" x="18" y="11" width="305" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stickerCamButton" id="AWA-u1-2pR">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWA-u1-2pR" id="dPb-V1-EvL">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sticker Cam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIv-rw-v8H">
-                                                    <rect key="frame" x="19" y="11" width="351" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="atHomeButton" id="SDB-Ms-Vzq">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SDB-Ms-Vzq" id="caY-wm-GB8">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="At Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81B-ks-oIj">
-                                                    <rect key="frame" x="18" y="11" width="351" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="dm8-bq-f5Z" id="jhx-9h-bFy"/>
-                            <outlet property="delegate" destination="dm8-bq-f5Z" id="EVr-zi-9vO"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UmT-r7-7hU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7" y="2501"/>
-        </scene>
-        <!--Navigation Controller-->
+        <!--Side Bar Navigation View Controller-->
         <scene sceneID="80C-un-GtI">
             <objects>
-                <navigationController id="9Mp-I4-dRc" sceneMemberID="viewController">
+                <navigationController id="9Mp-I4-dRc" customClass="SideBarNavigationViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oL8-WH-Lkd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -238,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1583" y="1687"/>
         </scene>
-        <!--Map-->
+        <!--mapView-->
         <scene sceneID="9XY-PX-gxF">
             <objects>
-                <viewController title="Map" id="09m-YL-8Uf" customClass="MapViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapView" title="mapView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="09m-YL-8Uf" customClass="MapViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Lfl-hT-6Dh"/>
                         <viewControllerLayoutGuide type="bottom" id="3xi-v0-auU"/>
@@ -263,17 +121,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QLF-E6-Cwd">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="UiT-qr-lJs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="UiT-qr-lJs">
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="09m-YL-8Uf" id="how-c0-Znq"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="List" id="zkl-fF-9QO">
                             <connections>
-                                <segue destination="HRE-sG-pfE" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="8Hr-KP-xk5"/>
+                                <action selector="revealListView:" destination="09m-YL-8Uf" id="RDa-mz-mom"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="mapView" destination="bX8-oo-PyC" id="vfk-rl-tXe"/>
-                        <outlet property="menuButton" destination="UiT-qr-lJs" id="WtP-Di-68f"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-JT-Ak4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +140,7 @@
         <!--Stories-->
         <scene sceneID="1M1-QJ-LyN">
             <objects>
-                <tableViewController id="b3b-OK-GQ5" customClass="StoriesMenuViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="storyMenuView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b3b-OK-GQ5" customClass="StoriesMenuViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MyI-O2-dUf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,7 +161,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="storyName" destination="7Tt-oX-F3U" id="9ax-8q-X3C"/>
-                                    <segue destination="iVZ-N1-qPl" kind="custom" identifier="storyViewDisplay" customClass="SWRevealViewControllerSeguePushController" id="iKE-K6-FgS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -314,37 +171,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Stories" id="pjq-Yz-YeB">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="IuD-kN-DBE"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="IuD-kN-DBE">
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="b3b-OK-GQ5" id="uQ5-dY-P3x"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="IuD-kN-DBE" id="3YH-lo-zXq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qw0-3B-o8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2397" y="2501"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LHE-nO-V9A">
-            <objects>
-                <navigationController id="iVZ-N1-qPl" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QtL-RF-6uR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="N9T-uL-LbZ" kind="relationship" relationship="rootViewController" id="G0o-H6-YRd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2iW-Dn-XK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2397" y="3263"/>
-        </scene>
         <!--Story View Controller-->
         <scene sceneID="LWa-rz-F2w">
             <objects>
-                <viewController id="N9T-uL-LbZ" customClass="StoryViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="storyView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N9T-uL-LbZ" customClass="StoryViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P89-x0-c4s"/>
                         <viewControllerLayoutGuide type="bottom" id="A3w-mM-fj9"/>
@@ -444,10 +285,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u9r-cA-KPb">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="jWK-x4-8Fh"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="jWK-x4-8Fh">
+                            <connections>
+                                <action selector="backToMenu:" destination="N9T-uL-LbZ" id="ifl-NE-33a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="jWK-x4-8Fh" id="OfJ-vR-z4t"/>
                         <outlet property="storyDescription" destination="82a-bs-Zdw" id="reZ-dI-dSw"/>
                     </connections>
                 </viewController>
@@ -489,7 +333,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="oPm-0f-CFX"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -517,30 +361,12 @@
             </objects>
             <point key="canvasLocation" x="4000" y="3263"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Lc9-pk-oJh">
-            <objects>
-                <navigationController id="ySo-d6-Wcq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hZk-Zu-Tic">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="b3b-OK-GQ5" kind="relationship" relationship="rootViewController" id="aEp-jb-F3o"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bwx-ci-EE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1583" y="2501"/>
-        </scene>
     </scenes>
     <resources>
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gat-eh-Pzw"/>
-        <segue reference="by2-Cq-fOZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
