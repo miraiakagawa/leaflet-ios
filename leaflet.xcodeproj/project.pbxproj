@@ -24,6 +24,17 @@
 		DB4D5BAD1AE73C37009AF66F /* SideMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAC1AE73C37009AF66F /* SideMenuNavigationViewController.swift */; };
 		DB4D5BAF1AE73C7E009AF66F /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */; };
 		DB4D5BB31AE7432C009AF66F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BB21AE7432C009AF66F /* SWRevealViewController.m */; };
+		DB6526741AE75FA1002C8CCA /* Energy.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65266F1AE75FA1002C8CCA /* Energy.png */; };
+		DB6526751AE75FA1002C8CCA /* Explore.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526701AE75FA1002C8CCA /* Explore.png */; };
+		DB6526761AE75FA1002C8CCA /* Heat.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526711AE75FA1002C8CCA /* Heat.png */; };
+		DB6526771AE75FA1002C8CCA /* Plants.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526721AE75FA1002C8CCA /* Plants.png */; };
+		DB6526781AE75FA1002C8CCA /* Water.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526731AE75FA1002C8CCA /* Water.png */; };
+		DB65267A1AE76D59002C8CCA /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6526791AE76D59002C8CCA /* RBResizer.swift */; };
+		DB6526811AE77CF2002C8CCA /* AtHome.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65267C1AE77CF2002C8CCA /* AtHome.png */; };
+		DB6526821AE77CF2002C8CCA /* ExploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65267D1AE77CF2002C8CCA /* ExploreIcon.png */; };
+		DB6526831AE77CF2002C8CCA /* Rewards.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65267E1AE77CF2002C8CCA /* Rewards.png */; };
+		DB6526841AE77CF2002C8CCA /* StickerCam.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65267F1AE77CF2002C8CCA /* StickerCam.png */; };
+		DB6526851AE77CF2002C8CCA /* Stories.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526801AE77CF2002C8CCA /* Stories.png */; };
 		DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D621AD0CEF800FFB42D /* AppDelegate.swift */; };
 		DBC30D651AD0CEF800FFB42D /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D641AD0CEF800FFB42D /* OverviewViewController.swift */; };
 		DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC30D661AD0CEF800FFB42D /* MapViewController.swift */; };
@@ -77,6 +88,17 @@
 		DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		DB4D5BB11AE7432C009AF66F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DB4D5BB21AE7432C009AF66F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DB65266F1AE75FA1002C8CCA /* Energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Energy.png; sourceTree = "<group>"; };
+		DB6526701AE75FA1002C8CCA /* Explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explore.png; sourceTree = "<group>"; };
+		DB6526711AE75FA1002C8CCA /* Heat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heat.png; sourceTree = "<group>"; };
+		DB6526721AE75FA1002C8CCA /* Plants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plants.png; sourceTree = "<group>"; };
+		DB6526731AE75FA1002C8CCA /* Water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water.png; sourceTree = "<group>"; };
+		DB6526791AE76D59002C8CCA /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
+		DB65267C1AE77CF2002C8CCA /* AtHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AtHome.png; sourceTree = "<group>"; };
+		DB65267D1AE77CF2002C8CCA /* ExploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExploreIcon.png; sourceTree = "<group>"; };
+		DB65267E1AE77CF2002C8CCA /* Rewards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rewards.png; sourceTree = "<group>"; };
+		DB65267F1AE77CF2002C8CCA /* StickerCam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StickerCam.png; sourceTree = "<group>"; };
+		DB6526801AE77CF2002C8CCA /* Stories.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stories.png; sourceTree = "<group>"; };
 		DBC30D5D1AD0CEF800FFB42D /* leaflet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = leaflet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC30D611AD0CEF800FFB42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC30D621AD0CEF800FFB42D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +213,7 @@
 		DB4D5BA61AE73B5F009AF66F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				DB6526791AE76D59002C8CCA /* RBResizer.swift */,
 				DB4D5BB01AE7432C009AF66F /* SWRevealViewController */,
 				DB4D5BA71AE73B7B009AF66F /* ENSideMenu */,
 			);
@@ -258,6 +281,16 @@
 			isa = PBXGroup;
 			children = (
 				DBD800601AE5263000AFA3D2 /* rain-veil.jpg */,
+				DB65267C1AE77CF2002C8CCA /* AtHome.png */,
+				DB65267D1AE77CF2002C8CCA /* ExploreIcon.png */,
+				DB65267E1AE77CF2002C8CCA /* Rewards.png */,
+				DB65267F1AE77CF2002C8CCA /* StickerCam.png */,
+				DB6526801AE77CF2002C8CCA /* Stories.png */,
+				DB65266F1AE75FA1002C8CCA /* Energy.png */,
+				DB6526701AE75FA1002C8CCA /* Explore.png */,
+				DB6526711AE75FA1002C8CCA /* Heat.png */,
+				DB6526721AE75FA1002C8CCA /* Plants.png */,
+				DB6526731AE75FA1002C8CCA /* Water.png */,
 				DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */,
 				DBC30D611AD0CEF800FFB42D /* Info.plist */,
 			);
@@ -390,9 +423,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC30D6A1AD0CEF800FFB42D /* Main.storyboard in Resources */,
+				DB6526781AE75FA1002C8CCA /* Water.png in Resources */,
+				DB6526751AE75FA1002C8CCA /* Explore.png in Resources */,
+				DB6526741AE75FA1002C8CCA /* Energy.png in Resources */,
 				DBC30D6F1AD0CEF800FFB42D /* LaunchScreen.xib in Resources */,
+				DB6526831AE77CF2002C8CCA /* Rewards.png in Resources */,
+				DB6526811AE77CF2002C8CCA /* AtHome.png in Resources */,
+				DB6526771AE75FA1002C8CCA /* Plants.png in Resources */,
 				DBC30D6C1AD0CEF800FFB42D /* Images.xcassets in Resources */,
+				DB6526761AE75FA1002C8CCA /* Heat.png in Resources */,
+				DB6526841AE77CF2002C8CCA /* StickerCam.png in Resources */,
 				DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */,
+				DB6526851AE77CF2002C8CCA /* Stories.png in Resources */,
+				DB6526821AE77CF2002C8CCA /* ExploreIcon.png in Resources */,
 				DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +470,7 @@
 				DB4D5BAF1AE73C7E009AF66F /* SideMenuTableViewController.swift in Sources */,
 				DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */,
 				DB4D5BAD1AE73C37009AF66F /* SideMenuNavigationViewController.swift in Sources */,
+				DB65267A1AE76D59002C8CCA /* RBResizer.swift in Sources */,
 				DB4D5BAB1AE73B8C009AF66F /* ENSideMenuNavigationController.swift in Sources */,
 				DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */,
 				DB4D5BB31AE7432C009AF66F /* SWRevealViewController.m in Sources */,

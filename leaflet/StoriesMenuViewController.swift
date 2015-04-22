@@ -13,6 +13,7 @@ struct Story {
     var description: String
     var pointsOfInterest: [PointOfInterest]
     var color: UIColor
+    var picture: String
 }
 
 class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
@@ -21,27 +22,32 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         Story(title: "Water",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor(hex: 0x2EA9FC)
+            color: UIColor(hex: 0x2EA9FC),
+            picture: "Water.png"
             ),
         Story(title: "Energy",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.orangeColor()
+            color: UIColor.orangeColor(),
+            picture: "Energy.png"
         ),
         Story(title: "Heat",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.redColor()
+            color: UIColor.redColor(),
+            picture: "Heat.png"
         ),
         Story(title: "Plants",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.greenColor()
+            color: UIColor.greenColor(),
+            picture: "Plants.png"
         ),
-        Story(title: "Living Building",
+        Story(title: "Explore",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.grayColor()
+            color: UIColor.grayColor(),
+            picture: "Explore.png"
         )
     ]
     
@@ -49,7 +55,8 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         var cell = tableView.dequeueReusableCellWithIdentifier("story") as? StoriesListViewCell ?? StoriesListViewCell()
         var story = self.stories[indexPath.row]
         
-        cell.storyName.text = story.title
+        cell.storyBackgroundImg.image = UIImage(named: story.picture)
+        cell.overlay.hidden = true
         
         return cell
     }
@@ -61,6 +68,9 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         println("did select row: \(indexPath.row)")
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("story", forIndexPath: indexPath) as! StoriesListViewCell
+        cell.overlay.hidden = false
         
         //Present new view controller
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
@@ -80,6 +90,9 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
+        
+        self.tableView.rowHeight = 100.0
+
     }
     
     override func didReceiveMemoryWarning() {

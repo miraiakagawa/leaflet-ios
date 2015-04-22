@@ -44,6 +44,7 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var menuItems = ["", "Map", "Stories", "Rewards", "Sticker Cam", "At Home"]
+        var icons = ["", "ExploreIcon.png", "Stories.png", "Rewards.png", "StickerCam.png", "AtHome.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
         
@@ -52,7 +53,6 @@ class SideMenuTableViewController: UITableViewController {
             cell!.backgroundColor = UIColor.clearColor()
             cell!.textLabel?.textColor = UIColor.blackColor()
             cell!.textLabel?.font = UIFont (name: "HelveticaNeue-Light", size: 16)
-            cell!.imageView?.frame = CGRectMake(0, 0, 60, 60)
             let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView
@@ -60,7 +60,7 @@ class SideMenuTableViewController: UITableViewController {
         
         cell!.textLabel?.text = menuItems[indexPath.row]
         if (indexPath.row != 0) {
-//            cell!.imageView?.image = UIImage(named: "rain-veil.jpg")
+            cell!.imageView?.image = UIImage(named: icons[indexPath.row])
         }
         
         return cell!
@@ -83,10 +83,10 @@ class SideMenuTableViewController: UITableViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
         switch (indexPath.row) {
-        case 0:
+        case 1:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
             break
-        case 1:
+        case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView")as! UIViewController
             break
         default:

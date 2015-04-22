@@ -141,26 +141,42 @@
         <scene sceneID="1M1-QJ-LyN">
             <objects>
                 <tableViewController storyboardIdentifier="storyMenuView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b3b-OK-GQ5" customClass="StoriesMenuViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MyI-O2-dUf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="MyI-O2-dUf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="story" id="Cgr-b2-lIl" customClass="StoriesListViewCell" customModule="leaflet" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="story" rowHeight="50" id="Cgr-b2-lIl" customClass="StoriesListViewCell" customModule="leaflet" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cgr-b2-lIl" id="We6-Ap-TLg">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="Cgr-b2-lIl" id="We6-Ap-TLg">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tt-oX-F3U">
-                                            <rect key="frame" x="14" y="14" width="578" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2gG-xP-Y8C">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                        </imageView>
+                                        <visualEffectView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1t-5p-O4a">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Y2x-NF-fWb">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <blurEffect style="extraLight"/>
+                                        </visualEffectView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2gG-xP-Y8C" firstAttribute="leading" secondItem="We6-Ap-TLg" secondAttribute="leading" id="16o-bk-BML"/>
+                                        <constraint firstAttribute="trailing" secondItem="2gG-xP-Y8C" secondAttribute="trailing" id="6Zr-Xe-Egt"/>
+                                        <constraint firstItem="2gG-xP-Y8C" firstAttribute="top" secondItem="We6-Ap-TLg" secondAttribute="top" id="Bu0-YC-IQa"/>
+                                        <constraint firstItem="K1t-5p-O4a" firstAttribute="leading" secondItem="We6-Ap-TLg" secondAttribute="leading" id="Rso-4Y-Jh0"/>
+                                        <constraint firstItem="K1t-5p-O4a" firstAttribute="top" secondItem="We6-Ap-TLg" secondAttribute="top" id="Wcj-ra-KR1"/>
+                                        <constraint firstAttribute="bottom" secondItem="2gG-xP-Y8C" secondAttribute="bottom" id="g8G-wU-tUI"/>
+                                        <constraint firstAttribute="bottom" secondItem="K1t-5p-O4a" secondAttribute="bottom" id="lqq-mi-08b"/>
+                                        <constraint firstAttribute="trailing" secondItem="K1t-5p-O4a" secondAttribute="trailing" id="ya8-vL-3EL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="storyName" destination="7Tt-oX-F3U" id="9ax-8q-X3C"/>
+                                    <outlet property="overlay" destination="K1t-5p-O4a" id="Dqk-bd-kpU"/>
+                                    <outlet property="storyBackgroundImg" destination="2gG-xP-Y8C" id="mij-Pt-F0J"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
