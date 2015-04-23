@@ -58,6 +58,8 @@
 		DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */; };
 		DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD800601AE5263000AFA3D2 /* rain-veil.jpg */; };
 		DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE150481AD5E65200DB03AF /* MenuViewController.swift */; };
+		DBF48C281AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */; };
+		DBF48C2A1AE84F8F00B2D63C /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
 		DBD800601AE5263000AFA3D2 /* rain-veil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rain-veil.jpg"; sourceTree = "<group>"; };
 		DBE150481AD5E65200DB03AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPointsOfInterestListViewCell.swift; sourceTree = "<group>"; };
+		DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			children = (
 				DB09CEAA1AD2703100E831B7 /* FecPoi.swift */,
 				DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */,
+				DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				DB338F711AE47E5900B818CC /* PointsOfInterestListViewCell.swift */,
 				DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */,
 				DB338F731AE488D000B818CC /* StoriesListViewCell.swift */,
+				DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF48C2A1AE84F8F00B2D63C /* PointOfInterest.swift in Sources */,
 				DB0F17891AD5F1D3002275C3 /* StoriesMenuViewController.swift in Sources */,
 				DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */,
 				DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */,
@@ -467,6 +474,7 @@
 				DB338F761AE489CD00B818CC /* StoryViewController.swift in Sources */,
 				DB09CEAB1AD2703100E831B7 /* FecPoi.swift in Sources */,
 				DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */,
+				DBF48C281AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift in Sources */,
 				DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */,
 				DB338F741AE488D000B818CC /* StoriesListViewCell.swift in Sources */,
 				DB25A5AE1AE7F5ED007939FF /* GlobalConstants.swift in Sources */,

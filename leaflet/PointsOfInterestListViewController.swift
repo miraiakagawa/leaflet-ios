@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct PointOfInterest {
-    var title: String
-    var content: String
-    var locationAway: Int
-    var image: String
-}
-
 class PointsOfInterestListViewController: UITableViewController, ENSideMenuDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
