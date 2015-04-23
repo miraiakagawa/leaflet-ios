@@ -20,8 +20,6 @@
 		DB338F741AE488D000B818CC /* StoriesListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB338F731AE488D000B818CC /* StoriesListViewCell.swift */; };
 		DB338F761AE489CD00B818CC /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB338F751AE489CD00B818CC /* StoryViewController.swift */; };
 		DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BA21AE73874009AF66F /* UIColorExtensions.swift */; };
-		DB4D5BAA1AE73B8C009AF66F /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BA81AE73B8C009AF66F /* ENSideMenu.swift */; };
-		DB4D5BAB1AE73B8C009AF66F /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BA91AE73B8C009AF66F /* ENSideMenuNavigationController.swift */; };
 		DB4D5BAD1AE73C37009AF66F /* SideMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAC1AE73C37009AF66F /* SideMenuNavigationViewController.swift */; };
 		DB4D5BAF1AE73C7E009AF66F /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */; };
 		DB6526741AE75FA1002C8CCA /* Energy.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65266F1AE75FA1002C8CCA /* Energy.png */; };
@@ -58,6 +56,8 @@
 		DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD800601AE5263000AFA3D2 /* rain-veil.jpg */; };
 		DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE150481AD5E65200DB03AF /* MenuViewController.swift */; };
 		DBFB6C581AE969B200110A16 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB6C571AE969B200110A16 /* SWRevealViewController.m */; };
+		DBFB6C5C1AE96A9900110A16 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB6C5A1AE96A9900110A16 /* ENSideMenu.swift */; };
+		DBFB6C5D1AE96A9900110A16 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB6C5B1AE96A9900110A16 /* ENSideMenuNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,6 @@
 		DB338F731AE488D000B818CC /* StoriesListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesListViewCell.swift; sourceTree = "<group>"; };
 		DB338F751AE489CD00B818CC /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		DB4D5BA21AE73874009AF66F /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		DB4D5BA81AE73B8C009AF66F /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENSideMenu.swift; path = "../../../../../Downloads/ENSwiftSideMenu-master/Library/ENSideMenu.swift"; sourceTree = "<group>"; };
-		DB4D5BA91AE73B8C009AF66F /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ENSideMenuNavigationController.swift; path = "../../../../../Downloads/ENSwiftSideMenu-master/Library/ENSideMenuNavigationController.swift"; sourceTree = "<group>"; };
 		DB4D5BAC1AE73C37009AF66F /* SideMenuNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationViewController.swift; sourceTree = "<group>"; };
 		DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		DB65266F1AE75FA1002C8CCA /* Energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Energy.png; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 		DBE150481AD5E65200DB03AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DBFB6C561AE969B200110A16 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DBFB6C571AE969B200110A16 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DBFB6C5A1AE96A9900110A16 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
+		DBFB6C5B1AE96A9900110A16 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +226,8 @@
 		DB4D5BA71AE73B7B009AF66F /* ENSideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				DB4D5BA81AE73B8C009AF66F /* ENSideMenu.swift */,
-				DB4D5BA91AE73B8C009AF66F /* ENSideMenuNavigationController.swift */,
+				DBFB6C5A1AE96A9900110A16 /* ENSideMenu.swift */,
+				DBFB6C5B1AE96A9900110A16 /* ENSideMenuNavigationController.swift */,
 			);
 			name = ENSideMenu;
 			sourceTree = "<group>";
@@ -460,10 +460,11 @@
 				DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */,
 				DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */,
 				DBFB6C581AE969B200110A16 /* SWRevealViewController.m in Sources */,
+				DBFB6C5C1AE96A9900110A16 /* ENSideMenu.swift in Sources */,
+				DBFB6C5D1AE96A9900110A16 /* ENSideMenuNavigationController.swift in Sources */,
 				DB09CEAE1AD2711500E831B7 /* FecPoiView.swift in Sources */,
 				DB09CEB71AD276DF00E831B7 /* HTTPClient.swift in Sources */,
 				DB09CEB31AD2721800E831B7 /* LibraryAPI.swift in Sources */,
-				DB4D5BAA1AE73B8C009AF66F /* ENSideMenu.swift in Sources */,
 				DB338F761AE489CD00B818CC /* StoryViewController.swift in Sources */,
 				DB09CEAB1AD2703100E831B7 /* FecPoi.swift in Sources */,
 				DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */,
@@ -475,7 +476,6 @@
 				DB09CEB91AD27CD300E831B7 /* DetailedViewController.swift in Sources */,
 				DB4D5BAD1AE73C37009AF66F /* SideMenuNavigationViewController.swift in Sources */,
 				DB65267A1AE76D59002C8CCA /* RBResizer.swift in Sources */,
-				DB4D5BAB1AE73B8C009AF66F /* ENSideMenuNavigationController.swift in Sources */,
 				DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */,
 				DBC30D651AD0CEF800FFB42D /* OverviewViewController.swift in Sources */,
 				DB09CEB51AD2729000E831B7 /* PersistencyManager.swift in Sources */,
