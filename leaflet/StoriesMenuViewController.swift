@@ -13,53 +13,41 @@ struct Story {
     var description: String
     var pointsOfInterest: [PointOfInterest]
     var color: UIColor
+    var picture: String
 }
 
-extension UIColor {
-    
-    convenience init(hex: Int) {
-        
-        let components = (
-            R: CGFloat((hex >> 16) & 0xff) / 255,
-            G: CGFloat((hex >> 08) & 0xff) / 255,
-            B: CGFloat((hex >> 00) & 0xff) / 255
-        )
-        
-        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
-        
-    }
-    
-}
-
-class StoriesMenuViewController: UITableViewController {
-    
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
     
     var stories: [Story] = [
         Story(title: "Water",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor(hex: 0x2EA9FC)
+            color: UIColor(hex: 0x2EA9FC),
+            picture: "Water.png"
             ),
         Story(title: "Energy",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.orangeColor()
+            color: UIColor.orangeColor(),
+            picture: "Energy.png"
         ),
         Story(title: "Heat",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.redColor()
+            color: UIColor.redColor(),
+            picture: "Heat.png"
         ),
         Story(title: "Plants",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.greenColor()
+            color: UIColor.greenColor(),
+            picture: "Plants.png"
         ),
-        Story(title: "Living Building",
+        Story(title: "Explore",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.grayColor()
+            color: UIColor.grayColor(),
+            picture: "Explore.png"
         )
     ]
     
@@ -67,7 +55,8 @@ class StoriesMenuViewController: UITableViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier("story") as? StoriesListViewCell ?? StoriesListViewCell()
         var story = self.stories[indexPath.row]
         
-        cell.storyName.text = story.title
+        cell.storyBackgroundImg.image = UIImage(named: story.picture)
+        cell.overlay.hidden = true
         
         return cell
     }
@@ -76,15 +65,36 @@ class StoriesMenuViewController: UITableViewController {
         return self.stories.count
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        println("did select row: \(indexPath.row)")
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("story", forIndexPath: indexPath) as! StoriesListViewCell
+        cell.overlay.hidden = false
+        
+        //Present new view controller
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var storyVC : StoryViewController
+        storyVC = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
+        storyVC.title = stories[indexPath.row].title
+        
+        storyVC.storyDescriptionText = stories[indexPath.row].description
+        
+        storyVC.backgroundNavColor = stories[indexPath.row].color
+    
+        sideMenuController()?.setContentViewController(storyVC)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
         
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
+        
+        self.tableView.rowHeight = 100.0
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,22 +102,26 @@ class StoriesMenuViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        switch segue.identifier! {
-            case "storyViewDisplay":
-                let navVC = segue.destinationViewController as! UINavigationController
-                let storyVC = navVC.viewControllers.first as! StoryViewController
-                if var cell = sender as? StoriesListViewCell {
-                    var storySearch = filter(stories) { (s: Story) in s.title == cell.storyName.text! }
-                    storyVC.title = storySearch[0].title
-                    storyVC.storyDescriptionText = storySearch[0].description
-                    storyVC.backgroundNavColor = storySearch[0].color
-                }
-        default:
-            break
-        }
-        
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        switch segue.identifier! {
+//            case "storyViewDisplay":
+//                let navVC = segue.destinationViewController as! UINavigationController
+//                let storyVC = navVC.viewControllers.first as! StoryViewController
+//                if var cell = sender as? StoriesListViewCell {
+//                    var storySearch = filter(stories) { (s: Story) in s.title == cell.storyName.text! }
+//                    storyVC.title = storySearch[0].title
+//                    storyVC.storyDescriptionText = storySearch[0].description
+//                    storyVC.backgroundNavColor = storySearch[0].color
+//                }
+//        default:
+//            break
+//        }
+//        
+//    }
     
     
     // MARK: - Table view data source

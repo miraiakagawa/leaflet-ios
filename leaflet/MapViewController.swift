@@ -9,29 +9,15 @@
 import UIKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class MapViewController: UIViewController, ENSideMenuDelegate {
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var mapView: GMSMapView!
-    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        mapView.delegate = self
-        mapView.myLocationEnabled = true
-        setMyLocation()
-        self.mapView.padding = UIEdgeInsets(top: self.topLayoutGuide.length, left: 0, bottom: 49, right: 0)
-        mapView.settings.myLocationButton = true
-
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,59 +25,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         // Dispose of any resources that can be recreated.
     }
     
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-            
-            mapView.myLocationEnabled = true
-//            mapView.settings.myLocationButton = true
-        }
+    @IBAction func revealListView(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("listView") as! UITableViewController
+        sideMenuController()?.setContentViewController(destViewController)
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if let location = locations.first as? CLLocation {
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 18, bearing: 0, viewingAngle: 0)
-            locationManager.stopUpdatingLocation()
-        }
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
     }
-    
-    func setMyLocation() {
-        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-        }
-        
-//        if let location = locations.first as? CLLocation {
-//            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-//            locationManager.stopUpdatingLocation()
-//        }
-    }
-
-    func reverseGeocodeCoordinate(coordinate: CLLocationCoordinate2D) {
-        
-        // 1
-        let geocoder = GMSGeocoder()
-        
-        // 2
-        geocoder.reverseGeocodeCoordinate(coordinate) { response , error in
-            if let address = response?.firstResult() {
-                
-                // 3
-                let lines = address.lines as! [String]
-//                self.addressLabel.text = join("\n", lines)
-                println(join("\n", lines))
-                
-                // 4
-                UIView.animateWithDuration(0.25) {
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
-    }
-    
-    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
-//        setMyLocation()
-        reverseGeocodeCoordinate(position.target)
-    }
-    
 }
 

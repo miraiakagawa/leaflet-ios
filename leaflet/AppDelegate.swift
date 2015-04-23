@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 /**
 * AppDelegate, which also acts as the CLLocationManagerDelegate, meaning any system notifications to do with locations will get handled in this class.
@@ -16,8 +17,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     // CONSTANTS
-    let googleMapsApiKey = "AIzaSyAoKcrRBul4PmuGDzUfPKAi1_KoA0StmJQ"
-    
     // TODO: generate a new uuid just for this application to use and set all beacons with this uuid
     // Default uuid string for estimote beacons
     let uuidString = "B9407F30-F5F8-466E-AFF9-25556B57FE6D"
@@ -33,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        // TODO: remove google maps dependency, including all framework files
-        GMSServices.provideAPIKey(googleMapsApiKey)
         
         /************** BEACON MONITORING SETUP **************/
         

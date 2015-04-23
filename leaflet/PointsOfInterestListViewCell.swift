@@ -12,10 +12,16 @@ import UIKit
 class PointsOfInterestListViewCell: UITableViewCell {
     
     @IBOutlet weak var poiName: UILabel!
+    @IBOutlet weak var locationAway: UILabel!
+    @IBOutlet weak var poiImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        poiName.textColor = UIColor(hex: GlobalConstants.bodyTextColor)
+        locationAway.font = GlobalConstants.subHeadingFont
+        poiImage.layer.cornerRadius = poiImage.frame.size.width / 2;
+
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

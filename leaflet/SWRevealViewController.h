@@ -155,13 +155,13 @@ typedef NS_ENUM( NSInteger, FrontViewPosition)
     FrontViewPositionLeftSide,
 
     // Center position, rear view is hidden behind front controller
-	FrontViewPositionLeft,
+  FrontViewPositionLeft,
     
     // Right possition, front view is presented right-offseted by rearViewRevealWidth
-	FrontViewPositionRight,
+  FrontViewPositionRight,
     
     // Right most possition, front view is presented right-offseted by rearViewRevealWidth+rearViewRevealOverdraw
-	FrontViewPositionRightMost,
+  FrontViewPositionRightMost,
     
     // Front controller is removed from view. Animated transitioning from this state will cause the same
     // effect than animating from FrontViewPositionRightMost. Use this instead of FrontViewPositionRightMost when

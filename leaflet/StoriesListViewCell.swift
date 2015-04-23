@@ -11,7 +11,8 @@ import UIKit
 
 class StoriesListViewCell: UITableViewCell {
     
-    @IBOutlet weak var storyName: UILabel!
+    @IBOutlet weak var storyBackgroundImg: UIImageView!
+    @IBOutlet weak var overlay: UIVisualEffectView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,8 +21,6 @@ class StoriesListViewCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }
