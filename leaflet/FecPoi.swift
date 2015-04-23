@@ -11,14 +11,17 @@ import ObjectiveC
 
 class FecPoi: NSObject {
    
+    var id: Int!
     var title : String!
     var content: String!
     var pictureUrl : String!
     var beaconMajor: Int!
     var visit: Bool!
+
     
-    init(title: String, content: String, pictureUrl: String, beaconMajor: Int) {
+    init(id: Int, title: String, content: String, pictureUrl: String, beaconMajor: Int) {
         super.init()
+        self.id = id
         self.visit = false
         self.title = title
         self.content = content
