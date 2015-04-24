@@ -48,6 +48,16 @@ class LibraryAPI: NSObject {
         return nil
     }
     
+    func getPoiById(id: Int) -> FecPoi? {
+        var allPois = persistencyManager.getPois()
+        for poi in allPois {
+            if poi.id == id {
+                return poi
+            }
+        }
+        return nil
+    }
+    
 //    func addAlbum(album: Album, index: Int) {
 //        persistencyManager.addAlbum(album, index: index)
 //        if isOnline {

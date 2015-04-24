@@ -349,7 +349,7 @@
         <!--Title-->
         <scene sceneID="ogS-l6-Nvs">
             <objects>
-                <viewController id="R7p-xw-NKv" customClass="DetailedViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedView" id="R7p-xw-NKv" customClass="DetailedViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5xx-dS-ZVL"/>
                         <viewControllerLayoutGuide type="bottom" id="jns-8U-vqO"/>

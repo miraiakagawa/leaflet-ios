@@ -8,24 +8,32 @@
 
 import UIKit
 
-class DetailedViewController: UIViewController {
+class DetailedViewController: UIViewController, ENSideMenuDelegate {
 
 
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var textView: UITextView!
 
+    var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
+    
     private var allPois = [FecPoi]()
     
     var selectedPoi:FecPoi? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.barTintColor = backgroundNavColor
+
         allPois = LibraryAPI.sharedInstance.getPois()
         if (selectedPoi == nil) {
             selectedPoi = allPois[0]
         }
         navBarTitle.title = selectedPoi?.title
         textView.text = selectedPoi?.content
+        
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
     }
     
     override func didReceiveMemoryWarning() {

@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // an array of known beacons. // TODO: move this to API
     var knownBeacons = [NSNumber: CLProximity]()
     
+    private var allPois = [FecPoi]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -71,7 +72,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
         
 
+        /************** INITIATED POIS **************/
+        
+        allPois = LibraryAPI.sharedInstance.getPois()
 
+        
         return true
     }
     
@@ -82,18 +87,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     *   2. The app was already running in the foreground, and a notification was fired. (Does not actually show up as a notification)
     */
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        NSLog("---> didReceiveLocalNotification")
+
         switch application.applicationState {
-            case UIApplicationState.Active:
-                NSLog("Active")
-            case UIApplicationState.Background:
-                NSLog("Background")
-            case UIApplicationState.Inactive:
-                NSLog("Inactive")
-        }
-        if notification.userInfo != nil && notification.userInfo!["poiId"] != nil {
-            let poiId:Int = notification.userInfo!["poiId"] as! Int
-            NSLog("POI Id is: \(poiId)")
+        case UIApplicationState.Active:
+            NSLog("Active")
+            // TODO: Show an internal alert and allow the user to move to view or not.
+        case UIApplicationState.Inactive:
+            if notification.userInfo != nil && notification.userInfo!["poiId"] != nil {
+                let poiId:Int = notification.userInfo!["poiId"] as! Int
+                NSLog("POI Id is: \(poiId)")
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+                
+                var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+                vc.selectedPoi = LibraryAPI.sharedInstance.getPoiById(poiId)
+                
+                if let rvc = self.window?.rootViewController as? SideBarNavigationViewController {
+                    rvc.setContentViewController(vc)
+                }
+            }
+        default:
+            return
         }
 
     }
@@ -113,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
     }
 
     func applicationWillTerminate(application: UIApplication) {
