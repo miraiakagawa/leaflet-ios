@@ -38,6 +38,10 @@ class LibraryAPI: NSObject {
         return persistencyManager.getPois()
     }
     
+    func getPointsOfInterest() -> [PointOfInterest] {
+        return persistencyManager.getPointsOfInterest()
+    }
+    
     func getPoiByBeaconMajor(major: Int) -> FecPoi? {
         var allPois = persistencyManager.getPois()
         for poi in allPois {

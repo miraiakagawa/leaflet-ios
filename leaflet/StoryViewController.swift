@@ -12,6 +12,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var storyDescription: UITextView!
     
+    @IBOutlet var topView: UIView!
     @IBOutlet weak var tableView: UITableView!
 
     private var allPois = [FecPoi]()
@@ -31,14 +32,16 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.storyDescription.font = GlobalConstants.subHeadingFont
         
         self.sideMenuController()?.sideMenu?.delegate = self
-        hideSideMenuView()
+        hideSideMenuView()        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("poi") as? StoriesListViewCell ?? StoriesListViewCell()
+        var cell = tableView.dequeueReusableCellWithIdentifier("poi") as? StoryPointsOfInterestListViewCell ?? StoryPointsOfInterestListViewCell()
         var poi = self.allPois[indexPath.row]
         
-        cell.textLabel?.text = poi.title
+        cell.poiName.text = poi.title
+        cell.poiImage.image = UIImage(named: poi.pictureUrl)
+        cell.locationAway.text = String(poi.beaconMajor) + "ft"
         
         return cell
     }
