@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mp-I4-dRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LQW-kT-OxL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -97,6 +97,137 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fge-Iz-C46" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2397" y="845"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="otF-2I-I1J">
+            <objects>
+                <viewController storyboardIdentifier="firstPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LQW-kT-OxL" customClass="OnboardingViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sBn-7O-2O1"/>
+                        <viewControllerLayoutGuide type="bottom" id="sM9-Se-hc7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W8F-Zk-G4g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BST-Sh-TD1">
+                                <rect key="frame" x="232" y="70" width="138" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-FQ-us3">
+                                <rect key="frame" x="225" y="131" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="GPl-Vv-gTm"/>
+                                    <constraint firstAttribute="width" constant="150" id="zw5-Uk-Euq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
+                                <rect key="frame" x="25" y="306" width="550" height="207"/>
+                                <string key="text">Welcome to the Frick Environmental Center! This is a net zero water and energy building, meaning that it is completely of the city grid. In addition to being beautiful, it demonstrates eco-friendly technology at it's most advanced.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-xF-0SS">
+                                <rect key="frame" x="281" y="538" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iWU-lh-rC3" firstAttribute="leading" secondItem="W8F-Zk-G4g" secondAttribute="leading" constant="25" id="07B-XS-7zr"/>
+                            <constraint firstItem="Wqu-xF-0SS" firstAttribute="top" secondItem="iWU-lh-rC3" secondAttribute="bottom" constant="25" id="0iD-m1-LCC"/>
+                            <constraint firstAttribute="trailing" secondItem="iWU-lh-rC3" secondAttribute="trailing" constant="25" id="ARs-pd-ZWi"/>
+                            <constraint firstAttribute="centerX" secondItem="iWU-lh-rC3" secondAttribute="centerX" id="DfI-Db-OHn"/>
+                            <constraint firstItem="sM9-Se-hc7" firstAttribute="top" secondItem="Wqu-xF-0SS" secondAttribute="bottom" constant="25" id="GTI-ui-GWb"/>
+                            <constraint firstItem="iWU-lh-rC3" firstAttribute="top" secondItem="Nql-FQ-us3" secondAttribute="bottom" constant="25" id="Izk-2P-ZoI"/>
+                            <constraint firstAttribute="centerX" secondItem="Nql-FQ-us3" secondAttribute="centerX" id="Ppt-Xe-1D6"/>
+                            <constraint firstItem="Nql-FQ-us3" firstAttribute="top" secondItem="BST-Sh-TD1" secondAttribute="bottom" constant="25" id="TLb-y9-nnj"/>
+                            <constraint firstItem="BST-Sh-TD1" firstAttribute="top" secondItem="sBn-7O-2O1" secondAttribute="bottom" constant="50" id="aW2-2g-Wwt"/>
+                            <constraint firstAttribute="centerX" secondItem="BST-Sh-TD1" secondAttribute="centerX" id="fvy-iU-hhC"/>
+                            <constraint firstAttribute="centerX" secondItem="Wqu-xF-0SS" secondAttribute="centerX" id="hHp-Ij-WPp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="HqD-oz-NdG" kind="custom" identifier="firstSegue" id="aKp-1T-Cf3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZ0-Cf-EoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="2539"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="0kV-dB-1Bj">
+            <objects>
+                <viewController storyboardIdentifier="secondPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HqD-oz-NdG" customClass="OnboardingViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eIj-Tc-vpl"/>
+                        <viewControllerLayoutGuide type="bottom" id="FCA-eG-78l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aFd-6r-New">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover &amp; Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHZ-A9-6lS">
+                                <rect key="frame" x="182" y="70" width="237" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
+                                <rect key="frame" x="225" y="131" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="0HG-bx-cJb"/>
+                                    <constraint firstAttribute="width" constant="150" id="Vig-8k-uQH"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
+                                <rect key="frame" x="25" y="306" width="550" height="207"/>
+                                <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
+                                <rect key="frame" x="281" y="538" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FCA-eG-78l" firstAttribute="top" secondItem="0cd-WK-1Zg" secondAttribute="bottom" constant="25" id="Ch9-AU-Oa5"/>
+                            <constraint firstItem="2R9-8g-DzK" firstAttribute="top" secondItem="wHZ-A9-6lS" secondAttribute="bottom" constant="25" id="FLo-Fd-sz2"/>
+                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="leading" secondItem="aFd-6r-New" secondAttribute="leading" constant="25" id="Jpb-3c-zXU"/>
+                            <constraint firstAttribute="trailing" secondItem="ekA-uQ-Yka" secondAttribute="trailing" constant="25" id="XWN-hV-BID"/>
+                            <constraint firstItem="2R9-8g-DzK" firstAttribute="leading" secondItem="wHZ-A9-6lS" secondAttribute="trailing" constant="25" id="b3k-ma-1Hx"/>
+                            <constraint firstAttribute="centerX" secondItem="wHZ-A9-6lS" secondAttribute="centerX" id="cMa-oH-ff8"/>
+                            <constraint firstAttribute="centerX" secondItem="0cd-WK-1Zg" secondAttribute="centerX" id="clv-Uy-8Mz"/>
+                            <constraint firstAttribute="centerX" secondItem="ekA-uQ-Yka" secondAttribute="centerX" id="dBv-R5-UZQ"/>
+                            <constraint firstItem="wHZ-A9-6lS" firstAttribute="top" secondItem="eIj-Tc-vpl" secondAttribute="bottom" constant="50" id="dhZ-xd-Tkx"/>
+                            <constraint firstItem="FCA-eG-78l" firstAttribute="top" secondItem="0cd-WK-1Zg" secondAttribute="bottom" constant="77" id="fB4-el-sM5"/>
+                            <constraint firstAttribute="centerX" secondItem="2R9-8g-DzK" secondAttribute="centerX" id="jAm-yK-1c1"/>
+                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="top" secondItem="2R9-8g-DzK" secondAttribute="bottom" constant="25" id="oLK-Kh-wQP"/>
+                            <constraint firstItem="0cd-WK-1Zg" firstAttribute="top" secondItem="ekA-uQ-Yka" secondAttribute="bottom" constant="25" id="uha-3h-ihW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="b3k-ma-1Hx"/>
+                                <exclude reference="fB4-el-sM5"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ud-0v-9f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="2539"/>
         </scene>
         <!--Side Bar Navigation View Controller-->
         <scene sceneID="80C-un-GtI">
