@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LQW-kT-OxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LQW-kT-OxL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -127,14 +127,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
                                 <rect key="frame" x="25" y="306" width="550" height="207"/>
                                 <string key="text">Welcome to the Frick Environmental Center! This is a net zero water and energy building, meaning that it is completely of the city grid. In addition to being beautiful, it demonstrates eco-friendly technology at it's most advanced.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-xF-0SS">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-xF-0SS">
                                 <rect key="frame" x="281" y="538" width="39" height="37"/>
                             </pageControl>
                         </subviews>
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ0-Cf-EoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="2539"/>
+            <point key="canvasLocation" x="-625" y="2419"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="0kV-dB-1Bj">
@@ -190,14 +190,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
                                 <rect key="frame" x="25" y="306" width="550" height="207"/>
                                 <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
                                 <rect key="frame" x="281" y="538" width="39" height="37"/>
                             </pageControl>
                         </subviews>
@@ -227,12 +227,134 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ud-0v-9f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="2539"/>
+            <point key="canvasLocation" x="63" y="2419"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="MlC-FF-WXJ">
+            <objects>
+                <viewController storyboardIdentifier="thirdPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JYb-Qi-nnV" customClass="OnboardingViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7I1-Sa-7zS"/>
+                        <viewControllerLayoutGuide type="bottom" id="gab-Al-0xo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vq0-da-ADR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location &amp; Notifications" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luU-lN-TPj">
+                                <rect key="frame" x="50" y="70" width="500" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czu-RR-Ro5">
+                                <rect key="frame" x="25" y="131" width="550" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="xS9-Vw-A9B"/>
+                                </constraints>
+                                <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-Ic-yBb">
+                                <rect key="frame" x="200" y="331" width="200" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHF-VW-S39">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2GG-Xm-aLY"/>
+                                            <constraint firstAttribute="width" constant="50" id="MkX-Bt-qa5"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4v-rD-yMF">
+                                        <rect key="frame" x="60" y="13" width="106" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="GHF-VW-S39" secondAttribute="bottom" id="8iY-TP-9Zh"/>
+                                    <constraint firstAttribute="width" constant="200" id="QCj-uM-svt"/>
+                                    <constraint firstAttribute="height" constant="50" id="foQ-OW-gJG"/>
+                                    <constraint firstAttribute="centerY" secondItem="A4v-rD-yMF" secondAttribute="centerY" id="fuq-cG-8yU"/>
+                                    <constraint firstItem="A4v-rD-yMF" firstAttribute="leading" secondItem="GHF-VW-S39" secondAttribute="trailing" constant="10" id="hnU-6q-fuB"/>
+                                    <constraint firstItem="GHF-VW-S39" firstAttribute="top" secondItem="jtR-Ic-yBb" secondAttribute="top" id="ivo-ok-mUH"/>
+                                    <constraint firstItem="GHF-VW-S39" firstAttribute="leading" secondItem="jtR-Ic-yBb" secondAttribute="leading" id="qPH-Fg-QUP"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-eK-MgX">
+                                <rect key="frame" x="200" y="396" width="200" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swE-7D-vXR">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6jg-HY-DMe"/>
+                                            <constraint firstAttribute="width" constant="50" id="fGV-lv-h4G"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZx-Zf-u47">
+                                        <rect key="frame" x="60" y="13" width="75" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="10D-zC-T3T"/>
+                                    <constraint firstItem="swE-7D-vXR" firstAttribute="top" secondItem="nSe-eK-MgX" secondAttribute="top" id="57v-42-Do0"/>
+                                    <constraint firstAttribute="bottom" secondItem="swE-7D-vXR" secondAttribute="bottom" id="5zb-Q8-bI7"/>
+                                    <constraint firstItem="swE-7D-vXR" firstAttribute="leading" secondItem="nSe-eK-MgX" secondAttribute="leading" id="AN2-NU-pOu"/>
+                                    <constraint firstItem="gZx-Zf-u47" firstAttribute="leading" secondItem="swE-7D-vXR" secondAttribute="trailing" constant="10" id="T8h-pF-vJO"/>
+                                    <constraint firstAttribute="centerY" secondItem="gZx-Zf-u47" secondAttribute="centerY" id="fHd-8g-JOF"/>
+                                    <constraint firstAttribute="width" constant="200" id="t0I-dX-aNA"/>
+                                </constraints>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gNu-JI-Eh3">
+                                <rect key="frame" x="270" y="510" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="luU-lN-TPj" firstAttribute="top" secondItem="7I1-Sa-7zS" secondAttribute="bottom" constant="50" id="0uu-I1-Ke4"/>
+                            <constraint firstAttribute="centerX" secondItem="nSe-eK-MgX" secondAttribute="centerX" id="4nB-AC-eRN"/>
+                            <constraint firstAttribute="centerX" secondItem="luU-lN-TPj" secondAttribute="centerX" id="CBO-99-xNP"/>
+                            <constraint firstItem="jtR-Ic-yBb" firstAttribute="top" secondItem="nSe-eK-MgX" secondAttribute="bottom" constant="-36" id="Ec9-wx-urn"/>
+                            <constraint firstAttribute="centerX" secondItem="gNu-JI-Eh3" secondAttribute="centerX" id="Gcf-HT-BzN"/>
+                            <constraint firstItem="Czu-RR-Ro5" firstAttribute="top" secondItem="luU-lN-TPj" secondAttribute="bottom" constant="25" id="L5O-7r-p3C"/>
+                            <constraint firstAttribute="centerX" secondItem="Czu-RR-Ro5" secondAttribute="centerX" id="Tx6-S3-lZT"/>
+                            <constraint firstAttribute="trailing" secondItem="luU-lN-TPj" secondAttribute="trailing" constant="50" id="UEe-kv-Q7T"/>
+                            <constraint firstAttribute="centerX" secondItem="nSe-eK-MgX" secondAttribute="centerX" id="c2S-Yl-hci"/>
+                            <constraint firstItem="gab-Al-0xo" firstAttribute="top" secondItem="gNu-JI-Eh3" secondAttribute="bottom" constant="25" id="djP-T7-VfJ"/>
+                            <constraint firstAttribute="centerX" secondItem="jtR-Ic-yBb" secondAttribute="centerX" id="iY9-ph-CLj"/>
+                            <constraint firstItem="luU-lN-TPj" firstAttribute="leading" secondItem="Vq0-da-ADR" secondAttribute="leading" constant="50" id="lE9-dN-83e"/>
+                            <constraint firstItem="jtR-Ic-yBb" firstAttribute="top" secondItem="Czu-RR-Ro5" secondAttribute="bottom" constant="33" id="mlF-bY-cYF"/>
+                            <constraint firstItem="Czu-RR-Ro5" firstAttribute="leading" secondItem="Vq0-da-ADR" secondAttribute="leading" constant="25" id="ouJ-lW-Qq0"/>
+                            <constraint firstAttribute="trailing" secondItem="Czu-RR-Ro5" secondAttribute="trailing" constant="25" id="rN5-kn-qeo"/>
+                            <constraint firstItem="nSe-eK-MgX" firstAttribute="top" secondItem="jtR-Ic-yBb" secondAttribute="bottom" constant="15" id="rkR-Jy-Tdx"/>
+                            <constraint firstItem="jtR-Ic-yBb" firstAttribute="top" secondItem="Czu-RR-Ro5" secondAttribute="bottom" id="wL1-1h-hDj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ec9-wx-urn"/>
+                                <exclude reference="mlF-bY-cYF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="circle1" destination="GHF-VW-S39" id="P41-dl-zom"/>
+                        <outlet property="circle2" destination="swE-7D-vXR" id="5Bv-Jv-4ia"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vi6-Ph-uES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="2419"/>
         </scene>
         <!--Side Bar Navigation View Controller-->
         <scene sceneID="80C-un-GtI">
             <objects>
-                <navigationController id="9Mp-I4-dRc" customClass="SideBarNavigationViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Mp-I4-dRc" customClass="SideBarNavigationViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oL8-WH-Lkd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -286,6 +408,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-JT-Ak4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2397" y="1687"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="dYO-DW-Nre">
+            <objects>
+                <viewController storyboardIdentifier="fourthPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HIr-Jy-Oyh" customClass="OnboardingViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0ff-Ez-65Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="G1Z-yW-EZo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wj1-Ba-Ipc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Explore!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5G-Cl-c95">
+                                <rect key="frame" x="205" y="70" width="190" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Tap the Compass to start your adventure at the FEC!" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-ua-VNU">
+                                <rect key="frame" x="25" y="572" width="550" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="P5z-HB-p02"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19T-sz-mHL">
+                                <rect key="frame" x="-48" y="131" width="696" height="416"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1Ww-Hr-XAm"/>
+                                    <constraint firstAttribute="height" constant="200" id="bOS-eg-00Q"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="rain-veil.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ejL-ua-VNU" secondAttribute="trailing" constant="25" id="6E0-86-J8F"/>
+                            <constraint firstAttribute="centerX" secondItem="19T-sz-mHL" secondAttribute="centerX" id="7GC-Zc-NVI"/>
+                            <constraint firstItem="ejL-ua-VNU" firstAttribute="leading" secondItem="wj1-Ba-Ipc" secondAttribute="leading" constant="25" id="Ceg-Jr-l4K"/>
+                            <constraint firstItem="19T-sz-mHL" firstAttribute="top" secondItem="b5G-Cl-c95" secondAttribute="bottom" constant="25" id="Eab-Cq-kVy"/>
+                            <constraint firstAttribute="centerX" secondItem="ejL-ua-VNU" secondAttribute="centerX" id="hXo-xa-J8M"/>
+                            <constraint firstAttribute="centerX" secondItem="b5G-Cl-c95" secondAttribute="centerX" id="jes-3n-gSo"/>
+                            <constraint firstItem="ejL-ua-VNU" firstAttribute="top" secondItem="19T-sz-mHL" secondAttribute="bottom" constant="25" id="o65-bJ-qxp"/>
+                            <constraint firstItem="b5G-Cl-c95" firstAttribute="top" secondItem="0ff-Ez-65Z" secondAttribute="bottom" constant="50" id="xpP-GJ-Her"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="startCompass" destination="19T-sz-mHL" id="BHZ-FY-OgA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYc-ba-CFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="2419"/>
         </scene>
         <!--Stories-->
         <scene sceneID="1M1-QJ-LyN">
