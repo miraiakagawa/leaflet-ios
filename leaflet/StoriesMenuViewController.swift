@@ -12,8 +12,9 @@ struct Story {
     var title: String
     var description: String
     var pointsOfInterest: [PointOfInterest]
-    var color: UIColor
+    var color: CGColor
     var picture: String
+    var storyIcon: String
 }
 
 class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
@@ -22,32 +23,37 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         Story(title: "Water",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor(hex: 0x2EA9FC),
-            picture: "Water.png"
+            color: UIColor(hex: 0x2EA9FC).CGColor,
+            picture: "Water.png",
+            storyIcon: "WaterHexagon.png"
             ),
         Story(title: "Energy",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.orangeColor(),
-            picture: "Energy.png"
+            color: UIColor.orangeColor().CGColor,
+            picture: "Energy.png",
+            storyIcon: "EnergyHexagon.png"
         ),
         Story(title: "Heat",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.redColor(),
-            picture: "Heat.png"
+            color: UIColor.redColor().CGColor,
+            picture: "Heat.png",
+            storyIcon: "HeatHexagon.png"
         ),
         Story(title: "Plants",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.greenColor(),
-            picture: "Plants.png"
+            color: UIColor.greenColor().CGColor,
+            picture: "Plants.png",
+            storyIcon: "PlantsHexagon.png"
         ),
         Story(title: "Explore",
             description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
             pointsOfInterest: [],
-            color: UIColor.grayColor(),
-            picture: "Explore.png"
+            color: UIColor.grayColor().CGColor,
+            picture: "Explore.png",
+            storyIcon: "ExploreHexagon.png"
         )
     ]
     
@@ -79,8 +85,8 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         storyVC.title = stories[indexPath.row].title
         
         storyVC.storyDescriptionText = stories[indexPath.row].description
-        
-        storyVC.backgroundNavColor = stories[indexPath.row].color
+        storyVC.storyIconPath = stories[indexPath.row].storyIcon
+        storyVC.storyColor = stories[indexPath.row].color
     
         sideMenuController()?.setContentViewController(storyVC)
     }

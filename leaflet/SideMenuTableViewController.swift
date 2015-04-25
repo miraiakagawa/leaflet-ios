@@ -14,7 +14,7 @@ class SideMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Customize apperance of table view
-        tableView.contentInset = UIEdgeInsetsMake(64.0, 0, 0, 0) //
+        tableView.contentInset = UIEdgeInsetsMake(50.0, 0, 0, 0) //
         tableView.separatorStyle = .None
         tableView.backgroundColor = UIColor.clearColor()
         tableView.scrollsToTop = false
@@ -44,7 +44,7 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var menuItems = ["", "Map", "Stories", "Rewards", "Sticker Cam", "At Home"]
-        var icons = ["", "ExploreIcon.png", "Stories.png", "Rewards.png", "StickerCam.png", "AtHome.png"]
+        var icons = ["", "ExploreMenu.png", "Stories.png", "Rewards.png", "StickerCam.png", "Home.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
         
@@ -52,7 +52,7 @@ class SideMenuTableViewController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CELL")
             cell!.backgroundColor = UIColor.clearColor()
             cell!.textLabel?.textColor = UIColor(hex: GlobalConstants.menuTextColor)
-            cell!.textLabel?.font = GlobalConstants.defaultFont
+            cell!.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 15)
             let selectedBackgroundView = UIView(frame: CGRectMake(0, 0, cell!.frame.size.width, cell!.frame.size.height))
             selectedBackgroundView.backgroundColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
             cell!.selectedBackgroundView = selectedBackgroundView

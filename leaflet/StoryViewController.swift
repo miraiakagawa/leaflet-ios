@@ -14,25 +14,58 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var topView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progressCircle: UIView!
+    @IBOutlet weak var storyIcon: UIImageView!
 
     private var allPois = [FecPoi]()
     
     
     var storyDescriptionText: String = ""
     var backgroundNavColor: UIColor = UIColor(hex: 0x61CE72)
+    var progress: CGFloat!
+    var storyColor: CGColor!
+    var storyIconPath: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         allPois = LibraryAPI.sharedInstance.getPois()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController?.navigationBar.barTintColor = backgroundNavColor
+        self.navigationController?.navigationBar.barTintColor = UIColor(CGColor: self.storyColor)
         self.storyDescription.textContainerInset = UIEdgeInsetsMake(20, 20, 20, 20);
         self.storyDescription.text = storyDescriptionText
         self.storyDescription.scrollEnabled = false
         self.storyDescription.font = GlobalConstants.subHeadingFont
         
         self.sideMenuController()?.sideMenu?.delegate = self
-        hideSideMenuView()        
+        hideSideMenuView()
+        
+        self.tableView.separatorStyle = .None
+        
+        self.progress = 0.5
+        addCircleView()
+        
+        self.storyIcon.image = UIImage(named: self.storyIconPath)
+    }
+    
+    func addCircleView() {
+        var circleWidth = CGFloat(60)
+        var circleHeight = circleWidth
+        
+        // Create a new CircleView
+        var circleView = CircleView(frame: CGRectMake(0, 0, circleWidth, circleHeight))
+        circleView.progress = self.progress
+        
+        self.progressCircle.addSubview(circleView)
+        
+        // Animate the drawing of the circle over the course of 1 second
+        circleView.animateCircle(1.0)
+        
+        let textLabel = UILabel(frame: CGRectMake(0 ,0 , 60.0, 60.0))
+        textLabel.font = UIFont(name: "HelveticaNeue", size: 14)
+        textLabel.textAlignment = .Center
+        textLabel.textColor = UIColor.whiteColor()
+        textLabel.text = String(stringInterpolationSegment: Int(self.progress*100)) + "%"
+        self.progressCircle.addSubview(textLabel)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

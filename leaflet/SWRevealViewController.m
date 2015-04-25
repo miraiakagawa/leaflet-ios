@@ -1290,7 +1290,7 @@ const int FrontViewPositionNone = 0xff;
             }
         }
         
-        duration = fabsf(journey/velocity);
+        duration = fabs(journey/velocity);
     }
     
     // Position driven change:
