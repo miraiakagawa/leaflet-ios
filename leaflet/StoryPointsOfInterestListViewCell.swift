@@ -21,9 +21,11 @@ class StoryPointsOfInterestListViewCell: UITableViewCell {
         // Initialization code
         poiName.font = GlobalConstants.defaultFont
         locationAway.font = GlobalConstants.subHeadingFont
-        poiImage.layer.cornerRadius = poiImage.frame.size.width / 2
+        poiImage.image = UIImage(named: "rain-veil.jpg")
+        poiImage.clipsToBounds = true
         
         cellContent.layer.cornerRadius = 5
+        cellContent.clipsToBounds = true
         
     }
     

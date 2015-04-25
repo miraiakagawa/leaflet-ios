@@ -316,8 +316,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-of-V4o">
                                                     <rect key="frame" x="20" y="0.0" width="560" height="69"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-Pu-hDN">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-Pu-hDN">
                                                             <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="k4L-82-b55"/>
+                                                                <constraint firstAttribute="height" constant="69" id="xgP-bm-Def"/>
+                                                                <constraint firstAttribute="width" constant="69" id="zg0-WE-HPf"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdK-ed-ia5">
                                                             <rect key="frame" x="83" y="13" width="424" height="21"/>

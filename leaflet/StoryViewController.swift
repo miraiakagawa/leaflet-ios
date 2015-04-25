@@ -73,7 +73,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var poi = self.allPois[indexPath.row]
         
         cell.poiName.text = poi.title
-        cell.poiImage.image = UIImage(named: poi.pictureUrl)
+//        cell.poiImage.image = UIImage(named: poi.pictureUrl)
         cell.locationAway.text = String(poi.beaconMajor) + "ft"
         
         return cell
