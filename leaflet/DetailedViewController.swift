@@ -14,48 +14,10 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
-
-    var stories: [Story] = [
-        Story(title: "Water",
-            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
-            pointsOfInterest: [],
-            color: UIColor(hex: 0x2EA9FC).CGColor,
-            picture: "Water.png",
-            storyIcon: "WaterHexagon.png"
-        ),
-        Story(title: "Energy",
-            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
-            pointsOfInterest: [],
-            color: UIColor.orangeColor().CGColor,
-            picture: "Energy.png",
-            storyIcon: "EnergyHexagon.png"
-        ),
-        Story(title: "Heat",
-            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
-            pointsOfInterest: [],
-            color: UIColor.redColor().CGColor,
-            picture: "Heat.png",
-            storyIcon: "HeatHexagon.png"
-        ),
-        Story(title: "Plants",
-            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
-            pointsOfInterest: [],
-            color: UIColor.greenColor().CGColor,
-            picture: "Plants.png",
-            storyIcon: "PlantsHexagon.png"
-        ),
-        Story(title: "Explore",
-            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
-            pointsOfInterest: [],
-            color: UIColor.grayColor().CGColor,
-            picture: "Explore.png",
-            storyIcon: "ExploreHexagon.png"
-        )
-    ]
-    
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
     private var allPois = [FecPoi]()
+    private var stories = [Story]()
     
     var selectedPoi:FecPoi? = nil
     
@@ -64,6 +26,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.barTintColor = backgroundNavColor
 
+        stories = LibraryAPI.sharedInstance.getStories()
         allPois = LibraryAPI.sharedInstance.getPois()
         if (selectedPoi == nil) {
             selectedPoi = allPois[0]
@@ -101,7 +64,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         // TODO: temporary patch. move stories into api and fix all this shit
         vc.title = stories[0].title
         
-        vc.storyDescriptionText = stories[0].description
+        vc.storyDescriptionText = stories[0].content
         vc.storyIconPath = stories[0].storyIcon
         vc.storyColor = stories[0].color
         
