@@ -9,13 +9,50 @@
 import UIKit
 
 class DetailedViewController: UIViewController, ENSideMenuDelegate {
-
-
-    @IBOutlet weak var navBarTitle: UINavigationItem!
+    
+    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
 
+    var stories: [Story] = [
+        Story(title: "Water",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor(hex: 0x2EA9FC).CGColor,
+            picture: "Water.png",
+            storyIcon: "WaterHexagon.png"
+        ),
+        Story(title: "Energy",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.orangeColor().CGColor,
+            picture: "Energy.png",
+            storyIcon: "EnergyHexagon.png"
+        ),
+        Story(title: "Heat",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.redColor().CGColor,
+            picture: "Heat.png",
+            storyIcon: "HeatHexagon.png"
+        ),
+        Story(title: "Plants",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.greenColor().CGColor,
+            picture: "Plants.png",
+            storyIcon: "PlantsHexagon.png"
+        ),
+        Story(title: "Explore",
+            description: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
+            pointsOfInterest: [],
+            color: UIColor.grayColor().CGColor,
+            picture: "Explore.png",
+            storyIcon: "ExploreHexagon.png"
+        )
+    ]
+    
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
     private var allPois = [FecPoi]()
@@ -32,7 +69,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
             selectedPoi = allPois[0]
         }
         
-        navBarTitle.title = selectedPoi?.title
+        navBar.title = selectedPoi?.title
         textView.text = selectedPoi?.content
         imageView.image = selectedPoi?.image
         
@@ -57,4 +94,18 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         }
     }
     
+    @IBAction func backButtonAction(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc:StoryViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
+        
+        // TODO: temporary patch. move stories into api and fix all this shit
+        vc.title = stories[0].title
+        
+        vc.storyDescriptionText = stories[0].description
+        vc.storyIconPath = stories[0].storyIcon
+        vc.storyColor = stories[0].color
+        
+        sideMenuController()?.setContentViewController(vc)
+    }
+        
 }

@@ -22,7 +22,6 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         cell.poiName.text = pointOfInterest.title
         cell.locationAway.text = String(pointOfInterest.beaconMajor) + "ft"
         
-        // TODO: fix the images.
         cell.poiImage.image = pointOfInterest.image
         
         return cell

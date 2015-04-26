@@ -73,9 +73,9 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var poi = self.allPois[indexPath.row]
         
         cell.poiName.text = poi.title
-//        cell.poiImage.image = UIImage(named: poi.pictureUrl)
         cell.locationAway.text = String(poi.beaconMajor) + "ft"
-        
+        cell.poiImage.image = poi.image
+
         return cell
     }
     
@@ -90,26 +90,30 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedPoi = allPois[indexPath.row]
-        println("before")
-//        self.performSegueWithIdentifier("ShowPoiDetail", sender: selectedPoi)
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+        vc.selectedPoi = selectedPoi
+        sideMenuController()?.setContentViewController(vc)
+        
     }
     
+    
     @IBAction func backToMenu(sender: AnyObject) {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var menuVC : StoriesMenuViewController
-        menuVC = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView") as! StoriesMenuViewController
-        
-        sideMenuController()?.setContentViewController(menuVC)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc: StoriesMenuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView") as! StoriesMenuViewController
+        sideMenuController()?.setContentViewController(vc)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         println("here")
-        if segue.identifier == "ShowPoiDetail" {
-            if let poi = sender as? FecPoi {
-                let detailedViewController = segue.destinationViewController as! DetailedViewController
-                detailedViewController.selectedPoi = poi
-            }
-        }
+//        if segue.identifier == "ShowPoiDetail" {
+//            if let poi = sender as? FecPoi {
+//                let detailedViewController = segue.destinationViewController as! DetailedViewController
+//                detailedViewController.selectedPoi = poi
+//            }
+//        }
     }
     
 }
