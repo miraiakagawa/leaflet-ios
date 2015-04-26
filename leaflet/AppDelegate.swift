@@ -88,27 +88,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     */
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
 
-        switch application.applicationState {
-        case UIApplicationState.Active:
-            NSLog("Active")
-            // TODO: Show an internal alert and allow the user to move to view or not.
-        case UIApplicationState.Inactive:
-            if notification.userInfo != nil && notification.userInfo!["poiId"] != nil {
-                let poiId:Int = notification.userInfo!["poiId"] as! Int
-                NSLog("POI Id is: \(poiId)")
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-                
-                var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
-                vc.selectedPoi = LibraryAPI.sharedInstance.getPoiById(poiId)
-                
-                if let rvc = self.window?.rootViewController as? SideBarNavigationViewController {
-                    rvc.setContentViewController(vc)
+        if notification.userInfo != nil && notification.userInfo!["poiId"] != nil {
+            let poiId:Int = notification.userInfo!["poiId"] as! Int
+            var selectedPoi = LibraryAPI.sharedInstance.getPoiById(poiId)
+            NSLog("POI Id is: \(poiId)")
+            
+            switch application.applicationState {
+            case UIApplicationState.Active:
+                NSLog("Active")
+                var title = "Hey there, it seems like  you are near the " + selectedPoi!.title + "!"
+                var alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                let cancelAction = UIAlertAction(title: "not now", style: .Cancel) { (action) in
+                    // nothing happens
                 }
-            }
-        default:
-            return
-        }
+                alert.addAction(cancelAction)
+                
+                let OKAction = UIAlertAction(title: "Learn More", style: .Default) { (action) in
+                    self.displayDetailedView(selectedPoi!)
+                }
+                alert.addAction(OKAction)
 
+                if let rvc = self.window?.rootViewController as? SideBarNavigationViewController {
+                    rvc.presentViewController(alert, animated: true, completion: nil)
+                }
+            case UIApplicationState.Inactive:
+                displayDetailedView(selectedPoi!)
+            default:
+                return
+            }
+        }
+    }
+    
+    func displayDetailedView(selectedPoi: FecPoi) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        
+        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+        vc.selectedPoi = selectedPoi
+        
+        if let rvc = self.window?.rootViewController as? SideBarNavigationViewController {
+            rvc.setContentViewController(vc)
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -141,10 +160,11 @@ extension AppDelegate: CLLocationManagerDelegate {
     /*
     * actual method that registers the local notification.
     */
-    func sendLocalNotificationWithMessage(message: String!, playSound: Bool, userInfo: [String:Int?]) {
+    func sendLocalNotificationWithMessage(title: String!, message: String!, playSound: Bool, userInfo: [String:Int?]) {
         
         // construct the notification with a message.
         let notification:UILocalNotification = UILocalNotification()
+        notification.alertTitle = title
         notification.alertBody = message
         
         // we can attach an id to the notification so we know which poi to retrieve when the user opens.
@@ -162,13 +182,9 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
-        //            let viewController:ViewController = window!.rootViewController as ViewController
-        //            viewController.beacons = beacons as [CLBeacon]?
-        //            viewController.tableView!.reloadData()
-
 
         var message:String = ""
-//                NSLog("didRangeBeacons: \(beacons.count)");
+        
         var foundBeacon:CLBeacon
         
         for beacon in beacons {
@@ -180,23 +196,17 @@ extension AppDelegate: CLLocationManagerDelegate {
                 if  prevProximity == nil || prevProximity != foundBeacon.proximity {
                     var poi:FecPoi? = LibraryAPI.sharedInstance.getPoiByBeaconMajor(foundBeacon.major.integerValue)
                     if (poi?.visit == false) {
-                        message = "Your are near the " + poi!.title + "!"
-                        //                    message = "You are near beacon with major \(foundBeacon.major) and minor \(foundBeacon.minor)"
+                        message = "Hey there, it seems like you are near the " + poi!.title + "!"
                         var userInfo = ["poiId": poi?.id]
-                        sendLocalNotificationWithMessage(message, playSound: true, userInfo: userInfo)
+                        sendLocalNotificationWithMessage(nil, message: message, playSound: true, userInfo: userInfo)
                     }
                     poi?.setVisiting(true)
 
                 }
             }
             knownBeacons[foundBeacon.major] = foundBeacon.proximity
-//            } else {
-//                knownBeacons[foundBeacon.major] = foundBeacon.proximity
-//            }
-//            NSLog("beacon \(foundBeacon.major): proximity: \(foundBeacon.proximity.rawValue)")
         }
 
-//        NSLog("known beacons: \(knownBeacons.count)")
     }
     
     func locationManager(manager: CLLocationManager!,
