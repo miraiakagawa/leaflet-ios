@@ -72,7 +72,7 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        println("did select row: \(indexPath.row)")
+//        println("did select row: \(indexPath.row)")
         
 //        if (indexPath.row == selectedMenuItem) {
 //            return

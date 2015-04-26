@@ -1,42 +1,55 @@
-/*
-* Copyright (c) 2014 Razeware LLC
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*/
+//
+//  HTTPClient.swift
+//  leaflet
+//
+//  Created by Mirai Akagawa on 4/6/15.
+//  Copyright (c) 2015 parks-and-rec. All rights reserved.
+//
 
 import UIKit
 
+// TODO Should be static class or shared instance.
+// TODO: need to check status code and only respond if 200
 class HTTPClient {
     
-    func getRequest(url: String) -> (AnyObject) {
-        return NSData()
+    func getJSONArrayFromUrl(url:NSURL, completion: ((data: NSArray?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            
+            var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
+            let jsonResponse: NSArray! = NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers, error: error) as? NSArray
+            
+            if (jsonResponse != nil) {
+                completion(data: jsonResponse)
+            } else {
+                NSLog("Accessing API Failed.")
+                completion(data: nil)
+            }
+            
+            }.resume()
     }
     
-    func postRequest(url: String, body: String) -> (AnyObject){
-        return NSData()
+    func getJSONFromUrl(url:NSURL, completion: ((data: NSDictionary?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            
+            var error: AutoreleasingUnsafeMutablePointer<NSError?> = nil
+            let jsonResponse: NSDictionary! = NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers, error: error) as? NSDictionary
+            
+            if (jsonResponse != nil) {
+                completion(data: jsonResponse)
+            } else {
+                NSLog("Accessing API Failed.")
+                completion(data: nil)
+            }
+        
+        }.resume()
     }
-    
-    func downloadImage(url: String) -> (UIImage) {
-        let aUrl = NSURL(string: url)
-        var data = NSData(contentsOfURL: aUrl!)
-        let image = UIImage(data: data!)
-        return image!
+
+    func getImageFromUrl(url:NSURL, completion: ((data: UIImage?) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            var imageData:NSData = data
+            completion(data: UIImage(data: imageData))
+        
+        }.resume()
     }
     
 }

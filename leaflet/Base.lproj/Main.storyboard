@@ -5,28 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--title-->
-        <scene sceneID="z5A-Ku-VaJ">
-            <objects>
-                <viewController id="hbh-AY-H5E" customClass="DetailedViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FWQ-s9-5so"/>
-                        <viewControllerLayoutGuide type="bottom" id="FQt-Sp-WSR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T63-4X-rj7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="title" id="Awm-48-jMf"/>
-                    <connections>
-                        <outlet property="navBarItem" destination="Awm-48-jMf" id="hOY-qN-3VX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzy-mJ-1uG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4623" y="3263"/>
-        </scene>
         <!--Frick Environmental Center-->
         <scene sceneID="rmZ-5L-9aQ">
             <objects>
@@ -668,7 +646,7 @@
                                             <outlet property="locationAway" destination="fB3-n9-5az" id="ruG-1k-zf8"/>
                                             <outlet property="poiImage" destination="1xV-Pu-hDN" id="pEs-Ke-yRt"/>
                                             <outlet property="poiName" destination="SdK-ed-ia5" id="hVT-10-SuI"/>
-                                            <segue destination="R7p-xw-NKv" kind="show" identifier="ShowPoiDetail" id="gat-eh-Pzw"/>
+                                            <segue destination="R7p-xw-NKv" kind="show" identifier="ShowPoiDetail" id="nF9-8N-pdO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -680,9 +658,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="oSd-iU-RoS" secondAttribute="trailing" constant="-16" id="H2f-Vw-LWd"/>
                             <constraint firstItem="oSd-iU-RoS" firstAttribute="leading" secondItem="pnz-t9-Jcu" secondAttribute="leading" id="ID5-tv-B55"/>
-                            <constraint firstItem="oSd-iU-RoS" firstAttribute="leading" secondItem="pnz-t9-Jcu" secondAttribute="leadingMargin" constant="-16" id="cvD-qd-Znx"/>
                             <constraint firstItem="A3w-mM-fj9" firstAttribute="top" secondItem="oSd-iU-RoS" secondAttribute="bottom" id="di3-xq-kC7"/>
                             <constraint firstItem="oSd-iU-RoS" firstAttribute="top" secondItem="P89-x0-c4s" secondAttribute="top" id="eIy-1A-sbl"/>
                             <constraint firstAttribute="trailing" secondItem="oSd-iU-RoS" secondAttribute="trailing" id="f1h-kG-0y6"/>
@@ -707,10 +683,10 @@
             </objects>
             <point key="canvasLocation" x="3159" y="3257"/>
         </scene>
-        <!--Title-->
+        <!--Detailed View Scene-->
         <scene sceneID="ogS-l6-Nvs">
             <objects>
-                <viewController storyboardIdentifier="detailedView" id="R7p-xw-NKv" customClass="DetailedViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailedView" title="Detailed View Scene" id="R7p-xw-NKv" customClass="DetailedViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5xx-dS-ZVL"/>
                         <viewControllerLayoutGuide type="bottom" id="jns-8U-vqO"/>
@@ -761,6 +737,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ULA-Nz-xBM"/>
                     <connections>
+                        <outlet property="imageView" destination="b85-44-dJF" id="MPI-G8-2Uy"/>
                         <outlet property="navBarTitle" destination="ULA-Nz-xBM" id="6B0-6x-dGH"/>
                         <outlet property="textView" destination="aLW-fz-lUh" id="Xcj-KG-dCJ"/>
                     </connections>
@@ -774,7 +751,7 @@
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gat-eh-Pzw"/>
+        <segue reference="nF9-8N-pdO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

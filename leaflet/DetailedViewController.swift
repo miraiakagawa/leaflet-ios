@@ -13,6 +13,8 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
 
     @IBOutlet weak var navBarTitle: UINavigationItem!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
+    
 
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
@@ -29,8 +31,10 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         if (selectedPoi == nil) {
             selectedPoi = allPois[0]
         }
+        
         navBarTitle.title = selectedPoi?.title
         textView.text = selectedPoi?.content
+        imageView.image = selectedPoi?.image
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()

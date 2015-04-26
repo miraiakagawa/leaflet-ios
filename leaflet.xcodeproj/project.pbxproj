@@ -68,7 +68,6 @@
 		DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD800601AE5263000AFA3D2 /* rain-veil.jpg */; };
 		DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE150481AD5E65200DB03AF /* MenuViewController.swift */; };
 		DBF48C281AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */; };
-		DBF48C2A1AE84F8F00B2D63C /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */; };
 		DBFB6C581AE969B200110A16 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB6C571AE969B200110A16 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -149,7 +148,6 @@
 		DBD800601AE5263000AFA3D2 /* rain-veil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rain-veil.jpg"; sourceTree = "<group>"; };
 		DBE150481AD5E65200DB03AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPointsOfInterestListViewCell.swift; sourceTree = "<group>"; };
-		DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
 		DBFB6C561AE969B200110A16 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		DBFB6C571AE969B200110A16 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,7 +187,6 @@
 			children = (
 				DB09CEAA1AD2703100E831B7 /* FecPoi.swift */,
 				DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */,
-				DBF48C291AE84F8F00B2D63C /* PointOfInterest.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -508,7 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB269D721AEA24780073BCFB /* ENSideMenu.swift in Sources */,
-				DBF48C2A1AE84F8F00B2D63C /* PointOfInterest.swift in Sources */,
 				DB0F17891AD5F1D3002275C3 /* StoriesMenuViewController.swift in Sources */,
 				DB32CD2D1AD5F745006D1A11 /* PointsOfInterestListViewController.swift in Sources */,
 				DBC30D671AD0CEF800FFB42D /* MapViewController.swift in Sources */,

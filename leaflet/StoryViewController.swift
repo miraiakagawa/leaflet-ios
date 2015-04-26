@@ -90,7 +90,8 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedPoi = allPois[indexPath.row]
-        self.performSegueWithIdentifier("ShowPoiDetail", sender: selectedPoi)
+        println("before")
+//        self.performSegueWithIdentifier("ShowPoiDetail", sender: selectedPoi)
     }
     
     @IBAction func backToMenu(sender: AnyObject) {
@@ -102,6 +103,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        println("here")
         if segue.identifier == "ShowPoiDetail" {
             if let poi = sender as? FecPoi {
                 let detailedViewController = segue.destinationViewController as! DetailedViewController

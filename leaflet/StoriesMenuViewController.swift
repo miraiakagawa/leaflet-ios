@@ -11,7 +11,7 @@ import UIKit
 struct Story {
     var title: String
     var description: String
-    var pointsOfInterest: [PointOfInterest]
+    var pointsOfInterest: [FecPoi]
     var color: CGColor
     var picture: String
     var storyIcon: String

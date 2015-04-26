@@ -24,4 +24,8 @@ struct GlobalConstants {
 //    onboarding stylings
     static let onboardingTextColor = 0xFFFFFF
     static let onboardingBackgroundColor = 0x61CE72
+    
+    // remote api - currently hosted on makagawa.com
+    static let remoteAPIUrl = "http://leaflet.makagawa.com/api"
+    static let remoteAPIPoisPath = "/pois"
 }
