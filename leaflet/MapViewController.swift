@@ -18,6 +18,7 @@ class MapViewController: UIViewController, ENSideMenuDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
+        self.navigationController!.navigationBar.hidden = false
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LQW-kT-OxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mp-I4-dRc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -116,7 +116,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-FQ-us3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-FQ-us3">
                                 <rect key="frame" x="225" y="131" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="GPl-Vv-gTm"/>
@@ -127,7 +127,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
                                 <rect key="frame" x="25" y="306" width="550" height="207"/>
                                 <string key="text">Welcome to the Frick Environmental Center! This is a net zero water and energy building, meaning that it is completely of the city grid. In addition to being beautiful, it demonstrates eco-friendly technology at it's most advanced.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,9 +153,7 @@
                             <constraint firstAttribute="centerX" secondItem="Wqu-xF-0SS" secondAttribute="centerX" id="hHp-Ij-WPp"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="HqD-oz-NdG" kind="custom" identifier="firstSegue" id="aKp-1T-Cf3"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Od5-Rq-Zcv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ0-Cf-EoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,14 +352,15 @@
         <!--Side Bar Navigation View Controller-->
         <scene sceneID="80C-un-GtI">
             <objects>
-                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Mp-I4-dRc" customClass="SideBarNavigationViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="fifthPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Mp-I4-dRc" customClass="SideBarNavigationViewController" customModule="leaflet" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dzc-mp-NLT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oL8-WH-Lkd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="09m-YL-8Uf" kind="relationship" relationship="rootViewController" id="a39-SX-txE"/>
+                        <segue destination="LQW-kT-OxL" kind="relationship" relationship="rootViewController" id="zO0-Uv-fJx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bu-Zh-2h8" userLabel="First Responder" sceneMemberID="firstResponder"/>

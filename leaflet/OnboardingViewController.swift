@@ -18,9 +18,13 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var swipeGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showNext")
-        swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipeGestureRecognizer)
+        var swipeLeftGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showNext")
+        swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
+        self.view.addGestureRecognizer(swipeLeftGestureRecognizer)
+        
+        var swipeRightGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showPrevious")
+        swipeRightGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRightGestureRecognizer)
         
         if circle1 != nil {
             addCircleView(circle1!)
@@ -32,7 +36,11 @@ class OnboardingViewController: UIViewController {
         
         if startCompass != nil {
             startCompass!.clipsToBounds = true
+            startCompass!.addTarget(self, action: "btnPressed", forControlEvents: UIControlEvents.TouchUpInside)
         }
+        
+        hideSideMenuView()
+        self.navigationController!.navigationBar.hidden = true
     }
     
     func showNext() {
@@ -51,10 +59,34 @@ class OnboardingViewController: UIViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
             break
         }
-        self.presentViewController(destViewController, animated: true, completion: nil)
-        
-        
-        
+        sideMenuController()?.setContentViewController(destViewController)
+    }
+    
+    func showPrevious() {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        switch (self.restorationIdentifier!) {
+        case "secondPage":
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
+            break
+        case "thirdPage":
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("secondPage") as! UIViewController
+            break
+        case "fourthPage":
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("thirdPage") as! UIViewController
+            break
+        default:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
+            break
+        }
+        sideMenuController()?.setContentViewController(destViewController)
+    }
+    
+    func btnPressed() {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+        sideMenuController()?.setContentViewController(destViewController)
     }
     
     func addCircleView(view: UIView) {
