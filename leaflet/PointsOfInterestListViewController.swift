@@ -31,6 +31,18 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         return self.allPois.count
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedPoi = allPois[indexPath.row]
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+        vc.selectedPoi = selectedPoi
+        sideMenuController()?.setContentViewController(vc)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
