@@ -10,22 +10,27 @@ import UIKit
 
 class FecPoi: NSObject {
    
+    let feetInMeters:Double = 3.28084
+    
     var id: Int!
     var title: String!
     var content: String!
     var imageUrl: String!
     var image: UIImage!
     var beaconMajor: Int!
+    
     var visit: Bool!
-
+    var distance: Double!
+    
     init(id: Int, title: String, content: String, imageUrl: String, beaconMajor: Int) {
         super.init()
         self.id = id
-        self.visit = false
         self.title = title
         self.content = content
         self.imageUrl = imageUrl
         self.beaconMajor = beaconMajor
+        
+        self.visit = false
         
         self.downloadImage()
     }
@@ -38,6 +43,22 @@ class FecPoi: NSObject {
         self.visit = visit
     }
     
+    func setDistance(distanceInMetric: Double) {
+        self.distance = distanceInMetric * feetInMeters
+        NSNotificationCenter.defaultCenter().postNotificationName("setDistanceNotification", object: self)
+    }
+    
+    func getHumanDistance() -> String {
+        if (self.distance == nil) {
+            return "Unknown distance away."
+        }
+        else if (self.distance < 10) {
+            return "You are here!"
+        } else {
+            return "\(Int(self.distance)) feet away."
+        }
+    }
+    
     func downloadImage() {
         var httpClient = HTTPClient()
         if let url = NSURL(string: GlobalConstants.remoteAPIUrl + self.imageUrl) {
@@ -48,4 +69,5 @@ class FecPoi: NSObject {
             }
         }
     }
+    
 }

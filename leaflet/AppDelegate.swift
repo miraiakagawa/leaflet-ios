@@ -190,20 +190,24 @@ extension AppDelegate: CLLocationManagerDelegate {
         for beacon in beacons {
             
             foundBeacon = beacon as! CLBeacon
+            var poi:FecPoi? = LibraryAPI.sharedInstance.getPoiByBeaconMajor(foundBeacon.major.integerValue)
             
             if foundBeacon.proximity == CLProximity.Near || foundBeacon.proximity == CLProximity.Immediate {
                 let prevProximity = knownBeacons[foundBeacon.major]
                 if  prevProximity == nil || prevProximity != foundBeacon.proximity {
-                    var poi:FecPoi? = LibraryAPI.sharedInstance.getPoiByBeaconMajor(foundBeacon.major.integerValue)
                     if (poi?.visit == false) {
                         message = "Hey there, it seems like you are near the " + poi!.title + "!"
                         var userInfo = ["poiId": poi?.id]
                         sendLocalNotificationWithMessage(nil, message: message, playSound: true, userInfo: userInfo)
                     }
                     poi?.setVisiting(true)
-
                 }
             }
+            
+            if (foundBeacon.proximity != CLProximity.Unknown && poi != nil) {
+                poi?.setDistance(foundBeacon.accuracy)
+            }
+            
             knownBeacons[foundBeacon.major] = foundBeacon.proximity
         }
 
