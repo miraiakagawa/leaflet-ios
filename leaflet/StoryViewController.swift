@@ -16,6 +16,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var progressCircle: UIView!
     @IBOutlet weak var storyIcon: UIImageView!
+    @IBOutlet weak var poiTable: UITableView!
 
     private var allPois = [FecPoi]()
     
@@ -46,6 +47,12 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         addCircleView()
         
         self.storyIcon.image = UIImage(named: self.storyIconPath)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"updateDistance:", name: "setDistanceNotification", object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func addCircleView() {
@@ -74,7 +81,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var poi = self.allPois[indexPath.row]
         
         cell.poiName.text = poi.title
-        cell.locationAway.text = String(poi.beaconMajor) + "ft"
+        cell.locationAway.text = poi.getHumanDistance()
         cell.poiImage.image = poi.image
 
         return cell
@@ -87,6 +94,10 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateDistance(notification: NSNotification) {
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

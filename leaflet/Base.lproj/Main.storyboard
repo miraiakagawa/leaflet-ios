@@ -683,6 +683,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="poiTable" destination="oSd-iU-RoS" id="3rQ-5t-4mb"/>
                         <outlet property="progressCircle" destination="0CC-cc-aRe" id="QB9-82-fHl"/>
                         <outlet property="storyDescription" destination="82a-bs-Zdw" id="reZ-dI-dSw"/>
                         <outlet property="storyIcon" destination="IX3-LD-P62" id="U6o-lc-iXU"/>

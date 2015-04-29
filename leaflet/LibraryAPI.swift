@@ -56,4 +56,14 @@ class LibraryAPI: NSObject {
         return nil
     }
     
+    func getPoiIndex(poi: FecPoi) -> Int? {
+        var allPois = persistencyManager.getPois()
+        for i in 0...allPois.count {
+            if allPois[i].id == poi.id {
+                return i
+            }
+        }
+        return nil
+    }
+    
 }
