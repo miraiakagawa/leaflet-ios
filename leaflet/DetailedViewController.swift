@@ -58,17 +58,18 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     }
     
     @IBAction func backButtonAction(sender: AnyObject) {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc:StoryViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
-        
-        // TODO: temporary patch. move stories into api and fix all this shit
-        vc.title = stories[0].title
-        
-        vc.storyDescriptionText = stories[0].content
-        vc.storyIconPath = stories[0].storyIcon
-        vc.storyColor = stories[0].color
-        
-        sideMenuController()?.setContentViewController(vc)
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        var vc:StoryViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
+//        
+//        // TODO: temporary patch. move stories into api and fix all this shit
+//        vc.title = stories[0].title
+//        
+//        vc.storyDescriptionText = stories[0].content
+//        vc.storyIconPath = stories[0].storyIcon
+//        vc.storyColor = stories[0].color
+//        
+//        sideMenuController()?.setContentViewController(vc)
+        self.navigationController?.popViewControllerAnimated(true)
     }
         
 }

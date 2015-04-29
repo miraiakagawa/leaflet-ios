@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mp-I4-dRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Mp-I4-dRc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -70,6 +70,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="8x1-Jp-dc8" id="bgE-bI-v4A"/>
+                        <segue destination="R7p-xw-NKv" kind="show" identifier="toContentFromList" id="a8A-UZ-Wcs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fge-Iz-C46" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,6 +133,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Od5-Rq-Zcv"/>
+                    <connections>
+                        <segue destination="HqD-oz-NdG" kind="show" identifier="onboardingToSecond" id="pMX-wN-N0T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ0-Cf-EoF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -149,13 +153,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover &amp; Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHZ-A9-6lS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Discover &amp; Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHZ-A9-6lS">
                                 <rect key="frame" x="182" y="70" width="237" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
                                 <rect key="frame" x="225" y="131" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0HG-bx-cJb"/>
@@ -166,14 +170,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
                                 <rect key="frame" x="25" y="306" width="550" height="94"/>
                                 <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
+                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
                                 <rect key="frame" x="281" y="425" width="39" height="150"/>
                             </pageControl>
                         </subviews>
@@ -192,6 +196,10 @@
                             <constraint firstItem="0cd-WK-1Zg" firstAttribute="top" secondItem="ekA-uQ-Yka" secondAttribute="bottom" constant="25" id="uha-3h-ihW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oLa-BL-YKu"/>
+                    <connections>
+                        <segue destination="JYb-Qi-nnV" kind="show" identifier="onboardingToThird" id="y1P-U9-74i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ud-0v-9f1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,6 +321,7 @@
                     <connections>
                         <outlet property="circle1" destination="GHF-VW-S39" id="P41-dl-zom"/>
                         <outlet property="circle2" destination="swE-7D-vXR" id="5Bv-Jv-4ia"/>
+                        <segue destination="HIr-Jy-Oyh" kind="show" identifier="onboardingToFourth" id="c2r-2q-WfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vi6-Ph-uES" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,7 +339,7 @@
                         <color key="barTintColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LQW-kT-OxL" kind="relationship" relationship="rootViewController" id="zO0-Uv-fJx"/>
+                        <segue destination="LQW-kT-OxL" kind="relationship" relationship="rootViewController" id="C99-XD-Aoz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Bu-Zh-2h8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,6 +501,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="N9T-uL-LbZ" kind="show" identifier="toStory" id="SZV-Kl-0cz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qw0-3B-o8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -676,6 +688,7 @@
                         <outlet property="storyIcon" destination="IX3-LD-P62" id="U6o-lc-iXU"/>
                         <outlet property="tableView" destination="oSd-iU-RoS" id="4kt-bH-GhU"/>
                         <outlet property="topView" destination="pnz-t9-Jcu" id="axu-Tg-azk"/>
+                        <segue destination="R7p-xw-NKv" kind="show" identifier="toContentFromStory" id="NYu-mA-wCA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiC-7n-G5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -749,5 +762,8 @@
         <image name="hamburger" width="44" height="44"/>
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NYu-mA-wCA"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

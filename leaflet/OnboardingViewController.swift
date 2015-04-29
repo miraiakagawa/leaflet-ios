@@ -44,42 +44,24 @@ class OnboardingViewController: UIViewController {
     }
     
     func showNext() {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var destViewController : UIViewController
         switch (self.restorationIdentifier!) {
-        case "firstPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("secondPage") as! UIViewController
-            break
-        case "secondPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("thirdPage") as! UIViewController
-            break
-        case "thirdPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("fourthPage") as! UIViewController
-        default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
-            break
+            case "firstPage":
+                self.performSegueWithIdentifier("onboardingToSecond", sender: self)
+                break
+            case "secondPage":
+                self.performSegueWithIdentifier("onboardingToThird", sender: self)
+                break
+            case "thirdPage":
+                self.performSegueWithIdentifier("onboardingToFourth", sender: self)
+                break
+            default:
+                self.performSegueWithIdentifier("onboardingToFourth", sender: self)
+                break
         }
-        sideMenuController()?.setContentViewController(destViewController)
     }
     
     func showPrevious() {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var destViewController : UIViewController
-        switch (self.restorationIdentifier!) {
-        case "secondPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
-            break
-        case "thirdPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("secondPage") as! UIViewController
-            break
-        case "fourthPage":
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("thirdPage") as! UIViewController
-            break
-        default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("firstPage") as! UIViewController
-            break
-        }
-        sideMenuController()?.setContentViewController(destViewController)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func btnPressed() {

@@ -25,6 +25,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var progress: CGFloat!
     var storyColor: CGColor!
     var storyIconPath: String!
+    var selectedPoi: FecPoi!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,27 +94,25 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
-        vc.selectedPoi = selectedPoi
-        sideMenuController()?.setContentViewController(vc)
+        self.selectedPoi = selectedPoi
+        self.performSegueWithIdentifier("toContentFromStory", sender: self)
         
     }
     
     
     @IBAction func backToMenu(sender: AnyObject) {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var vc: StoriesMenuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView") as! StoriesMenuViewController
-        sideMenuController()?.setContentViewController(vc)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("here")
-//        if segue.identifier == "ShowPoiDetail" {
-//            if let poi = sender as? FecPoi {
-//                let detailedViewController = segue.destinationViewController as! DetailedViewController
-//                detailedViewController.selectedPoi = poi
-//            }
-//        }
+        switch segue.identifier! {
+            case "toContentFromStory":
+                if var poiVC = segue.destinationViewController as? DetailedViewController {
+                    poiVC.selectedPoi = self.selectedPoi
+                }
+            default:
+                break
+        }
     }
     
 }

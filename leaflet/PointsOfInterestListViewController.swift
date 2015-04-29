@@ -14,6 +14,7 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
     
     
     private var allPois = [FecPoi]()
+    var selectedPoi: FecPoi!
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("pointOfInterest") as? PointsOfInterestListViewCell ?? PointsOfInterestListViewCell()
@@ -32,14 +33,9 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedPoi = allPois[indexPath.row]
+        self.selectedPoi = allPois[indexPath.row]
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
-        vc.selectedPoi = selectedPoi
-        sideMenuController()?.setContentViewController(vc)
-        
+        self.performSegueWithIdentifier("toContentFromList", sender: self)
     }
     
     
@@ -72,13 +68,16 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         toggleSideMenuView()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        switch segue.identifier! {
-//            
-//        default:
-//            break
-//        }
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "toContentFromList":
+                if var poiVC = segue.destinationViewController as? DetailedViewController {
+                    poiVC.selectedPoi = self.selectedPoi
+                }
+            default:
+                break
+        }
+        
+    }
     
 }

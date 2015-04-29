@@ -11,6 +11,7 @@ import UIKit
 class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
     
     private var stories = [Story]()
+    var selectedStory: Story!
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("story") as? StoriesListViewCell ?? StoriesListViewCell()
@@ -33,17 +34,8 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         var cell = tableView.dequeueReusableCellWithIdentifier("story", forIndexPath: indexPath) as! StoriesListViewCell
         cell.overlay.hidden = false
         
-        //Present new view controller
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        var storyVC : StoryViewController
-        storyVC = mainStoryboard.instantiateViewControllerWithIdentifier("storyView") as! StoryViewController
-        storyVC.title = stories[indexPath.row].title
-        
-        storyVC.storyDescriptionText = stories[indexPath.row].content
-        storyVC.storyIconPath = stories[indexPath.row].storyIcon
-        storyVC.storyColor = stories[indexPath.row].color
-    
-        sideMenuController()?.setContentViewController(storyVC)
+        self.selectedStory = stories[indexPath.row]
+        self.performSegueWithIdentifier("toStory", sender: self)
     }
     
     override func viewDidLoad() {
@@ -70,22 +62,20 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         toggleSideMenuView()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        switch segue.identifier! {
-//            case "storyViewDisplay":
-//                let navVC = segue.destinationViewController as! UINavigationController
-//                let storyVC = navVC.viewControllers.first as! StoryViewController
-//                if var cell = sender as? StoriesListViewCell {
-//                    var storySearch = filter(stories) { (s: Story) in s.title == cell.storyName.text! }
-//                    storyVC.title = storySearch[0].title
-//                    storyVC.storyDescriptionText = storySearch[0].description
-//                    storyVC.backgroundNavColor = storySearch[0].color
-//                }
-//        default:
-//            break
-//        }
-//        
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "toStory":
+                if var storyVC = segue.destinationViewController as? StoryViewController {
+                    storyVC.title = self.selectedStory.title
+                    storyVC.storyDescriptionText = self.selectedStory.content
+                    storyVC.storyIconPath = self.selectedStory.storyIcon
+                    storyVC.storyColor = self.selectedStory.color
+                }
+        default:
+            break
+        }
+        
+    }
     
     
     // MARK: - Table view data source
