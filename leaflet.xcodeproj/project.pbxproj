@@ -11,8 +11,9 @@
 		AB3767F41AF2FEB9008D73BF /* GGCompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3767F31AF2FEB9008D73BF /* GGCompassViewController.swift */; };
 		AB3767F61AF2FEC6008D73BF /* GGCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3767F51AF2FEC6008D73BF /* GGCompass.swift */; };
 		AB3767F81AF2FEE8008D73BF /* GGCompassNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */; };
-		AB3767FB1AF2FF55008D73BF /* Center.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3767F91AF2FF55008D73BF /* Center.png */; };
-		AB3767FC1AF2FF55008D73BF /* Pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = AB3767FA1AF2FF55008D73BF /* Pointer.png */; };
+		ABFB0A481AF40F180030384D /* compassPOIDot.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFB0A451AF40F180030384D /* compassPOIDot.png */; };
+		ABFB0A491AF40F180030384D /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFB0A461AF40F180030384D /* pointer.png */; };
+		ABFB0A4A1AF40F180030384D /* trail.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFB0A471AF40F180030384D /* trail.png */; };
 		DB09CEAB1AD2703100E831B7 /* FecPoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEAA1AD2703100E831B7 /* FecPoi.swift */; };
 		DB09CEAE1AD2711500E831B7 /* FecPoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */; };
 		DB09CEB31AD2721800E831B7 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB21AD2721800E831B7 /* LibraryAPI.swift */; };
@@ -93,8 +94,9 @@
 		AB3767F31AF2FEB9008D73BF /* GGCompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGCompassViewController.swift; sourceTree = "<group>"; };
 		AB3767F51AF2FEC6008D73BF /* GGCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGCompass.swift; sourceTree = "<group>"; };
 		AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGCompassNavView.xib; sourceTree = "<group>"; };
-		AB3767F91AF2FF55008D73BF /* Center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Center.png; sourceTree = "<group>"; };
-		AB3767FA1AF2FF55008D73BF /* Pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pointer.png; sourceTree = "<group>"; };
+		ABFB0A451AF40F180030384D /* compassPOIDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = compassPOIDot.png; path = ../leaflet.xcodeproj/compassPOIDot.png; sourceTree = "<group>"; };
+		ABFB0A461AF40F180030384D /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pointer.png; path = ../leaflet.xcodeproj/pointer.png; sourceTree = "<group>"; };
+		ABFB0A471AF40F180030384D /* trail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trail.png; path = ../leaflet.xcodeproj/trail.png; sourceTree = "<group>"; };
 		DB09CEAA1AD2703100E831B7 /* FecPoi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FecPoi.swift; sourceTree = "<group>"; };
 		DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FecPoiView.swift; sourceTree = "<group>"; };
 		DB09CEB21AD2721800E831B7 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -317,8 +319,9 @@
 				DBC30D681AD0CEF800FFB42D /* Main.storyboard */,
 				AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */,
 				DBC30D6B1AD0CEF800FFB42D /* Images.xcassets */,
-				AB3767F91AF2FF55008D73BF /* Center.png */,
-				AB3767FA1AF2FF55008D73BF /* Pointer.png */,
+				ABFB0A451AF40F180030384D /* compassPOIDot.png */,
+				ABFB0A461AF40F180030384D /* pointer.png */,
+				ABFB0A471AF40F180030384D /* trail.png */,
 				DBC30D6D1AD0CEF800FFB42D /* LaunchScreen.xib */,
 				DBC30D601AD0CEF800FFB42D /* Supporting Files */,
 			);
@@ -490,20 +493,21 @@
 				DB6526781AE75FA1002C8CCA /* Water.png in Resources */,
 				AB3767F81AF2FEE8008D73BF /* GGCompassNavView.xib in Resources */,
 				DB7C0D571AEB60870050716A /* HeatHexagon.png in Resources */,
+				ABFB0A491AF40F180030384D /* pointer.png in Resources */,
 				DB6526751AE75FA1002C8CCA /* Explore.png in Resources */,
 				DB6526741AE75FA1002C8CCA /* Energy.png in Resources */,
 				DBC30D6F1AD0CEF800FFB42D /* LaunchScreen.xib in Resources */,
 				DB6526831AE77CF2002C8CCA /* Rewards.png in Resources */,
 				DB7C0D551AEB60870050716A /* EnergyHexagon.png in Resources */,
+				ABFB0A481AF40F180030384D /* compassPOIDot.png in Resources */,
 				DB7F8A911AEB557100DC9DF8 /* ExploreMenu.png in Resources */,
 				DB6526811AE77CF2002C8CCA /* AtHome.png in Resources */,
 				DB6526771AE75FA1002C8CCA /* Plants.png in Resources */,
 				DBC30D6C1AD0CEF800FFB42D /* Images.xcassets in Resources */,
 				DB6526761AE75FA1002C8CCA /* Heat.png in Resources */,
-				AB3767FB1AF2FF55008D73BF /* Center.png in Resources */,
-				AB3767FC1AF2FF55008D73BF /* Pointer.png in Resources */,
 				DB7F8A931AEB559800DC9DF8 /* Home.png in Resources */,
 				DB7C0D591AEB60870050716A /* WaterHexagon.png in Resources */,
+				ABFB0A4A1AF40F180030384D /* trail.png in Resources */,
 				DB6526841AE77CF2002C8CCA /* StickerCam.png in Resources */,
 				DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */,
 				DB6526851AE77CF2002C8CCA /* Stories.png in Resources */,
