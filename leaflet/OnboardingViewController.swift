@@ -67,7 +67,7 @@ class OnboardingViewController: UIViewController {
     func btnPressed() {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
-        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
         sideMenuController()?.setContentViewController(destViewController)
     }
     
