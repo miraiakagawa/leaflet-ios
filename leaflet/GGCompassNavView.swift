@@ -13,8 +13,8 @@ import CoreLocation
 class GGCompassNavView: UIView {
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var distnaceToGo: UILabel!
-    @IBOutlet weak var compassCenterImage: UIImageView!
     @IBOutlet weak var compassPointerImage: UIImageView!
+    @IBOutlet weak var destinationImageView: UIImageView!
     
     var destinationName : String = "No Where!" {
         didSet {
@@ -22,7 +22,7 @@ class GGCompassNavView: UIView {
         }
     };
     
-    // Convience Instantiator for GGCompassNavView
+    // Convience Initializer for GGCompassNavView
     class func NewGGCompassNavView(owner : AnyObject) -> GGCompassNavView {
         var newView: AnyObject? = NSBundle.mainBundle().loadNibNamed("GGCompassNavView", owner: owner, options: nil).first;
         return (newView as! GGCompassNavView);
@@ -39,8 +39,8 @@ class GGCompassNavView: UIView {
         let width = Double(compassPointerImage.frame.width);
         let height = Double(compassPointerImage.frame.height);
         
-        let centerX = compassCenterImage.frame.origin.x;
-        let centerY = compassCenterImage.frame.origin.y;
+        let centerX = compassPointerImage.frame.origin.x;
+        let centerY = compassPointerImage.frame.origin.y;
         
         let currentX = Double(compassPointerImage.frame.origin.x);
         let currentY = Double(compassPointerImage.frame.origin.y);
@@ -48,18 +48,15 @@ class GGCompassNavView: UIView {
         newX = cos(newDirection * TO_RAD) * radius + Double(centerX);
         newY = sin(newDirection * TO_RAD) * radius + Double(centerY);
         
-        var theta = atan2(compassPointerImage.transform.b, compassPointerImage.transform.a);
-        var dTheta = newDirection - Double(theta);
+//        var theta = atan2(compassPointerImage.transform.b, compassPointerImage.transform.a);
+//        var dTheta = newDirection - Double(theta);
         
         var pointer : UIImageView = compassPointerImage;
         
         UIView.animateWithDuration(0.5, animations: {
-//            pointer.frame = CGRectMake(CGFloat(newX), CGFloat(newY), CGFloat(width), CGFloat(height));
-            var transform : CGAffineTransform = pointer.transform;
-            CGAffineTransformTranslate(transform, CGFloat(newX - currentX), CGFloat(newY - currentY));
-            CGAffineTransformRotate(transform, (CGFloat(newDirection) * CGFloat(TO_RAD)));
-            pointer.transform = transform;
-            
+//            NSLog("New Direction is \(newDirection)");
+            var newDirectionRad = newDirection * TO_RAD;
+            pointer.transform = CGAffineTransformMakeRotation(CGFloat(newDirectionRad));
             return ();
         });
     }

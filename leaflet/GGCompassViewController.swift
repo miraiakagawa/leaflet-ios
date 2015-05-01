@@ -24,7 +24,7 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
         self.compass = GGCompass();
         
         // For Debugging in the simulator
-        // 1 Pine Street SF, CA
+        // 202000 Lucille Ave, Cupertino, CA
         let defaultDestination = CLLocation(latitude: 37.332334, longitude: -122.025143);
         self.compass.destination = defaultDestination
         self.compassView.destinationName = "20200 Lucille Ave";
@@ -56,7 +56,7 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
-            NSLog("Lat: \(location.coordinate.latitude), Long: \(location.coordinate.longitude)");
+            // NSLog("Lat: \(location.coordinate.latitude), Long: \(location.coordinate.longitude)");
             
             var (newDirection, newDistance) = compass.directionAndDistanceToDestination(location);
             compassView.updateDirectionToDestination(newDirection);
@@ -66,8 +66,7 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
         if let heading = newHeading {
-            NSLog("Heading: \(heading)");
-            
+            // NSLog("Heading: \(heading)");
             compassView.updateUsersDirection(heading.trueHeading);
         }
     }
