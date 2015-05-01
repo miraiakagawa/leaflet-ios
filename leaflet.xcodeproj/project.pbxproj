@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3767F21AF2FEB2008D73BF /* GGCompassNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3767F11AF2FEB2008D73BF /* GGCompassNavView.swift */; };
+		AB3767F41AF2FEB9008D73BF /* GGCompassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3767F31AF2FEB9008D73BF /* GGCompassViewController.swift */; };
+		AB3767F61AF2FEC6008D73BF /* GGCompass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3767F51AF2FEC6008D73BF /* GGCompass.swift */; };
+		AB3767F81AF2FEE8008D73BF /* GGCompassNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */; };
 		DB09CEAB1AD2703100E831B7 /* FecPoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEAA1AD2703100E831B7 /* FecPoi.swift */; };
 		DB09CEAE1AD2711500E831B7 /* FecPoiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */; };
 		DB09CEB31AD2721800E831B7 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB09CEB21AD2721800E831B7 /* LibraryAPI.swift */; };
@@ -83,6 +87,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB3767F11AF2FEB2008D73BF /* GGCompassNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGCompassNavView.swift; sourceTree = "<group>"; };
+		AB3767F31AF2FEB9008D73BF /* GGCompassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGCompassViewController.swift; sourceTree = "<group>"; };
+		AB3767F51AF2FEC6008D73BF /* GGCompass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGCompass.swift; sourceTree = "<group>"; };
+		AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GGCompassNavView.xib; sourceTree = "<group>"; };
 		DB09CEAA1AD2703100E831B7 /* FecPoi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FecPoi.swift; sourceTree = "<group>"; };
 		DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FecPoiView.swift; sourceTree = "<group>"; };
 		DB09CEB21AD2721800E831B7 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		DB09CEAC1AD2703A00E831B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AB3767F51AF2FEC6008D73BF /* GGCompass.swift */,
 				DB09CEAA1AD2703100E831B7 /* FecPoi.swift */,
 				DBAEB3471AECDC9F00C0B050 /* Story.swift */,
 				DB25A5AD1AE7F5ED007939FF /* GlobalConstants.swift */,
@@ -197,6 +206,7 @@
 		DB09CEAF1AD2717800E831B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB3767F11AF2FEB2008D73BF /* GGCompassNavView.swift */,
 				DB338F711AE47E5900B818CC /* PointsOfInterestListViewCell.swift */,
 				DB09CEAD1AD2711500E831B7 /* FecPoiView.swift */,
 				DB338F731AE488D000B818CC /* StoriesListViewCell.swift */,
@@ -209,6 +219,7 @@
 		DB09CEB01AD2717E00E831B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AB3767F31AF2FEB9008D73BF /* GGCompassViewController.swift */,
 				DBC30D661AD0CEF800FFB42D /* MapViewController.swift */,
 				DBC30D641AD0CEF800FFB42D /* OverviewViewController.swift */,
 				DB09CEB81AD27CD300E831B7 /* DetailedViewController.swift */,
@@ -300,6 +311,7 @@
 				DB09CEAF1AD2717800E831B7 /* Views */,
 				DB09CEAC1AD2703A00E831B7 /* Models */,
 				DBC30D681AD0CEF800FFB42D /* Main.storyboard */,
+				AB3767F71AF2FEE8008D73BF /* GGCompassNavView.xib */,
 				DBC30D6B1AD0CEF800FFB42D /* Images.xcassets */,
 				DBC30D6D1AD0CEF800FFB42D /* LaunchScreen.xib */,
 				DBC30D601AD0CEF800FFB42D /* Supporting Files */,
@@ -470,6 +482,7 @@
 			files = (
 				DBC30D6A1AD0CEF800FFB42D /* Main.storyboard in Resources */,
 				DB6526781AE75FA1002C8CCA /* Water.png in Resources */,
+				AB3767F81AF2FEE8008D73BF /* GGCompassNavView.xib in Resources */,
 				DB7C0D571AEB60870050716A /* HeatHexagon.png in Resources */,
 				DB6526751AE75FA1002C8CCA /* Explore.png in Resources */,
 				DB6526741AE75FA1002C8CCA /* Energy.png in Resources */,
@@ -522,8 +535,10 @@
 				DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */,
 				DBF48C281AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift in Sources */,
 				DB7F8A8F1AEB4B5800DC9DF8 /* KYCircularProgress.swift in Sources */,
+				AB3767F41AF2FEB9008D73BF /* GGCompassViewController.swift in Sources */,
 				DB269D731AEA24780073BCFB /* ENSideMenuNavigationController.swift in Sources */,
 				DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */,
+				AB3767F61AF2FEC6008D73BF /* GGCompass.swift in Sources */,
 				DB338F741AE488D000B818CC /* StoriesListViewCell.swift in Sources */,
 				DB25A5AE1AE7F5ED007939FF /* GlobalConstants.swift in Sources */,
 				DB7F8A951AEB56E900DC9DF8 /* CircleView.swift in Sources */,
@@ -534,6 +549,7 @@
 				DB65267A1AE76D59002C8CCA /* RBResizer.swift in Sources */,
 				DBC30D631AD0CEF800FFB42D /* AppDelegate.swift in Sources */,
 				DBC30D651AD0CEF800FFB42D /* OverviewViewController.swift in Sources */,
+				AB3767F21AF2FEB2008D73BF /* GGCompassNavView.swift in Sources */,
 				DB09CEB51AD2729000E831B7 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
