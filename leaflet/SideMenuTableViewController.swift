@@ -43,7 +43,7 @@ class SideMenuTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var menuItems = ["", "Map", "Stories", "Rewards", "Sticker Cam", "At Home"]
+        var menuItems = ["", "Explore", "Stories", "Rewards", "Sticker Cam", "At Home"]
         var icons = ["", "ExploreMenu.png", "Stories.png", "Rewards.png", "StickerCam.png", "Home.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
@@ -84,13 +84,13 @@ class SideMenuTableViewController: UITableViewController {
         var destViewController : UIViewController
         switch (indexPath.row) {
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
             break
         case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView")as! UIViewController
             break
         default:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
             break
         }
         sideMenuController()?.setContentViewController(destViewController)
