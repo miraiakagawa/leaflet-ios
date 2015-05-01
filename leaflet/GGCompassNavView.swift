@@ -22,6 +22,14 @@ class GGCompassNavView: UIView {
         }
     };
     
+    var destinationImage : UIImage? {
+        didSet {
+            if(destinationImage != nil) {
+                destinationImageView.image = destinationImage;
+            }
+        }
+    }
+    
     // Convience Initializer for GGCompassNavView
     class func NewGGCompassNavView(owner : AnyObject) -> GGCompassNavView {
         var newView: AnyObject? = NSBundle.mainBundle().loadNibNamed("GGCompassNavView", owner: owner, options: nil).first;

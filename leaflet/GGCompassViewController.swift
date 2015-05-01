@@ -37,6 +37,20 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setDestination(poi : FecPoi) {
+        compassView.destinationImage = poi.image;
+        compassView.destinationName = poi.title;
+        
+        /*
+            To-Do: Need to add data to Fecpoi that contains a GPS location
+            Temporarily uses a static point for POIs.
+        */
+        compass.destination = CLLocation(latitude: 37.332334, longitude: -122.025143);
+        
+    }
+    
+    // MARK: CoreLocation Handlers
+    
     func startHeadAndLocationUpdates() {
         if(locationManager == nil) {
             locationManager = CLLocationManager();
