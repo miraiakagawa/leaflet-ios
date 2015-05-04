@@ -56,13 +56,9 @@ class GGCompassNavView: UIView {
         newX = cos(newDirection * TO_RAD) * radius + Double(centerX);
         newY = sin(newDirection * TO_RAD) * radius + Double(centerY);
         
-//        var theta = atan2(compassPointerImage.transform.b, compassPointerImage.transform.a);
-//        var dTheta = newDirection - Double(theta);
-        
         var pointer : UIImageView = compassPointerImage;
         
         UIView.animateWithDuration(0.5, animations: {
-//            NSLog("New Direction is \(newDirection)");
             var newDirectionRad = newDirection * TO_RAD;
             pointer.transform = CGAffineTransformMakeRotation(CGFloat(newDirectionRad));
             return ();
