@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class FecPoi: NSObject {
    
@@ -21,6 +22,8 @@ class FecPoi: NSObject {
     
     var visit: Bool!
     var distance: Double!
+    
+    var coordinate : CLLocationCoordinate2D!
     
     init(id: Int, title: String, content: String, imageUrl: String, beaconMajor: Int) {
         super.init()
