@@ -57,14 +57,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Frick Environmental Center" id="hhB-No-X1H">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="8x1-Jp-dc8">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="8x1-Jp-dc8">
                             <connections>
                                 <action selector="toggleSideMenu:" destination="mNX-aG-1zn" id="AjI-Gz-jLu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="uYi-Wm-EZj">
+                        <barButtonItem key="rightBarButtonItem" title="Compass" id="uYi-Wm-EZj">
                             <connections>
-                                <action selector="revealMapView:" destination="mNX-aG-1zn" id="5Si-eu-psX"/>
+                                <action selector="revealCompassView:" destination="mNX-aG-1zn" id="QOY-wC-qme"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,6 +218,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wK4-vE-fdq">
+                        <barButtonItem key="leftBarButtonItem" image="hamburger" id="DGy-MN-gf8">
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="c19-Tj-JAq" id="TQd-Nd-tdK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="List" id="ElY-rW-k1k">
+                            <connections>
+                                <action selector="revealListView:" destination="c19-Tj-JAq" id="ffG-3F-7fh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHg-nG-1YS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,6 +453,9 @@
                                 <state key="normal" backgroundImage="rain-veil.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnPressed:" destination="HIr-Jy-Oyh" eventType="touchUpInside" id="7q2-jr-w6O"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019610000002" green="0.7843137255" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -455,9 +470,6 @@
                             <constraint firstItem="b5G-Cl-c95" firstAttribute="top" secondItem="0ff-Ez-65Z" secondAttribute="bottom" constant="50" id="xpP-GJ-Her"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="startCompass" destination="19T-sz-mHL" id="BHZ-FY-OgA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYc-ba-CFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -782,7 +794,7 @@
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYu-mA-wCA"/>
+        <segue reference="a8A-UZ-Wcs"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

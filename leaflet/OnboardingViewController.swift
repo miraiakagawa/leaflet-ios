@@ -63,12 +63,12 @@ class OnboardingViewController: UIViewController {
     func showPrevious() {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
-    func btnPressed() {
+    @IBAction func btnPressed(sender: AnyObject) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
         destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
         sideMenuController()?.setContentViewController(destViewController)
+        
     }
     
     func addCircleView(view: UIView) {

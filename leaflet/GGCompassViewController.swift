@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
+class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSideMenuDelegate {
     
     var locationManager: CLLocationManager!
     var compass : GGCompass!
@@ -30,6 +30,11 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
         self.compassView.destinationName = "20200 Lucille Ave";
         
         startHeadAndLocationUpdates();
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        self.sideMenuController()?.sideMenu?.delegate = self
+        hideSideMenuView()
+        self.navigationController!.navigationBar.hidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +92,17 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         NSLog(error.description);
+    }
+    
+    @IBAction func revealListView(sender: AnyObject) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        var destViewController : UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("listView") as! UITableViewController
+        sideMenuController()?.setContentViewController(destViewController)
+    }
+    
+    @IBAction func toggleSideMenu(sender: AnyObject) {
+        toggleSideMenuView()
     }
 }
 

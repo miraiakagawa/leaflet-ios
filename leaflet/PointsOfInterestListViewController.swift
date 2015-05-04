@@ -47,6 +47,7 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         
         allPois = LibraryAPI.sharedInstance.getPois()
         
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
@@ -57,10 +58,10 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func revealMapView(sender: AnyObject) {
+    @IBAction func revealCompassView(sender: AnyObject) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController
-        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mapView") as! UIViewController
+        destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
         sideMenuController()?.setContentViewController(destViewController)
     }
     
