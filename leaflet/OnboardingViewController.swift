@@ -57,7 +57,6 @@ class OnboardingViewController: UIViewController {
                 self.performSegueWithIdentifier("onboardingToFourth", sender: self)
                 break
             default:
-                self.performSegueWithIdentifier("onboardingToFourth", sender: self)
                 break
         }
     }
@@ -65,6 +64,7 @@ class OnboardingViewController: UIViewController {
     func showPrevious() {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
     @IBAction func btnPressed(sender: AnyObject) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         var destViewController : UIViewController

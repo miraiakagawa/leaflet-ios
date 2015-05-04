@@ -456,7 +456,7 @@
                                     <constraint firstAttribute="width" constant="200" id="1Ww-Hr-XAm"/>
                                     <constraint firstAttribute="height" constant="200" id="bOS-eg-00Q"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="rain-veil.jpg">
+                                <state key="normal" backgroundImage="Compass.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
