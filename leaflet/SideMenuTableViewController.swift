@@ -89,6 +89,9 @@ class SideMenuTableViewController: UITableViewController {
         case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView")as! UIViewController
             break
+        case 5:
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("atHomeView")as! UIViewController
+            break
         default:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("compassView") as! UIViewController
             break

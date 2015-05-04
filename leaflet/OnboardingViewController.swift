@@ -13,7 +13,8 @@ class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var circle1: UIView?
     @IBOutlet weak var circle2: UIView?
-    @IBOutlet weak var startCompass: UIButton?
+    @IBOutlet weak var heading: UILabel!
+    @IBOutlet weak var text: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +35,14 @@ class OnboardingViewController: UIViewController {
             addCircleView(circle2!)
         }
         
-        if startCompass != nil {
-            startCompass!.clipsToBounds = true
-            startCompass!.addTarget(self, action: "btnPressed", forControlEvents: UIControlEvents.TouchUpInside)
-        }
-        
         hideSideMenuView()
         self.navigationController!.navigationBar.hidden = true
+        
+        self.view.backgroundColor = UIColor(hex: GlobalConstants.onboardingBackgroundColor)
+        
+        heading.textColor = UIColor(hex: GlobalConstants.onboardingTextColor)
+        
+        text.textColor = UIColor(hex: GlobalConstants.onboardingTextColor)
     }
     
     func showNext() {

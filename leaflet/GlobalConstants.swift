@@ -10,20 +10,33 @@ import Foundation
 
 struct GlobalConstants {
     
-//    defaults
-    static let defaultNavColor = 0x61CE72
-    static let defaultNavTextColor = 0xFFFFFF
-    static let defaultFont = UIFont(name: "HelveticaNeue-Light", size: 16)
+//    COLORS
+    static let darkGreen = 0x327935
+    static let mediumGreen = 0x4CAF50
+    static let lightGreen = 0x62EC68
+    static let washedOutGreen = 0xEFFFF2
     
+    static let textGray = 0x4A4A4A
+    static let darkGray = 0x969696
+    static let mediumGray = 0xD4D4D4
+    static let lightGray = 0xEFEFF0
+    static let white = 0xFFFFFF
+    
+    static let black = 0x000000
+    
+//    default coloring
+    static let defaultNavColor = mediumGreen
+    static let defaultNavTextColor = white
+    static let bodyTextColor = textGray
+    static let menuTextColor = black
+    
+    static let onboardingTextColor = white
+    static let onboardingBackgroundColor = mediumGreen
     
 //    text stylings
-    static let bodyTextColor = 0x4A4A4A
-    static let menuTextColor = 0x000000
-    static let subHeadingFont = UIFont(name: "HelveticaNeue-Light", size: 12)
-    
-//    onboarding stylings
-    static let onboardingTextColor = 0xFFFFFF
-    static let onboardingBackgroundColor = 0x61CE72
+    static let defaultFont = UIFont(name: "HelveticaNeue-Light", size: 16)
+    static let subHeadingFont = UIFont(name: "HelveticaNeue-Light", size: 14)
+    static let textFont = UIFont(name: "HelveticaNeue-Light", size: 14)
     
     // remote api - currently hosted on makagawa.com
     static let remoteAPIUrl = "http://leaflet.makagawa.com/api"

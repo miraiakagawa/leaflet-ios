@@ -36,7 +36,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.storyDescription.textContainerInset = UIEdgeInsetsMake(20, 20, 20, 20);
         self.storyDescription.text = storyDescriptionText
         self.storyDescription.scrollEnabled = false
-        self.storyDescription.font = GlobalConstants.subHeadingFont
+        self.storyDescription.font = GlobalConstants.textFont
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
@@ -113,6 +113,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func backToMenu(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
