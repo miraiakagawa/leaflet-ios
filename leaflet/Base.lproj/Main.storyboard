@@ -965,7 +965,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         </scene>
     </scenes>
     <resources>
-        <image name="Compass.png" width="401" height="401"/>
+        <image name="Compass.png" width="400" height="400"/>
         <image name="Save For Home Button.png" width="201" height="200"/>
         <image name="Save for Home Outline.png" width="201" height="200"/>
         <image name="back" width="44" height="44"/>
