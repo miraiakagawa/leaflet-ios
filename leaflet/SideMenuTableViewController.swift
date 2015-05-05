@@ -44,7 +44,7 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var menuItems = ["", "Explore", "Stories", "Rewards", "Sticker Cam", "At Home"]
-        var icons = ["", "ExploreMenu.png", "Stories.png", "Rewards.png", "StickerCam.png", "Home.png"]
+        var icons = ["", "ExploreIcon.png", "StoriesIcon.png", "RewardsIcon.png", "StickerCamIcon.png", "SaveForHomeIcon.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
         

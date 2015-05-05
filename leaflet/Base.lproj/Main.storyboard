@@ -913,7 +913,7 @@
                                     <constraint firstAttribute="width" constant="60" id="Jcy-Zz-Uyl"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sy8-wY-GU8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Save for Home Button.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sy8-wY-GU8">
                                 <rect key="frame" x="520" y="176" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="8BI-i8-4BN"/>
@@ -998,6 +998,7 @@
     </scenes>
     <resources>
         <image name="Compass.png" width="401" height="401"/>
+        <image name="Save for Home Button.png" width="201" height="200"/>
         <image name="back" width="44" height="44"/>
         <image name="compass" width="44" height="44"/>
         <image name="hamburger" width="44" height="44"/>
