@@ -110,7 +110,6 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
     @IBAction func backToMenu(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
@@ -122,6 +121,12 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if var poiVC = segue.destinationViewController as? DetailedViewController {
                     poiVC.selectedPoi = self.selectedPoi
                 }
+                break;
+            case "toCompassViewFromStory":
+                /*
+                    TO-DO: Pass the closest, unvisited POI to the compass view
+                */
+                break;
             default:
                 break
         }

@@ -35,7 +35,7 @@
                     <rect key="frame" x="167" y="295" width="40" height="180"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.25490196078431371" green="0.64313725490196083" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
                 <outlet property="compassPointerImage" destination="oi9-iZ-sgK" id="49E-jX-OXV"/>
