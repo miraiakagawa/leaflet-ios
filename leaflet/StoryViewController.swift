@@ -127,6 +127,25 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 /*
                     TO-DO: Pass the closest, unvisited POI to the compass view
                 */
+                if let var compassVC = segue.destinationViewController as? GGCompassViewController {
+                    var sortedByDistance : [FecPoi] = allPois.sorted({ (a, b) -> Bool in
+                        if (a.distance != nil && b.distance != nil) {
+                            return a.distance < b.distance;
+                        } else {
+                            return false;
+                        }
+                    });
+                    
+                    var nextToVisit : FecPoi? = sortedByDistance.filter({
+                        return $0.visit;
+                    }).first;
+                    
+                    if (nextToVisit == nil) {
+                        compassVC.destination = sortedByDistance.first!;
+                    } else {
+                        compassVC.destination = nextToVisit!;
+                    }
+                }
                 break;
             default:
                 break

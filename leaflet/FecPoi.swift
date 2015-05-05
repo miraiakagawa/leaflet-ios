@@ -21,7 +21,7 @@ class FecPoi: NSObject {
     var beaconMajor: Int!
     
     var visit: Bool!
-    var distance: Double!
+    var distance: Double?
     
     var coordinate : CLLocationCoordinate2D!
     
@@ -58,7 +58,7 @@ class FecPoi: NSObject {
         else if (self.distance < 10) {
             return "You are here!"
         } else {
-            return "\(Int(self.distance)) feet away."
+            return "\(Int(self.distance!)) feet away."
         }
     }
     

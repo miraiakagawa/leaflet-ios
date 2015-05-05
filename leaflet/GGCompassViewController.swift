@@ -14,6 +14,7 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
     var locationManager: CLLocationManager!
     var compass : GGCompass!
     var compassView : GGCompassNavView!;
+    var destination : FecPoi?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,16 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         
         // For Debugging in the simulator
         // 202000 Lucille Ave, Cupertino, CA
-        let defaultDestination = CLLocation(latitude: 37.332334, longitude: -122.025143);
-        self.compass.destination = defaultDestination
-        self.compassView.destinationName = "20200 Lucille Ave";
+//        let defaultDestination = CLLocation(latitude: 37.332334, longitude: -122.025143);
+//        self.compass.destination = defaultDestination.coordinate;
+//        self.compassView.destinationName = "20200 Lucille Ave";
+
+        if (destination != nil) {
+            compassView.destinationImage = destination!.image;
+            compassView.destinationName = destination!.title;
+            
+            compass.destination = destination?.coordinate;
+        }
         
         startHeadAndLocationUpdates();
         
@@ -43,18 +51,6 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func setDestination(poi : FecPoi) {
-        compassView.destinationImage = poi.image;
-        compassView.destinationName = poi.title;
-        
-        /*
-            To-Do: Need to add data to Fecpoi that contains a GPS location
-            Temporarily uses a static point for POIs.
-        */
-        compass.destination = CLLocation(latitude: 37.332334, longitude: -122.025143);
-        
     }
     
     // MARK: CoreLocation Handlers
