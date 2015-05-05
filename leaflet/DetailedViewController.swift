@@ -13,11 +13,13 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var overlay: UIView!
     
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
     private var allPois = [FecPoi]()
     private var stories = [Story]()
+    private var visited = 4
     
     var selectedPoi:FecPoi? = nil
     
@@ -38,6 +40,9 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
+        
+        createOverlay()
+        checkRewards()
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,5 +66,88 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         self.navigationController?.popViewControllerAnimated(true)
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
     }
+    
+    func createOverlay() {
+        var name:String = "Fish"
         
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = view.bounds //view is self.view in a UIViewController
+            self.overlay.addSubview(blurEffectView)
+            //if you have more UIViews on screen, use insertSubview:belowSubview: to place it underneath the lowest view
+            
+            //                sticker image
+            let stickerImage = UIImageView(frame: CGRectMake(0, 100, 150, 150))
+            stickerImage.backgroundColor = UIColor(hex: GlobalConstants.darkGreen)
+            stickerImage.layer.cornerRadius = stickerImage.frame.size.width / 2;
+            stickerImage.clipsToBounds = true
+            stickerImage.frame.origin.x = CGRectGetMidX(view.bounds) - CGRectGetMidX(stickerImage.bounds)
+            self.overlay.addSubview(stickerImage)
+            
+            //                reward text
+            let headingText = UILabel(frame: CGRectMake(0, 250, 200, 100))
+            headingText.text = "You Got The " + name + " Sticker!"
+            headingText.font = GlobalConstants.titleFont
+            headingText.textColor = UIColor(hex: GlobalConstants.white)
+            headingText.textAlignment = .Center
+            headingText.lineBreakMode = .ByWordWrapping
+            headingText.numberOfLines = 2
+            headingText.frame.origin.x = CGRectGetMidX(view.bounds) - CGRectGetMidX(headingText.bounds)
+            self.overlay.addSubview(headingText)
+            
+            let subheadingText = UILabel(frame: CGRectMake(0, 325, 200, 100))
+            subheadingText.text = "Keep exploring to get more stickers just like this one!"
+            subheadingText.font = GlobalConstants.defaultFont
+            subheadingText.textColor = UIColor(hex: GlobalConstants.white)
+            subheadingText.textAlignment = .Center
+            subheadingText.lineBreakMode = .ByWordWrapping
+            subheadingText.numberOfLines = 2
+            subheadingText.frame.origin.x = CGRectGetMidX(view.bounds) - CGRectGetMidX(subheadingText.bounds)
+            self.overlay.addSubview(subheadingText)
+            
+            //                button
+            let button = UIButton(frame: CGRectMake(0, 425, 150, 30))
+            button.backgroundColor = UIColor(hex: GlobalConstants.mediumGray)
+            button.setTitleColor(UIColor(hex: GlobalConstants.textGray), forState: UIControlState.Normal)
+            button.setTitle("Got It", forState: UIControlState.Normal)
+            button.addTarget(self, action: "dismissReward", forControlEvents: UIControlEvents.TouchUpInside)
+            button.frame.origin.x = CGRectGetMidX(view.bounds) - CGRectGetMidX(button.bounds)
+            button.layer.cornerRadius = 5;
+            self.overlay.addSubview(button)
+            
+            //add auto layout constraints so that the blur fills the screen upon rotating device
+            blurEffectView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: blurEffectView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+            
+            self.overlay.setTranslatesAutoresizingMaskIntoConstraints(false)
+            view.addConstraint(NSLayoutConstraint(item: self.overlay, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: self.overlay, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: self.overlay, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+            view.addConstraint(NSLayoutConstraint(item: self.overlay, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+        } else {
+            view.backgroundColor = UIColor.blackColor()
+        }
+    }
+    
+    func checkRewards() {
+        if (visited > 3) {
+            showReward()
+        } else {
+            dismissReward()
+        }
+    }
+    
+    func showReward() {
+        self.navigationController?.navigationBar.hidden = true
+        self.overlay.hidden = false
+    }
+    
+    func dismissReward() {
+        self.navigationController?.navigationBar.hidden = false
+        self.overlay.hidden = true
+    }
 }

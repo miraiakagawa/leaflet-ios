@@ -37,6 +37,7 @@ struct GlobalConstants {
     static let defaultFont = UIFont(name: "HelveticaNeue-Light", size: 16)
     static let subHeadingFont = UIFont(name: "HelveticaNeue-Light", size: 14)
     static let textFont = UIFont(name: "HelveticaNeue-Light", size: 14)
+    static let titleFont = UIFont(name: "HelveticaNeue-Medium", size: 30)
     
     // remote api - currently hosted on makagawa.com
     static let remoteAPIUrl = "http://leaflet.makagawa.com/api"
