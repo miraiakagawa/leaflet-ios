@@ -95,7 +95,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-FQ-us3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fec_square.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-FQ-us3">
                                 <rect key="frame" x="225" y="175" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="GPl-Vv-gTm"/>
@@ -108,7 +108,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-lh-rC3">
                                 <rect key="frame" x="25" y="350" width="550" height="163"/>
-                                <string key="text">Welcome to the Frick Environmental Center! This is a net zero water and energy building, meaning that it is completely of the city grid. In addition to being beautiful, it demonstrates eco-friendly technology at it's most advanced.</string>
+                                <string key="text">Welcome to the Frick Environmental Center! This is a net 0 water and energy building, meaning that is is completely self sustainable and off the city grid. In addition to being beautiful, it demonstrates eco-friendly technology at it’s most advanced. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -155,46 +155,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Discover &amp; Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHZ-A9-6lS">
-                                <rect key="frame" x="182" y="70" width="237" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover &amp; Learn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHZ-A9-6lS">
+                                <rect key="frame" x="182" y="114" width="237" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rain-veil.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
-                                <rect key="frame" x="225" y="131" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWU-Mp-51M">
+                                <rect key="frame" x="195" y="175" width="210" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="1LL-xt-0Ji">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="HO0-JI-ve2"/>
+                                            <constraint firstAttribute="height" constant="100" id="Jmp-5M-eaJ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Save for Home Outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
+                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="0HG-bx-cJb"/>
+                                            <constraint firstAttribute="width" constant="100" id="Vig-8k-uQH"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="0HG-bx-cJb"/>
-                                    <constraint firstAttribute="width" constant="150" id="Vig-8k-uQH"/>
+                                    <constraint firstAttribute="height" constant="100" id="6jN-Ga-9I1"/>
+                                    <constraint firstItem="2R9-8g-DzK" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="top" id="FZb-SO-6VK"/>
+                                    <constraint firstAttribute="leading" secondItem="1LL-xt-0Ji" secondAttribute="leading" id="FpI-u7-XlH"/>
+                                    <constraint firstAttribute="bottom" secondItem="2R9-8g-DzK" secondAttribute="bottom" id="bIM-GO-s29"/>
+                                    <constraint firstAttribute="trailing" secondItem="2R9-8g-DzK" secondAttribute="trailing" id="bne-66-1Zi"/>
+                                    <constraint firstAttribute="width" constant="210" id="gKa-QT-vdZ"/>
+                                    <constraint firstItem="1LL-xt-0Ji" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="top" id="mas-G8-bms"/>
+                                    <constraint firstAttribute="bottom" secondItem="1LL-xt-0Ji" secondAttribute="bottom" id="ohV-AV-emT"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
+                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
-                                <rect key="frame" x="25" y="306" width="550" height="94"/>
-                                <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
+                                <rect key="frame" x="25" y="300" width="543" height="113"/>
+                                <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. 
+
+The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
-                                <rect key="frame" x="281" y="425" width="39" height="150"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
+                                <rect key="frame" x="281" y="438" width="39" height="137"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.64705882349999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="SWU-Mp-51M" firstAttribute="top" secondItem="wHZ-A9-6lS" secondAttribute="bottom" constant="25" id="6Pf-Vg-lE6"/>
                             <constraint firstItem="FCA-eG-78l" firstAttribute="top" secondItem="0cd-WK-1Zg" secondAttribute="bottom" constant="25" id="Ch9-AU-Oa5"/>
-                            <constraint firstItem="2R9-8g-DzK" firstAttribute="top" secondItem="wHZ-A9-6lS" secondAttribute="bottom" constant="25" id="FLo-Fd-sz2"/>
+                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="bottom" constant="25" id="Eov-Bz-H5K"/>
                             <constraint firstItem="ekA-uQ-Yka" firstAttribute="leading" secondItem="aFd-6r-New" secondAttribute="leading" constant="25" id="Jpb-3c-zXU"/>
                             <constraint firstAttribute="trailing" secondItem="ekA-uQ-Yka" secondAttribute="trailing" constant="25" id="XWN-hV-BID"/>
                             <constraint firstAttribute="centerX" secondItem="wHZ-A9-6lS" secondAttribute="centerX" id="cMa-oH-ff8"/>
                             <constraint firstAttribute="centerX" secondItem="0cd-WK-1Zg" secondAttribute="centerX" id="clv-Uy-8Mz"/>
                             <constraint firstAttribute="centerX" secondItem="ekA-uQ-Yka" secondAttribute="centerX" id="dBv-R5-UZQ"/>
                             <constraint firstItem="wHZ-A9-6lS" firstAttribute="top" secondItem="eIj-Tc-vpl" secondAttribute="bottom" constant="50" id="dhZ-xd-Tkx"/>
-                            <constraint firstAttribute="centerX" secondItem="2R9-8g-DzK" secondAttribute="centerX" id="jAm-yK-1c1"/>
-                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="top" secondItem="2R9-8g-DzK" secondAttribute="bottom" constant="25" id="oLK-Kh-wQP"/>
+                            <constraint firstAttribute="centerX" secondItem="SWU-Mp-51M" secondAttribute="centerX" id="tyI-69-UU0"/>
                             <constraint firstItem="0cd-WK-1Zg" firstAttribute="top" secondItem="ekA-uQ-Yka" secondAttribute="bottom" constant="25" id="uha-3h-ihW"/>
                         </constraints>
                     </view>
@@ -262,7 +290,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="xS9-Vw-A9B"/>
                                 </constraints>
-                                <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
+                                <string key="text">For the app to work, we need to be able to access your location and send notifications. If you’d like to grant us access, click the buttons below. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -399,7 +427,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Tap the Compass to start your adventure at the FEC!" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-ua-VNU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Tap the Compass to start your adventure at the FEC!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-ua-VNU">
                                 <rect key="frame" x="25" y="356" width="550" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="P5z-HB-p02"/>
@@ -468,7 +496,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="pIA-O2-ZTd"/>
                                             </constraints>
-                                            <string key="text">Building a more sustainable future is a job that we all share. Below are items you were interested in and ways you can bring the ideas behind them back to your own home.</string>
+                                            <string key="text">Lots of features you’ll visit here are not just great for the FEC! Below are some of the things you were interested in saving for later.</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -939,14 +967,16 @@
     <resources>
         <image name="Compass.png" width="401" height="401"/>
         <image name="Save For Home Button.png" width="201" height="200"/>
+        <image name="Save for Home Outline.png" width="201" height="200"/>
         <image name="back" width="44" height="44"/>
         <image name="compass" width="44" height="44"/>
+        <image name="fec_square.jpg" width="270" height="270"/>
         <image name="hamburger" width="44" height="44"/>
         <image name="list" width="44" height="44"/>
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYu-mA-wCA"/>
+        <segue reference="BYd-BC-rHW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
