@@ -21,7 +21,7 @@ class FecPoi: NSObject {
     var beaconMajor: Int!
     
     var visit: Bool!
-    var distance: Double!
+    var distance: Double?
     
     var coordinate : CLLocationCoordinate2D!
     
