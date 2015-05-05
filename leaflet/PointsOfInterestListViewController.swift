@@ -48,6 +48,7 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         allPois = LibraryAPI.sharedInstance.getPois()
         
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        self.navigationController?.navigationBar.clipsToBounds = false
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         

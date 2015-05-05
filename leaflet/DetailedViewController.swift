@@ -64,7 +64,11 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     
     @IBAction func backButtonAction(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        let n: Int! = self.navigationController?.viewControllers?.count
+        let myUIViewController = self.navigationController?.viewControllers[n-1] as? UIViewController
+        if ((myUIViewController as? StoryViewController) == nil) {
+            self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        }
     }
     
     func createOverlay() {

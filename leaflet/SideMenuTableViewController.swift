@@ -16,7 +16,7 @@ class SideMenuTableViewController: UITableViewController {
         // Customize apperance of table view
         tableView.contentInset = UIEdgeInsetsMake(50.0, 0, 0, 0) //
         tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.clearColor()
+        tableView.backgroundColor = UIColor(hex: GlobalConstants.lightGray)
         tableView.scrollsToTop = false
         
         // Preserve selection between presentations
@@ -39,12 +39,12 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return 6
+        return 5
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var menuItems = ["", "Explore", "Stories", "Rewards", "Sticker Cam", "At Home"]
-        var icons = ["", "ExploreIcon.png", "StoriesIcon.png", "RewardsIcon.png", "StickerCamIcon.png", "SaveForHomeIcon.png"]
+        var menuItems = ["", "Explore", "Stories", "Rewards", "At Home"]
+        var icons = ["", "ExploreIcon.png", "StoriesIcon.png", "RewardsIcon.png", "SaveForHomeIcon.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
         
@@ -89,7 +89,7 @@ class SideMenuTableViewController: UITableViewController {
         case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView")as! UIViewController
             break
-        case 5:
+        case 4:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("atHomeView")as! UIViewController
             break
         default:

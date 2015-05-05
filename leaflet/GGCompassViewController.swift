@@ -31,7 +31,8 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         
         startHeadAndLocationUpdates();
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0x40A33F)
+        self.navigationController?.navigationBar.clipsToBounds = true
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         self.navigationController!.navigationBar.hidden = false

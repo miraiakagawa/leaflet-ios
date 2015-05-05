@@ -44,6 +44,7 @@ class SaveForHomeViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: GlobalConstants.defaultNavColor)
+        self.navigationController?.navigationBar.clipsToBounds = false
         
         self.allSaved = LibraryAPI.sharedInstance.getPois()
         

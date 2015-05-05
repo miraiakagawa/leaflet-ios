@@ -228,7 +228,7 @@
                                 <action selector="toggleSideMenu:" destination="c19-Tj-JAq" id="TQd-Nd-tdK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="List" id="ElY-rW-k1k">
+                        <barButtonItem key="rightBarButtonItem" image="list" id="ElY-rW-k1k">
                             <connections>
                                 <action selector="revealListView:" destination="c19-Tj-JAq" id="ffG-3F-7fh"/>
                             </connections>
@@ -949,6 +949,7 @@
         <image name="back" width="44" height="44"/>
         <image name="compass" width="44" height="44"/>
         <image name="hamburger" width="44" height="44"/>
+        <image name="list" width="44" height="44"/>
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
