@@ -12,13 +12,13 @@ import Darwin
 
 class GGCompass : NSObject {
     
-    var destination : CLLocation?;
+    var destination : CLLocationCoordinate2D?;
     
     override init() {
         super.init();
     }
     
-    init(destination : CLLocation) {
+    init(destination : CLLocationCoordinate2D) {
         super.init();
         self.destination = destination;
     }
@@ -28,7 +28,7 @@ class GGCompass : NSObject {
         var heading = 0.0;
         var distance = 0.0;
         
-        if let destPosition = destination?.coordinate {
+        if let destPosition = destination {
             // Helpful constants
             distance = distanceBetweenPoints(userLocation.coordinate, point2: destPosition);
             heading = headingFromPointToPoint(userLocation.coordinate, to : destPosition);

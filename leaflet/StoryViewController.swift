@@ -135,13 +135,14 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         }
                     });
                     
-                    var nextToVisit : FecPoi? = sortedByDistance.filter({ return $0.visit;
+                    var nextToVisit : FecPoi? = sortedByDistance.filter({
+                        return $0.visit;
                     }).first;
                     
                     if (nextToVisit == nil) {
-                        compassVC.setDestination(sortedByDistance.first!);
+                        compassVC.destination = sortedByDistance.first!;
                     } else {
-                        compassVC.setDestination(nextToVisit!);
+                        compassVC.destination = nextToVisit!;
                     }
                 }
                 break;
