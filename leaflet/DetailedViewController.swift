@@ -19,7 +19,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     
     private var allPois = [FecPoi]()
     private var stories = [Story]()
-    private var visited = 4
+    private var visited = LibraryAPI.sharedInstance.getVisitedCount()
     
     var selectedPoi:FecPoi? = nil
     
@@ -144,7 +144,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     }
     
     func checkRewards() {
-        if (visited > 3) {
+        if (visited > 1) {
             showReward()
         } else {
             dismissReward()
