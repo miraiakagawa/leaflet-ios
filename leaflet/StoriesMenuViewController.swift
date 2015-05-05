@@ -18,7 +18,6 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         var story = self.stories[indexPath.row]
         
         cell.storyBackgroundImg.image = UIImage(named: story.picture)
-        cell.overlay.hidden = true
         
         return cell
     }
@@ -32,7 +31,6 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         println("did select row: \(indexPath.row)")
         
         var cell = tableView.dequeueReusableCellWithIdentifier("story", forIndexPath: indexPath) as! StoriesListViewCell
-        cell.overlay.hidden = false
         
         self.selectedStory = stories[indexPath.row]
         self.performSegueWithIdentifier("toStory", sender: self)
@@ -50,7 +48,7 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
-        self.tableView.rowHeight = 100.0
+//        self.tableView.rowHeight = 100.0
         self.tableView.separatorStyle = .None
 
     }

@@ -71,6 +71,12 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         }
     }
     
+    @IBAction func savePoi(sender: AnyObject) {
+        if (selectedPoi != nil) {
+            LibraryAPI.sharedInstance.savePoi(selectedPoi!)
+        }
+    }
+    
     func createOverlay() {
         var name:String = "Fish"
         

@@ -20,7 +20,7 @@ class SideMenuTableViewController: UITableViewController {
         tableView.scrollsToTop = false
         
         // Preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = true
         
         tableView.selectRowAtIndexPath(NSIndexPath(forRow: selectedMenuItem, inSection: 0), animated: false, scrollPosition: .Middle)
     }

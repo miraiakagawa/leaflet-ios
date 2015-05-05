@@ -12,7 +12,6 @@ import UIKit
 class StoriesListViewCell: UITableViewCell {
     
     @IBOutlet weak var storyBackgroundImg: UIImageView!
-    @IBOutlet weak var overlay: UIVisualEffectView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -66,4 +66,11 @@ class LibraryAPI: NSObject {
         return nil
     }
     
+    func savePoi(poi: FecPoi) {
+        persistencyManager.savePoi(poi)
+    }
+    
+    func getSaved() -> [FecPoi] {
+        return persistencyManager.getSaved()
+    }
 }

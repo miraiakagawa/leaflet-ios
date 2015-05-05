@@ -47,7 +47,7 @@ class SaveForHomeViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.clipsToBounds = false
         
-        self.allSaved = LibraryAPI.sharedInstance.getPois()
+        self.allSaved = LibraryAPI.sharedInstance.getSaved()
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
