@@ -105,6 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 
                 let OKAction = UIAlertAction(title: "Learn More", style: .Default) { (action) in
                     self.displayDetailedView(selectedPoi!)
+                    LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
                 }
                 alert.addAction(OKAction)
 

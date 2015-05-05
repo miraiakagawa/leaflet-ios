@@ -73,4 +73,12 @@ class LibraryAPI: NSObject {
     func getSaved() -> [FecPoi] {
         return persistencyManager.getSaved()
     }
+    
+    func updateVisited(poi: FecPoi) {
+        persistencyManager.updateVisited(poi)
+    }
+    
+    func getVisitedCount() -> Int {
+        return persistencyManager.getVisitedCount()
+    }
 }
