@@ -33,6 +33,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         allPois = LibraryAPI.sharedInstance.getPois()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.barTintColor = UIColor(CGColor: self.storyColor)
+        self.navigationController?.navigationBar.translucent = false
         self.storyDescription.textContainerInset = UIEdgeInsetsMake(20, 20, 20, 20);
         self.storyDescription.text = storyDescriptionText
         self.storyDescription.scrollEnabled = false
