@@ -19,7 +19,7 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var poiTable: UITableView!
 
     private var allPois = [FecPoi]()
-    
+    private var visited = LibraryAPI.sharedInstance.getVisitedCount()
     
     var storyDescriptionText: String = ""
     var backgroundNavColor: UIColor = UIColor(hex: 0x61CE72)
@@ -38,13 +38,14 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.storyDescription.text = storyDescriptionText
         self.storyDescription.scrollEnabled = false
         self.storyDescription.font = GlobalConstants.textFont
+        visited = LibraryAPI.sharedInstance.getVisitedCount()
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
         self.tableView.separatorStyle = .None
         
-        self.progress = 0.5
+        self.progress = CGFloat(visited) / CGFloat(allPois.count)
         addCircleView()
         
         self.storyIcon.image = UIImage(named: self.storyIconPath)
