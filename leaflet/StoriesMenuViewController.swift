@@ -48,7 +48,7 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
-//        self.tableView.rowHeight = 100.0
+        self.tableView.rowHeight = 100.0
         self.tableView.separatorStyle = .None
 
     }
