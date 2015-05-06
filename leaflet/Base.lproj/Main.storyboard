@@ -510,38 +510,39 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-Cx-2Fl">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCC-uW-tST">
                                             <rect key="frame" x="570" y="10" width="25" height="25"/>
-                                            <color key="backgroundColor" red="0.23529411759999999" green="0.64705882349999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="WRW-JK-2WK"/>
-                                                <constraint firstAttribute="height" constant="25" id="aOZ-Ng-c1n"/>
+                                                <constraint firstAttribute="height" constant="25" id="E3U-on-VKa"/>
+                                                <constraint firstAttribute="width" constant="25" id="IWA-Sg-0cE"/>
                                             </constraints>
-                                        </imageView>
+                                            <state key="normal" title="Button" image="Cancel.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="hideHeader:" destination="ZSq-ZT-wIf" eventType="touchUpInside" id="zod-by-S4Q"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="L7I-Aa-M6f" secondAttribute="trailing" constant="30" id="0vc-LF-B08"/>
-                                        <constraint firstItem="L7I-Aa-M6f" firstAttribute="trailing" secondItem="tZQ-Cx-2Fl" secondAttribute="leading" id="4VN-XD-IRf"/>
-                                        <constraint firstItem="L7I-Aa-M6f" firstAttribute="leading" secondItem="tZQ-Cx-2Fl" secondAttribute="trailing" constant="-15" id="GlT-pJ-tPL"/>
+                                        <constraint firstItem="DCC-uW-tST" firstAttribute="top" secondItem="L7I-Aa-M6f" secondAttribute="top" constant="10" id="5Xp-mo-Tdm"/>
                                         <constraint firstItem="L7I-Aa-M6f" firstAttribute="top" secondItem="Kek-29-rYw" secondAttribute="topMargin" id="ICc-at-iz6"/>
+                                        <constraint firstItem="DCC-uW-tST" firstAttribute="leading" secondItem="L7I-Aa-M6f" secondAttribute="trailing" id="KJh-dA-d1P"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="L7I-Aa-M6f" secondAttribute="bottom" id="M1V-o3-IuS"/>
                                         <constraint firstAttribute="centerY" secondItem="L7I-Aa-M6f" secondAttribute="centerY" id="PKG-4v-pOJ"/>
                                         <constraint firstAttribute="centerX" secondItem="L7I-Aa-M6f" secondAttribute="centerX" id="SmU-SS-hf9"/>
-                                        <constraint firstItem="L7I-Aa-M6f" firstAttribute="top" secondItem="tZQ-Cx-2Fl" secondAttribute="bottom" constant="-7" id="ZnU-Il-WxN"/>
-                                        <constraint firstItem="L7I-Aa-M6f" firstAttribute="top" secondItem="tZQ-Cx-2Fl" secondAttribute="top" constant="-10" id="plU-Yg-yiu"/>
                                         <constraint firstItem="L7I-Aa-M6f" firstAttribute="top" secondItem="Kek-29-rYw" secondAttribute="top" id="sNp-uD-qeT"/>
                                         <constraint firstAttribute="bottom" secondItem="L7I-Aa-M6f" secondAttribute="bottom" id="yR2-ze-7Gx"/>
                                         <constraint firstItem="L7I-Aa-M6f" firstAttribute="leading" secondItem="Kek-29-rYw" secondAttribute="leading" id="zKb-gu-0cK"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="GlT-pJ-tPL"/>
                                             <exclude reference="ICc-at-iz6"/>
                                             <exclude reference="M1V-o3-IuS"/>
                                             <exclude reference="PKG-4v-pOJ"/>
                                             <exclude reference="SmU-SS-hf9"/>
-                                            <exclude reference="ZnU-Il-WxN"/>
                                             <exclude reference="yR2-ze-7Gx"/>
                                         </mask>
                                     </variation>
@@ -974,6 +975,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         </scene>
     </scenes>
     <resources>
+        <image name="Cancel.png" width="201" height="200"/>
         <image name="Compass.png" width="400" height="400"/>
         <image name="Save For Home Button.png" width="201" height="200"/>
         <image name="Save for Home Outline.png" width="201" height="200"/>
@@ -985,7 +987,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NYu-mA-wCA"/>
+        <segue reference="BYd-BC-rHW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

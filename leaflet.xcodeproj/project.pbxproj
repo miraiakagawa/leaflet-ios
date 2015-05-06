@@ -74,6 +74,7 @@
 		DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */; };
 		DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD800601AE5263000AFA3D2 /* rain-veil.jpg */; };
 		DBDB6FD81AFA614800059D3F /* Saved for Home.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FD71AFA614800059D3F /* Saved for Home.png */; };
+		DBDB6FDA1AFA65B000059D3F /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FD91AFA65B000059D3F /* Cancel.png */; };
 		DBDBAEDE1AF857870091D9FA /* ExploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAED91AF857870091D9FA /* ExploreIcon.png */; };
 		DBDBAEDF1AF857870091D9FA /* RewardsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */; };
 		DBDBAEE01AF857870091D9FA /* SaveforHomeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */; };
@@ -167,6 +168,7 @@
 		DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
 		DBD800601AE5263000AFA3D2 /* rain-veil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rain-veil.jpg"; sourceTree = "<group>"; };
 		DBDB6FD71AFA614800059D3F /* Saved for Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saved for Home.png"; sourceTree = "<group>"; };
+		DBDB6FD91AFA65B000059D3F /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel.png; sourceTree = "<group>"; };
 		DBDBAED91AF857870091D9FA /* ExploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExploreIcon.png; sourceTree = "<group>"; };
 		DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RewardsIcon.png; sourceTree = "<group>"; };
 		DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveforHomeIcon.png; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				DB7C0D501AEB60870050716A /* EnergyHexagon.png */,
 				DB7C0D511AEB60870050716A /* ExploreHexagon.png */,
 				DB81F1031AF95B61009EDBBB /* fec_square.jpg */,
+				DBDB6FD91AFA65B000059D3F /* Cancel.png */,
 				DB7C0D521AEB60870050716A /* HeatHexagon.png */,
 				DBBA3EBF1AF96BC2009ABEA3 /* Compass.png */,
 				DB7C0D531AEB60870050716A /* PlantsHexagon.png */,
@@ -511,6 +514,7 @@
 				DB7C0D571AEB60870050716A /* HeatHexagon.png in Resources */,
 				ABFB0A491AF40F180030384D /* pointer.png in Resources */,
 				DBDBAEDF1AF857870091D9FA /* RewardsIcon.png in Resources */,
+				DBDB6FDA1AFA65B000059D3F /* Cancel.png in Resources */,
 				DB6526751AE75FA1002C8CCA /* Explore.png in Resources */,
 				DB6526741AE75FA1002C8CCA /* Energy.png in Resources */,
 				DBDBAEE21AF857870091D9FA /* StoriesIcon.png in Resources */,

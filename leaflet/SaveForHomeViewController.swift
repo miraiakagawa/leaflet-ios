@@ -16,6 +16,10 @@ class SaveForHomeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     
+    @IBAction func hideHeader(sender: AnyObject) {
+        self.tableView.tableHeaderView = nil
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("saved") as? SaveForHomeListViewCell ?? SaveForHomeListViewCell()
         var saved = self.allSaved[indexPath.row]
@@ -56,6 +60,7 @@ class SaveForHomeViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.dataSource = self
         self.tableView.rowHeight = 60.0
         self.tableView.backgroundColor = UIColor(hex: GlobalConstants.lightGray)
+        self.tableView.tableHeaderView = headerView
         
         self.headerView.backgroundColor = UIColor(hex: GlobalConstants.washedOutGreen)
         self.textInstructions.backgroundColor = UIColor.clearColor()
