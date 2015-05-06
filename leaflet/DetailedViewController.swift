@@ -43,6 +43,8 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         
         createOverlay()
         checkRewards()
+        
+        LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
     }
     
     override func didReceiveMemoryWarning() {
