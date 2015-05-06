@@ -14,12 +14,14 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var overlay: UIView!
+    @IBOutlet weak var button: UIButton!
     
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
     private var allPois = [FecPoi]()
     private var stories = [Story]()
     private var visited = LibraryAPI.sharedInstance.getVisitedCount()
+    private var saved = [FecPoi]()
     
     var selectedPoi:FecPoi? = nil
     
@@ -30,6 +32,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
 
         stories = LibraryAPI.sharedInstance.getStories()
         allPois = LibraryAPI.sharedInstance.getPois()
+        saved = LibraryAPI.sharedInstance.getSaved()
         if (selectedPoi == nil) {
             selectedPoi = allPois[0]
         }
@@ -37,6 +40,10 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         navBar.title = selectedPoi?.title
         textView.text = selectedPoi?.content
         imageView.image = selectedPoi?.image
+        
+        if contains(saved, selectedPoi!) {
+            self.button.setImage(UIImage(named: "Saved For Home.png"), forState: UIControlState.Normal)
+        }
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
@@ -74,6 +81,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     @IBAction func savePoi(sender: AnyObject) {
         if (selectedPoi != nil) {
             LibraryAPI.sharedInstance.savePoi(selectedPoi!)
+            self.button.setImage(UIImage(named: "Saved For Home.png"), forState: UIControlState.Normal)
         }
     }
     

@@ -961,6 +961,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="button" destination="2u1-rU-GGh" id="MSS-wS-KnE"/>
                         <outlet property="imageView" destination="b85-44-dJF" id="MPI-G8-2Uy"/>
                         <outlet property="navBar" destination="nng-Yp-4MM" id="D3U-Nt-aMt"/>
                         <outlet property="overlay" destination="lkT-EM-yLV" id="dr2-Dk-h7S"/>

@@ -73,6 +73,7 @@
 		DBD304AE1AF813F20001747D /* SaveForHomeListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD304AD1AF813F20001747D /* SaveForHomeListViewCell.swift */; };
 		DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */; };
 		DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DBD800601AE5263000AFA3D2 /* rain-veil.jpg */; };
+		DBDB6FD81AFA614800059D3F /* Saved for Home.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FD71AFA614800059D3F /* Saved for Home.png */; };
 		DBDBAEDE1AF857870091D9FA /* ExploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAED91AF857870091D9FA /* ExploreIcon.png */; };
 		DBDBAEDF1AF857870091D9FA /* RewardsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */; };
 		DBDBAEE01AF857870091D9FA /* SaveforHomeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */; };
@@ -165,6 +166,7 @@
 		DBD304AD1AF813F20001747D /* SaveForHomeListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveForHomeListViewCell.swift; sourceTree = "<group>"; };
 		DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tos_beep.caf; sourceTree = "<group>"; };
 		DBD800601AE5263000AFA3D2 /* rain-veil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rain-veil.jpg"; sourceTree = "<group>"; };
+		DBDB6FD71AFA614800059D3F /* Saved for Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saved for Home.png"; sourceTree = "<group>"; };
 		DBDBAED91AF857870091D9FA /* ExploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExploreIcon.png; sourceTree = "<group>"; };
 		DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RewardsIcon.png; sourceTree = "<group>"; };
 		DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveforHomeIcon.png; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */,
 				DBDBAEDC1AF857870091D9FA /* StickerCamIcon.png */,
 				DB81F1011AF951F8009EDBBB /* Save For Home Button.png */,
+				DBDB6FD71AFA614800059D3F /* Saved for Home.png */,
 				DBDBAEDD1AF857870091D9FA /* StoriesIcon.png */,
 				DB7C0D541AEB60870050716A /* WaterHexagon.png */,
 				DBD800601AE5263000AFA3D2 /* rain-veil.jpg */,
@@ -522,6 +525,7 @@
 				DB6526761AE75FA1002C8CCA /* Heat.png in Resources */,
 				DBDBAEE11AF857870091D9FA /* StickerCamIcon.png in Resources */,
 				DBBA3EC01AF96BC2009ABEA3 /* Compass.png in Resources */,
+				DBDB6FD81AFA614800059D3F /* Saved for Home.png in Resources */,
 				DB7C0D591AEB60870050716A /* WaterHexagon.png in Resources */,
 				ABFB0A4A1AF40F180030384D /* trail.png in Resources */,
 				DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */,
