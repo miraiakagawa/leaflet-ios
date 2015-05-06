@@ -79,6 +79,13 @@ class LibraryAPI: NSObject {
     }
     
     func getVisitedCount() -> Int {
-        return persistencyManager.getVisitedCount()
+        var allPois = persistencyManager.getPois()
+        var i = 0
+        for poi in allPois {
+            if (poi.visit != nil && poi.visit!) {
+                i++
+            }
+        }
+        return i
     }
 }
