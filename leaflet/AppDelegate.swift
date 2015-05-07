@@ -124,11 +124,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func displayDetailedView(selectedPoi: FecPoi) {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
         
-        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
-        vc.selectedPoi = selectedPoi
+        var storiesMenuViewController: StoriesMenuViewController = mainStoryboard.instantiateViewControllerWithIdentifier("storyMenuView") as! StoriesMenuViewController
+    
+//        var vc: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+        
+        var detailedViewController: DetailedViewController = mainStoryboard.instantiateViewControllerWithIdentifier("detailedView") as! DetailedViewController
+        detailedViewController.selectedPoi = selectedPoi
         
         if let rvc = self.window?.rootViewController as? SideBarNavigationViewController {
-            rvc.setContentViewController(vc)
+            rvc.setContentViewController(storiesMenuViewController)
+            rvc.pushViewController(detailedViewController, animated: true)
         }
     }
     
