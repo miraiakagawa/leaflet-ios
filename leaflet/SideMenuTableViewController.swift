@@ -9,7 +9,12 @@
 import UIKit
 
 class SideMenuTableViewController: UITableViewController {
+    
     var selectedMenuItem : Int = 0
+
+    let menuItems = ["", "Explore", "Stories", "Rewards", "At Home"]
+    let icons = ["", "ExploreMenuIcon", "StoriesMenuIcon", "RewardsMenuIcon", "AtHomeMenuIcon"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +48,6 @@ class SideMenuTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var menuItems = ["", "Explore", "Stories", "Rewards", "At Home"]
-        var icons = ["", "ExploreIcon.png", "StoriesIcon.png", "RewardsIcon.png", "SaveForHomeIcon.png"]
         
         var cell = tableView.dequeueReusableCellWithIdentifier("CELL") as? UITableViewCell
         
@@ -72,11 +75,6 @@ class SideMenuTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-//        println("did select row: \(indexPath.row)")
-        
-//        if (indexPath.row == selectedMenuItem) {
-//            return
-//        }
         selectedMenuItem = indexPath.row
 
         //Present new view controller

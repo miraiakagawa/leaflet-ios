@@ -2,18 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "List 44.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "List 44-1.png"
+      "filename" : "PlantsHexagon.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "List 66.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -47,36 +47,36 @@ class PersistencyManager: NSObject {
                 content: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
                 pointsOfInterest: [],
                 color: UIColor(hex: 0x2EA9FC).CGColor,
-                picture: "Water.png",
-                storyIcon: "WaterHexagon.png"
+                picture: "WaterBanner",
+                storyIcon: "WaterHexagon"
             ),
             Story(id: 2, title: "Energy",
                 content: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
                 pointsOfInterest: [],
                 color: UIColor.orangeColor().CGColor,
-                picture: "Energy.png",
-                storyIcon: "EnergyHexagon.png"
+                picture: "EnergyBanner",
+                storyIcon: "EnergyHexagon"
             ),
             Story(id: 3, title: "Heat",
                 content: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
                 pointsOfInterest: [],
                 color: UIColor.redColor().CGColor,
-                picture: "Heat.png",
-                storyIcon: "HeatHexagon.png"
+                picture: "HeatBanner",
+                storyIcon: "HeatHexagon"
             ),
             Story(id: 4, title: "Plants",
                 content: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
                 pointsOfInterest: [],
                 color: UIColor.greenColor().CGColor,
-                picture: "Plants.png",
-                storyIcon: "PlantsHexagon.png"
+                picture: "PlantsBanner",
+                storyIcon: "PlantsHexagon"
             ),
             Story(id: 5, title: "Explore",
                 content: "Both our wellness and that of our environment depends greatly on the quality of water available to us. This means we need to take great care to protect our ground water as well as efficiently collect rain water. The center has various practical as well as beautiful features revolving around our water.",
                 pointsOfInterest: [],
                 color: UIColor.grayColor().CGColor,
-                picture: "Explore.png",
-                storyIcon: "ExploreHexagon.png"
+                picture: "ExploreBanner",
+                storyIcon: "ExploreHexagon"
             )
         ]
         

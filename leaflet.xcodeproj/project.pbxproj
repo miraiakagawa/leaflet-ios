@@ -31,17 +31,7 @@
 		DB4D5BA31AE73874009AF66F /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BA21AE73874009AF66F /* UIColorExtensions.swift */; };
 		DB4D5BAD1AE73C37009AF66F /* SideMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAC1AE73C37009AF66F /* SideMenuNavigationViewController.swift */; };
 		DB4D5BAF1AE73C7E009AF66F /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */; };
-		DB6526741AE75FA1002C8CCA /* Energy.png in Resources */ = {isa = PBXBuildFile; fileRef = DB65266F1AE75FA1002C8CCA /* Energy.png */; };
-		DB6526751AE75FA1002C8CCA /* Explore.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526701AE75FA1002C8CCA /* Explore.png */; };
-		DB6526761AE75FA1002C8CCA /* Heat.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526711AE75FA1002C8CCA /* Heat.png */; };
-		DB6526771AE75FA1002C8CCA /* Plants.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526721AE75FA1002C8CCA /* Plants.png */; };
-		DB6526781AE75FA1002C8CCA /* Water.png in Resources */ = {isa = PBXBuildFile; fileRef = DB6526731AE75FA1002C8CCA /* Water.png */; };
 		DB65267A1AE76D59002C8CCA /* RBResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6526791AE76D59002C8CCA /* RBResizer.swift */; };
-		DB7C0D551AEB60870050716A /* EnergyHexagon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7C0D501AEB60870050716A /* EnergyHexagon.png */; };
-		DB7C0D561AEB60870050716A /* ExploreHexagon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7C0D511AEB60870050716A /* ExploreHexagon.png */; };
-		DB7C0D571AEB60870050716A /* HeatHexagon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7C0D521AEB60870050716A /* HeatHexagon.png */; };
-		DB7C0D581AEB60870050716A /* PlantsHexagon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7C0D531AEB60870050716A /* PlantsHexagon.png */; };
-		DB7C0D591AEB60870050716A /* WaterHexagon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB7C0D541AEB60870050716A /* WaterHexagon.png */; };
 		DB7F8A8F1AEB4B5800DC9DF8 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7F8A8E1AEB4B5800DC9DF8 /* KYCircularProgress.swift */; };
 		DB7F8A951AEB56E900DC9DF8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7F8A941AEB56E900DC9DF8 /* CircleView.swift */; };
 		DB81F1021AF951F8009EDBBB /* Save For Home Button.png in Resources */ = {isa = PBXBuildFile; fileRef = DB81F1011AF951F8009EDBBB /* Save For Home Button.png */; };
@@ -77,11 +67,6 @@
 		DBDB6FDC1AFAF71700059D3F /* Compass Outline.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FDB1AFAF71700059D3F /* Compass Outline.png */; };
 		DBDB6FDE1AFAF71C00059D3F /* Compass Button.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FDD1AFAF71C00059D3F /* Compass Button.png */; };
 		DBDB6FE01AFAF74500059D3F /* Saved for Home.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDB6FDF1AFAF74500059D3F /* Saved for Home.png */; };
-		DBDBAEDE1AF857870091D9FA /* ExploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAED91AF857870091D9FA /* ExploreIcon.png */; };
-		DBDBAEDF1AF857870091D9FA /* RewardsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */; };
-		DBDBAEE01AF857870091D9FA /* SaveforHomeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */; };
-		DBDBAEE11AF857870091D9FA /* StickerCamIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDC1AF857870091D9FA /* StickerCamIcon.png */; };
-		DBDBAEE21AF857870091D9FA /* StoriesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DBDBAEDD1AF857870091D9FA /* StoriesIcon.png */; };
 		DBE150491AD5E65200DB03AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE150481AD5E65200DB03AF /* MenuViewController.swift */; };
 		DBF48C281AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */; };
 		DBFB6C581AE969B200110A16 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB6C571AE969B200110A16 /* SWRevealViewController.m */; };
@@ -122,17 +107,7 @@
 		DB4D5BA21AE73874009AF66F /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DB4D5BAC1AE73C37009AF66F /* SideMenuNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationViewController.swift; sourceTree = "<group>"; };
 		DB4D5BAE1AE73C7E009AF66F /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
-		DB65266F1AE75FA1002C8CCA /* Energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Energy.png; sourceTree = "<group>"; };
-		DB6526701AE75FA1002C8CCA /* Explore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explore.png; sourceTree = "<group>"; };
-		DB6526711AE75FA1002C8CCA /* Heat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Heat.png; sourceTree = "<group>"; };
-		DB6526721AE75FA1002C8CCA /* Plants.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plants.png; sourceTree = "<group>"; };
-		DB6526731AE75FA1002C8CCA /* Water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water.png; sourceTree = "<group>"; };
 		DB6526791AE76D59002C8CCA /* RBResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBResizer.swift; sourceTree = "<group>"; };
-		DB7C0D501AEB60870050716A /* EnergyHexagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EnergyHexagon.png; sourceTree = "<group>"; };
-		DB7C0D511AEB60870050716A /* ExploreHexagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExploreHexagon.png; sourceTree = "<group>"; };
-		DB7C0D521AEB60870050716A /* HeatHexagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeatHexagon.png; sourceTree = "<group>"; };
-		DB7C0D531AEB60870050716A /* PlantsHexagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlantsHexagon.png; sourceTree = "<group>"; };
-		DB7C0D541AEB60870050716A /* WaterHexagon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WaterHexagon.png; sourceTree = "<group>"; };
 		DB7F8A8E1AEB4B5800DC9DF8 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		DB7F8A941AEB56E900DC9DF8 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DB81F1011AF951F8009EDBBB /* Save For Home Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Save For Home Button.png"; sourceTree = "<group>"; };
@@ -173,11 +148,6 @@
 		DBDB6FDB1AFAF71700059D3F /* Compass Outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass Outline.png"; sourceTree = "<group>"; };
 		DBDB6FDD1AFAF71C00059D3F /* Compass Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass Button.png"; sourceTree = "<group>"; };
 		DBDB6FDF1AFAF74500059D3F /* Saved for Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saved for Home.png"; sourceTree = "<group>"; };
-		DBDBAED91AF857870091D9FA /* ExploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExploreIcon.png; sourceTree = "<group>"; };
-		DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RewardsIcon.png; sourceTree = "<group>"; };
-		DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SaveforHomeIcon.png; sourceTree = "<group>"; };
-		DBDBAEDC1AF857870091D9FA /* StickerCamIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StickerCamIcon.png; sourceTree = "<group>"; };
-		DBDBAEDD1AF857870091D9FA /* StoriesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StoriesIcon.png; sourceTree = "<group>"; };
 		DBE150481AD5E65200DB03AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DBF48C271AE84E6600B2D63C /* StoryPointsOfInterestListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryPointsOfInterestListViewCell.swift; sourceTree = "<group>"; };
 		DBFB6C561AE969B200110A16 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -349,30 +319,15 @@
 		DBC30D601AD0CEF800FFB42D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DB7C0D501AEB60870050716A /* EnergyHexagon.png */,
-				DB7C0D511AEB60870050716A /* ExploreHexagon.png */,
 				DB81F1031AF95B61009EDBBB /* fec_square.jpg */,
 				DBDB6FD91AFA65B000059D3F /* Cancel.png */,
-				DB7C0D521AEB60870050716A /* HeatHexagon.png */,
 				DBDB6FDB1AFAF71700059D3F /* Compass Outline.png */,
 				DBDB6FDD1AFAF71C00059D3F /* Compass Button.png */,
 				DBBA3EBF1AF96BC2009ABEA3 /* Compass.png */,
-				DB7C0D531AEB60870050716A /* PlantsHexagon.png */,
-				DBDBAED91AF857870091D9FA /* ExploreIcon.png */,
-				DBDBAEDA1AF857870091D9FA /* RewardsIcon.png */,
 				DBDB6FDF1AFAF74500059D3F /* Saved for Home.png */,
 				DB81F1051AF95D83009EDBBB /* Save for Home Outline.png */,
-				DBDBAEDB1AF857870091D9FA /* SaveforHomeIcon.png */,
-				DBDBAEDC1AF857870091D9FA /* StickerCamIcon.png */,
 				DB81F1011AF951F8009EDBBB /* Save For Home Button.png */,
-				DBDBAEDD1AF857870091D9FA /* StoriesIcon.png */,
-				DB7C0D541AEB60870050716A /* WaterHexagon.png */,
 				DBD800601AE5263000AFA3D2 /* rain-veil.jpg */,
-				DB65266F1AE75FA1002C8CCA /* Energy.png */,
-				DB6526701AE75FA1002C8CCA /* Explore.png */,
-				DB6526711AE75FA1002C8CCA /* Heat.png */,
-				DB6526721AE75FA1002C8CCA /* Plants.png */,
-				DB6526731AE75FA1002C8CCA /* Water.png */,
 				DBD4DD8A1AD5CA0400B508FC /* tos_beep.caf */,
 				DBC30D611AD0CEF800FFB42D /* Info.plist */,
 			);
@@ -515,36 +470,21 @@
 			files = (
 				DBDB6FDC1AFAF71700059D3F /* Compass Outline.png in Resources */,
 				DBC30D6A1AD0CEF800FFB42D /* Main.storyboard in Resources */,
-				DBDBAEDE1AF857870091D9FA /* ExploreIcon.png in Resources */,
-				DB6526781AE75FA1002C8CCA /* Water.png in Resources */,
 				AB3767F81AF2FEE8008D73BF /* GGCompassNavView.xib in Resources */,
-				DB7C0D571AEB60870050716A /* HeatHexagon.png in Resources */,
 				ABFB0A491AF40F180030384D /* pointer.png in Resources */,
-				DBDBAEDF1AF857870091D9FA /* RewardsIcon.png in Resources */,
 				DBDB6FE01AFAF74500059D3F /* Saved for Home.png in Resources */,
 				DBDB6FDA1AFA65B000059D3F /* Cancel.png in Resources */,
-				DB6526751AE75FA1002C8CCA /* Explore.png in Resources */,
-				DB6526741AE75FA1002C8CCA /* Energy.png in Resources */,
-				DBDBAEE21AF857870091D9FA /* StoriesIcon.png in Resources */,
 				DB81F1061AF95D83009EDBBB /* Save for Home Outline.png in Resources */,
 				DBC30D6F1AD0CEF800FFB42D /* LaunchScreen.xib in Resources */,
 				DB81F1041AF95B61009EDBBB /* fec_square.jpg in Resources */,
-				DB7C0D551AEB60870050716A /* EnergyHexagon.png in Resources */,
 				ABFB0A481AF40F180030384D /* compassPOIDot.png in Resources */,
-				DB6526771AE75FA1002C8CCA /* Plants.png in Resources */,
-				DBDBAEE01AF857870091D9FA /* SaveforHomeIcon.png in Resources */,
 				DBC30D6C1AD0CEF800FFB42D /* Images.xcassets in Resources */,
-				DB6526761AE75FA1002C8CCA /* Heat.png in Resources */,
-				DBDBAEE11AF857870091D9FA /* StickerCamIcon.png in Resources */,
 				DBBA3EC01AF96BC2009ABEA3 /* Compass.png in Resources */,
 				DBDB6FDE1AFAF71C00059D3F /* Compass Button.png in Resources */,
-				DB7C0D591AEB60870050716A /* WaterHexagon.png in Resources */,
 				ABFB0A4A1AF40F180030384D /* trail.png in Resources */,
 				DBD800611AE5263000AFA3D2 /* rain-veil.jpg in Resources */,
 				DB81F1021AF951F8009EDBBB /* Save For Home Button.png in Resources */,
-				DB7C0D581AEB60870050716A /* PlantsHexagon.png in Resources */,
 				DBD4DD8B1AD5CA0400B508FC /* tos_beep.caf in Resources */,
-				DB7C0D561AEB60870050716A /* ExploreHexagon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

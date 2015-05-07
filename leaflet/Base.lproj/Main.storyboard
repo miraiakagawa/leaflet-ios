@@ -914,42 +914,23 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lkT-EM-yLV">
-                                <rect key="frame" x="-39" y="-37" width="19" height="58"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jns-8U-vqO" firstAttribute="top" secondItem="lkT-EM-yLV" secondAttribute="bottom" id="2GI-wP-oLS"/>
-                            <constraint firstItem="lkT-EM-yLV" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" id="3a1-Yz-TeN"/>
                             <constraint firstItem="aLW-fz-lUh" firstAttribute="leading" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-584" id="3v1-hx-xiW"/>
                             <constraint firstItem="2eZ-Tm-wEf" firstAttribute="bottom" secondItem="b85-44-dJF" secondAttribute="bottom" constant="-15" id="5JP-NH-XGS"/>
-                            <constraint firstItem="lkT-EM-yLV" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="5az-PF-Q8i"/>
                             <constraint firstItem="aLW-fz-lUh" firstAttribute="top" secondItem="b85-44-dJF" secondAttribute="bottom" constant="10" id="5ed-p7-neo"/>
                             <constraint firstItem="aLW-fz-lUh" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" id="77u-Ag-Q69"/>
                             <constraint firstItem="aLW-fz-lUh" firstAttribute="trailing" secondItem="Tmm-BH-rkz" secondAttribute="trailingMargin" id="7CT-an-6zJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lkT-EM-yLV" secondAttribute="trailing" id="7uz-kX-qBx"/>
                             <constraint firstItem="b85-44-dJF" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="81A-aD-kRF"/>
                             <constraint firstItem="jns-8U-vqO" firstAttribute="top" secondItem="aLW-fz-lUh" secondAttribute="bottom" id="Aae-J5-bNH"/>
                             <constraint firstItem="b85-44-dJF" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="AkA-zR-ZyJ"/>
-                            <constraint firstItem="lkT-EM-yLV" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="MvZ-9a-nz2"/>
                             <constraint firstItem="b85-44-dJF" firstAttribute="leading" secondItem="2eZ-Tm-wEf" secondAttribute="leading" constant="-15" id="NuW-pM-EHe"/>
                             <constraint firstItem="b85-44-dJF" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" constant="-16" id="d5Z-Sp-XFv"/>
                             <constraint firstItem="2u1-rU-GGh" firstAttribute="bottom" secondItem="b85-44-dJF" secondAttribute="bottom" constant="-15" id="eu3-KA-P3g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-16" id="fZh-oi-3YQ"/>
                             <constraint firstItem="2u1-rU-GGh" firstAttribute="trailing" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-15" id="m8H-I2-RI9"/>
-                            <constraint firstItem="jns-8U-vqO" firstAttribute="top" secondItem="lkT-EM-yLV" secondAttribute="bottom" id="wha-sh-YML"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3a1-Yz-TeN"/>
-                                <exclude reference="5az-PF-Q8i"/>
-                                <exclude reference="7uz-kX-qBx"/>
-                                <exclude reference="MvZ-9a-nz2"/>
-                                <exclude reference="2GI-wP-oLS"/>
-                                <exclude reference="wha-sh-YML"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem image="back" id="gQa-M0-caC">
@@ -968,7 +949,6 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                         <outlet property="button" destination="2u1-rU-GGh" id="MSS-wS-KnE"/>
                         <outlet property="imageView" destination="b85-44-dJF" id="MPI-G8-2Uy"/>
                         <outlet property="navBar" destination="nng-Yp-4MM" id="D3U-Nt-aMt"/>
-                        <outlet property="overlay" destination="lkT-EM-yLV" id="dr2-Dk-h7S"/>
                         <outlet property="textView" destination="aLW-fz-lUh" id="Xcj-KG-dCJ"/>
                     </connections>
                 </viewController>
@@ -991,8 +971,8 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="a8A-UZ-Wcs"/>
         <segue reference="ixy-0Y-gts"/>
-        <segue reference="NYu-mA-wCA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

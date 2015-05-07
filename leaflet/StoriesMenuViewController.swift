@@ -28,8 +28,6 @@ class StoriesMenuViewController: UITableViewController, ENSideMenuDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        println("did select row: \(indexPath.row)")
-        
         var cell = tableView.dequeueReusableCellWithIdentifier("story", forIndexPath: indexPath) as! StoriesListViewCell
         
         self.selectedStory = stories[indexPath.row]
