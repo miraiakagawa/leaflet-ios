@@ -888,7 +888,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c19-Tj-JAq" kind="custom" identifier="toCompassViewFromPoi" customClass="SWRevealViewControllerSeguePushController" id="pkW-gl-GOD"/>
+                                    <segue destination="c19-Tj-JAq" kind="show" identifier="toCompassViewFromPoi" id="ixy-0Y-gts"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2u1-rU-GGh">
@@ -991,8 +991,8 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BYd-BC-rHW"/>
-        <segue reference="pkW-gl-GOD"/>
+        <segue reference="ixy-0Y-gts"/>
+        <segue reference="NYu-mA-wCA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
