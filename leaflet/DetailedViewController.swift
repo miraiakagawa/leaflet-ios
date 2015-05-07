@@ -69,6 +69,12 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
                 println("end of story")
             }
         }
+        
+        if segue.identifier == "toCompassViewFromPoi" {
+            if let var compassVC = segue.destinationViewController as? GGCompassViewController {
+                compassVC.destination = selectedPoi!
+            }
+        }
     }
     
     @IBAction func backButtonAction(sender: AnyObject) {
