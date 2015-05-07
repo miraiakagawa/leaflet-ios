@@ -12,7 +12,11 @@ import Darwin
 
 class GGCompass : NSObject {
     
-    var destination : CLLocationCoordinate2D?;
+//    var destination : CLLocationCoordinate2D?;
+    
+    let TO_RAD = M_PI / 180
+    let TO_DEG = 180 / M_PI
+    let R = 3959.0 * 5280.0 // Radius of the earth in feet
     
     override init() {
         super.init();
@@ -20,32 +24,29 @@ class GGCompass : NSObject {
     
     init(destination : CLLocationCoordinate2D) {
         super.init();
-        self.destination = destination;
+//        self.destination = destination;
     }
     
-    func directionAndDistanceToDestination(userLocation : CLLocation) ->
-                                          (CLLocationDegrees, CLLocationDistance) {
-        var heading = 0.0;
-        var distance = 0.0;
-        
-        if let destPosition = destination {
-            // Helpful constants
-            distance = distanceBetweenPoints(userLocation.coordinate, point2: destPosition);
-            heading = headingFromPointToPoint(userLocation.coordinate, to : destPosition);
-        }
-        
-        return (heading, distance);
-    }
+//    func directionAndDistanceToDestination(userLocation : CLLocation) ->
+//                                          (CLLocationDegrees, CLLocationDistance) {
+//        var heading = 0.0;
+//        var distance = 0.0;
+//        
+//        if let destPosition = destination {
+//            // Helpful constants
+//            distance = distanceBetweenPoints(userLocation.coordinate, point2: destPosition);
+//            heading = headingFromPointToPoint(userLocation.coordinate, to : destPosition);
+//        }
+//        
+//        return (heading, distance);
+//    }
     
-    func distanceBetweenPoints(point1 : CLLocationCoordinate2D,
-                               point2 : CLLocationCoordinate2D) -> Double {
-        let TO_RAD = M_PI / 180;
-        let R = 3959.0 * 5280.0 // Radius of the earth in feet
+    func distanceBetweenPoints(point1: CLLocation, point2: CLLocation) -> Double {
 
-        let lat1 = point1.latitude;
-        let long1 = point1.longitude;
-        let lat2 = point2.latitude;
-        let long2 = point2.longitude;
+        let lat1 = point1.coordinate.latitude;
+        let long1 = point1.coordinate.longitude;
+        let lat2 = point2.coordinate.latitude;
+        let long2 = point2.coordinate.longitude;
 
         // Calculate distance between two lat, long points
         var phi1 = lat1 * TO_RAD;
@@ -61,16 +62,14 @@ class GGCompass : NSObject {
         return R * c;
     }
     
-    func headingFromPointToPoint(from : CLLocationCoordinate2D, to : CLLocationCoordinate2D) -> CLLocationDirection {
-        let TO_RAD = M_PI / 180;
-        let TO_DEG = 180 / M_PI;
+    func headingFromPointToPoint(from: CLLocation, to: CLLocation) -> CLLocationDirection {
         
         // Set up constants in mathemtical form
-        let phi1 = from.latitude * TO_RAD;
-        let phi2 = to.latitude * TO_RAD;
+        let phi1 = from.coordinate.latitude * TO_RAD;
+        let phi2 = to.coordinate.latitude * TO_RAD;
         
-        let lambda1 = from.longitude * TO_RAD;
-        let lambda2 = to.longitude * TO_RAD;
+        let lambda1 = from.coordinate.longitude * TO_RAD;
+        let lambda2 = to.coordinate.longitude * TO_RAD;
     
         let y = sin(lambda2 - lambda1) * cos(phi2);
         let x = cos(phi1)*sin(phi2) - sin(phi1)*cos(phi2)*cos(lambda2 - lambda1);

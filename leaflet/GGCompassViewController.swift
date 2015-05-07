@@ -14,7 +14,11 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
     var locationManager: CLLocationManager!
     var compass : GGCompass!
     var compassView : GGCompassNavView!;
-    var destination : FecPoi?;
+//    var destination : FecPoi?;
+    var destination: CLLocation?
+    
+    var mostRecentHeading: CLHeading?
+    var mostRecentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +30,17 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         
         // For Debugging in the simulator
         // 202000 Lucille Ave, Cupertino, CA
-//        let defaultDestination = CLLocation(latitude: 37.332334, longitude: -122.025143);
-//        self.compass.destination = defaultDestination.coordinate;
-//        self.compassView.destinationName = "20200 Lucille Ave";
+        let defaultDestination = CLLocation(latitude: 40.448942, longitude: -79.948149);
+//        let defaultDestination = CLLocation(latitude: 40.445835, longitude: -79.948833);
+//        self.compass.destination = defaultDestination;
+        self.compassView.destinationName = "Random Place";
+        destination = defaultDestination
 
         if (destination != nil) {
-            compassView.destinationImage = destination!.image;
-            compassView.destinationName = destination!.title;
+//            compassView.destinationImage = destination!.image;
+//            compassView.destinationName = destination!.title;
             
-            compass.destination = destination?.coordinate;
+//            compass.destination = destination?.coordinate;
         }
         
         startHeadAndLocationUpdates();
@@ -62,8 +68,6 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         
         locationManager.delegate = self;
         
-        NSLog("\(CLLocationManager.authorizationStatus())");
-        
         if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
             locationManager.requestAlwaysAuthorization();
         }
@@ -74,18 +78,28 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
+            mostRecentLocation = location
             // NSLog("Lat: \(location.coordinate.latitude), Long: \(location.coordinate.longitude)");
             
-            var (newDirection, newDistance) = compass.directionAndDistanceToDestination(location);
-            compassView.updateDirectionToDestination(newDirection);
-            compassView.updateDistanceToDestination(newDistance);
+//            var (newDirection, newDistance) = compass.directionAndDistanceToDestination(location);
+//            var destinationDistance = 
+//            compassView.updateDirectionToDestination(newDirection);
+//            compassView.updateDistanceToDestination(newDistance);
+            if (mostRecentHeading != nil) {
+                var destinationHeading = compass.headingFromPointToPoint(mostRecentLocation!, to: destination!)
+                compassView.updateCompassPointer(mostRecentHeading!.trueHeading, destinationHeading: destinationHeading)
+            }
+            
         }
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
         if let heading = newHeading {
-            // NSLog("Heading: \(heading)");
-            compassView.updateUsersDirection(heading.trueHeading);
+            mostRecentHeading = newHeading
+            if (mostRecentLocation != nil) {
+                var destinationHeading = compass.headingFromPointToPoint(mostRecentLocation!, to: destination!)
+                compassView.updateCompassPointer(mostRecentHeading!.trueHeading, destinationHeading: destinationHeading)
+            }
         }
     }
     

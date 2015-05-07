@@ -68,7 +68,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         
         if segue.identifier == "toCompassViewFromPoi" {
             if let var compassVC = segue.destinationViewController as? GGCompassViewController {
-                compassVC.destination = selectedPoi!
+//                compassVC.destination = selectedPoi!
             }
         }
         

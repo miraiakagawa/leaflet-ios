@@ -142,9 +142,9 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }).first;
                     
                     if (nextToVisit == nil) {
-                        compassVC.destination = sortedByDistance.first!;
+//                        compassVC.destination = sortedByDistance.first!;
                     } else {
-                        compassVC.destination = nextToVisit!;
+//                        compassVC.destination = nextToVisit!;
                     }
                 }
                 break;

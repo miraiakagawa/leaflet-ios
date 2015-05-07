@@ -91,11 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if notification.userInfo != nil && notification.userInfo!["poiId"] != nil {
             let poiId:Int = notification.userInfo!["poiId"] as! Int
             var selectedPoi = LibraryAPI.sharedInstance.getPoiById(poiId)
-            NSLog("POI Id is: \(poiId)")
             
             switch application.applicationState {
             case UIApplicationState.Active:
-                NSLog("Active")
                 var title = "Hey there, it seems like  you are near the " + selectedPoi!.title + "!"
                 var alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                 let cancelAction = UIAlertAction(title: "not now", style: .Cancel) { (action) in

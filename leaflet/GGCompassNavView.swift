@@ -36,41 +36,47 @@ class GGCompassNavView: UIView {
         return (newView as! GGCompassNavView);
     }
     
-    func updateDirectionToDestination(newDirection : CLLocationDirection) {
-        let radius = 70.0;
-        let TO_RAD = M_PI/180;
+    /**
+    * @args:
+    *   deviceHeading: the angle from due North of the orientation of the Device
+    *   destinationHeading: the angle from due North of the Destination from current location
+    *
+    * Updates the compass angle on the screen based on the difference between the two angles.
+    *
+    */
+    func updateCompassPointer(deviceHeading : CLLocationDirection, destinationHeading : CLLocationDirection) {
+        let radius = 70.0
+        let TO_RAD = M_PI/180
         
-        var newX : Double;
-        var newY : Double;
-        var newRotation : Double = newDirection;
+        var newX : Double
+        var newY : Double
+        var deviceRotation : Double = deviceHeading
+        var destinationRotation : Double = destinationHeading
+        var compassRotation = destinationRotation - deviceRotation
         
-        let width = Double(compassPointerImage.frame.width);
-        let height = Double(compassPointerImage.frame.height);
+        let width = Double(compassPointerImage.frame.width)
+        let height = Double(compassPointerImage.frame.height)
         
-        let centerX = compassPointerImage.frame.origin.x;
-        let centerY = compassPointerImage.frame.origin.y;
+        let centerX = compassPointerImage.frame.origin.x
+        let centerY = compassPointerImage.frame.origin.y
         
-        let currentX = Double(compassPointerImage.frame.origin.x);
-        let currentY = Double(compassPointerImage.frame.origin.y);
+        let currentX = Double(compassPointerImage.frame.origin.x)
+        let currentY = Double(compassPointerImage.frame.origin.y)
         
-        newX = cos(newDirection * TO_RAD) * radius + Double(centerX);
-        newY = sin(newDirection * TO_RAD) * radius + Double(centerY);
+        newX = cos(compassRotation * TO_RAD) * radius + Double(centerX)
+        newY = sin(compassRotation * TO_RAD) * radius + Double(centerY)
         
-        var pointer : UIImageView = compassPointerImage;
+        var pointer : UIImageView = compassPointerImage
         
         UIView.animateWithDuration(0.5, animations: {
-            var newDirectionRad = newDirection * TO_RAD;
-            pointer.transform = CGAffineTransformMakeRotation(CGFloat(newDirectionRad));
-            return ();
-        });
+            var newDirectionRad = compassRotation * TO_RAD
+            pointer.transform = CGAffineTransformMakeRotation(CGFloat(newDirectionRad))
+            return ()
+        })
     }
     
     func updateDistanceToDestination(newDistance : CLLocationDistance) {
         distnaceToGo.text? = String(format: "%0.0f ft", newDistance);
-    }
-    
-    func updateUsersDirection(newDirection : CLLocationDirection) {
-        
     }
     
 }

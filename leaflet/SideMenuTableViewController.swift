@@ -12,8 +12,8 @@ class SideMenuTableViewController: UITableViewController {
     
     var selectedMenuItem : Int = 0
 
-    let menuItems = ["", "Explore", "Stories", "Rewards", "At Home"]
-    let icons = ["", "ExploreMenuIcon", "StoriesMenuIcon", "RewardsMenuIcon", "AtHomeMenuIcon"]
+    let menuItems = ["", "Compass", "Stories", "Rewards", "At Home"]
+    let icons = ["", "CompassMenuIcon", "StoriesMenuIcon", "RewardsMenuIcon", "AtHomeMenuIcon"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
