@@ -75,8 +75,8 @@ class GGCompassNavView: UIView {
         })
     }
     
-    func updateDistanceToDestination(newDistance : CLLocationDistance) {
-        distnaceToGo.text? = String(format: "%0.0f ft", newDistance);
+    func updateDistanceToDestination(distance: String) {
+        distnaceToGo.text? = distance
     }
     
 }

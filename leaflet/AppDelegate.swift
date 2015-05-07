@@ -222,9 +222,6 @@ extension AppDelegate: CLLocationManagerDelegate {
         didEnterRegion region: CLRegion!) {
             manager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
             manager.startUpdatingLocation()
-            
-            NSLog("You entered the region")
-//            sendLocalNotificationWithMessage("You entered the region", playSound: true)
     }
     
     func locationManager(manager: CLLocationManager!,
@@ -232,7 +229,5 @@ extension AppDelegate: CLLocationManagerDelegate {
             manager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
             manager.stopUpdatingLocation()
             knownBeacons = [:]
-            NSLog("You exited the region")
-//            sendLocalNotificationWithMessage("You exited the region", playSound: false)
     }
 }

@@ -10,12 +10,16 @@ import UIKit
 import CoreLocation
 
 class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSideMenuDelegate {
+
+    let fakeDestination = CLLocation(latitude: 40.448942, longitude: -79.948149);
+//    let fakeDestination = CLLocation(latitude: 40.445835, longitude: -79.948833);
     
     var locationManager: CLLocationManager!
     var compass : GGCompass!
     var compassView : GGCompassNavView!;
-//    var destination : FecPoi?;
+
     var destination: CLLocation?
+    var destinationPoi: FecPoi?
     
     var mostRecentHeading: CLHeading?
     var mostRecentLocation: CLLocation?
@@ -28,21 +32,15 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         self.view = compassView;
         self.compass = GGCompass();
         
-        // For Debugging in the simulator
-        // 202000 Lucille Ave, Cupertino, CA
-        let defaultDestination = CLLocation(latitude: 40.448942, longitude: -79.948149);
-//        let defaultDestination = CLLocation(latitude: 40.445835, longitude: -79.948833);
-//        self.compass.destination = defaultDestination;
-        self.compassView.destinationName = "Random Place";
-        destination = defaultDestination
-
-        if (destination != nil) {
-//            compassView.destinationImage = destination!.image;
-//            compassView.destinationName = destination!.title;
-            
-//            compass.destination = destination?.coordinate;
+        if (destinationPoi == nil) {
+            destinationPoi = LibraryAPI.sharedInstance.getFirstPoi()
         }
         
+        destination = CLLocation(latitude: destinationPoi!.latitude, longitude: destinationPoi!.longitude)
+        
+        compassView.destinationImage = destinationPoi!.image;
+        compassView.destinationName = destinationPoi!.title;
+
         startHeadAndLocationUpdates();
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -52,8 +50,14 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         self.navigationController!.navigationBar.hidden = false
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"updateDistance:", name: "setDistanceNotification", object: nil)
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,12 +83,6 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
             mostRecentLocation = location
-            // NSLog("Lat: \(location.coordinate.latitude), Long: \(location.coordinate.longitude)");
-            
-//            var (newDirection, newDistance) = compass.directionAndDistanceToDestination(location);
-//            var destinationDistance = 
-//            compassView.updateDirectionToDestination(newDirection);
-//            compassView.updateDistanceToDestination(newDistance);
             if (mostRecentHeading != nil) {
                 var destinationHeading = compass.headingFromPointToPoint(mostRecentLocation!, to: destination!)
                 compassView.updateCompassPointer(mostRecentHeading!.trueHeading, destinationHeading: destinationHeading)
@@ -101,6 +99,10 @@ class GGCompassViewController: UIViewController, CLLocationManagerDelegate, ENSi
                 compassView.updateCompassPointer(mostRecentHeading!.trueHeading, destinationHeading: destinationHeading)
             }
         }
+    }
+    
+    func updateDistance(notification: NSNotification) {
+        compassView.updateDistanceToDestination(destinationPoi!.getHumanDistance())
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {

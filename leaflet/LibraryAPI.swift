@@ -32,6 +32,16 @@ class LibraryAPI: NSObject {
         return persistencyManager.getPois()
     }
 
+    func getFirstPoi() -> FecPoi {
+        var allPois = persistencyManager.getPois()
+        for poi in allPois {
+            if !poi.visit {
+                return poi
+            }
+        }
+        return persistencyManager.getPois()[0]
+    }
+    
     func getStories() -> [Story] {
         return persistencyManager.getStories()
     }
@@ -73,11 +83,7 @@ class LibraryAPI: NSObject {
     func getSaved() -> [FecPoi] {
         return persistencyManager.getSaved()
     }
-    
-//    func updateVisited(poi: FecPoi) {
-//        persistencyManager.updateVisited(poi)
-//    }
-    
+        
     func getVisitedCount() -> Int {
         var allPois = persistencyManager.getPois()
         var i = 0

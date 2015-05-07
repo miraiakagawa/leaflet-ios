@@ -19,19 +19,23 @@ class FecPoi: NSObject {
     var imageUrl: String!
     var image: UIImage!
     var beaconMajor: Int!
+    var latitude: CLLocationDegrees!
+    var longitude: CLLocationDegrees!
     
     var visit: Bool!
     var distance: Double?
     
     var coordinate : CLLocationCoordinate2D!
     
-    init(id: Int, title: String, content: String, imageUrl: String, beaconMajor: Int) {
+    init(id: Int, title: String, content: String, imageUrl: String, beaconMajor: Int, latitude: Double, longitude: Double) {
         super.init()
         self.id = id
         self.title = title
         self.content = content
         self.imageUrl = imageUrl
         self.beaconMajor = beaconMajor
+        self.latitude = latitude
+        self.longitude = longitude
         
         self.visit = false
         
@@ -53,12 +57,14 @@ class FecPoi: NSObject {
     
     func getHumanDistance() -> String {
         if (self.distance == nil) {
-            return "Unknown distance away."
+//            return "Unknown distance away."
+            return "A little further."
         }
         else if (self.distance < 10) {
             return "You are here!"
         } else {
-            return "\(Int(self.distance!)) feet away."
+//            return "\(Int(self.distance!)) feet away."
+            return "A short walk away,"
         }
     }
     

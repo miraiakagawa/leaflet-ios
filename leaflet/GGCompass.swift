@@ -12,8 +12,6 @@ import Darwin
 
 class GGCompass : NSObject {
     
-//    var destination : CLLocationCoordinate2D?;
-    
     let TO_RAD = M_PI / 180
     let TO_DEG = 180 / M_PI
     let R = 3959.0 * 5280.0 // Radius of the earth in feet
@@ -21,25 +19,6 @@ class GGCompass : NSObject {
     override init() {
         super.init();
     }
-    
-    init(destination : CLLocationCoordinate2D) {
-        super.init();
-//        self.destination = destination;
-    }
-    
-//    func directionAndDistanceToDestination(userLocation : CLLocation) ->
-//                                          (CLLocationDegrees, CLLocationDistance) {
-//        var heading = 0.0;
-//        var distance = 0.0;
-//        
-//        if let destPosition = destination {
-//            // Helpful constants
-//            distance = distanceBetweenPoints(userLocation.coordinate, point2: destPosition);
-//            heading = headingFromPointToPoint(userLocation.coordinate, to : destPosition);
-//        }
-//        
-//        return (heading, distance);
-//    }
     
     func distanceBetweenPoints(point1: CLLocation, point2: CLLocation) -> Double {
 

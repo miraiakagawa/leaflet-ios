@@ -45,7 +45,15 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tableView.separatorStyle = .None
         
-        self.progress = CGFloat(visited) / CGFloat(allPois.count)
+        // just for the demo - to fast forward it
+        if (visited == 0) {
+            self.progress = 0
+        } else if (visited == 1) {
+            self.progress = 0.1
+        } else if (visited > 1) {
+            self.progress = 0.8
+        }
+//        self.progress = CGFloat(visited) / CGFloat(allPois.count)
         addCircleView()
         
         self.storyIcon.image = UIImage(named: self.storyIconPath)
@@ -142,9 +150,9 @@ class StoryViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }).first;
                     
                     if (nextToVisit == nil) {
-//                        compassVC.destination = sortedByDistance.first!;
+                        compassVC.destinationPoi = sortedByDistance.first!;
                     } else {
-//                        compassVC.destination = nextToVisit!;
+                        compassVC.destinationPoi = nextToVisit!;
                     }
                 }
                 break;

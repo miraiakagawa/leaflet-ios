@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PersistencyManager: NSObject {
    
     private var fecPois = [FecPoi]()
     private var stories = [Story]()
     private var saved = [FecPoi]()
-//    private var visited = [FecPoi]()
+
     var httpClient: HTTPClient
     
     override init() {
@@ -23,7 +24,6 @@ class PersistencyManager: NSObject {
 
         fecPois = []
         saved = []
-//        visited = []
     
         if let jsonUrl = NSURL(string: GlobalConstants.remoteAPIUrl + GlobalConstants.remoteAPIPoisPath) {
             httpClient.getJSONArrayFromUrl(jsonUrl) { data in
@@ -35,7 +35,9 @@ class PersistencyManager: NSObject {
                                 title: poi["title"] as! String,
                                 content: poi["content"] as! String,
                                 imageUrl: poi["img"] as! String,
-                                beaconMajor: poi["beaconMajor"] as! Int))
+                                beaconMajor: poi["beaconMajor"] as! Int,
+                                latitude: poi["latitude"] as! CLLocationDegrees,
+                                longitude: poi["longitude"] as! CLLocationDegrees))
                         }
                     }
                 }
@@ -80,7 +82,6 @@ class PersistencyManager: NSObject {
             )
         ]
         
-        
     }
     
     func getPois() -> [FecPoi] {
@@ -101,14 +102,4 @@ class PersistencyManager: NSObject {
         return saved
     }
     
-//    func updateVisited(visitedPoi: FecPoi) {
-//        if !contains(visited, visitedPoi) {
-//            visited.append(visitedPoi)
-//        }
-//    }
-//    
-//    func getVisitedCount() -> Int {
-//        return visited.count
-//    }
-
 }

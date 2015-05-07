@@ -21,7 +21,7 @@ class PointsOfInterestListViewController: UITableViewController, ENSideMenuDeleg
         var pointOfInterest = self.allPois[indexPath.row]
         
         cell.poiName.text = pointOfInterest.title
-        cell.locationAway.text = String(pointOfInterest.beaconMajor) + "ft"
+        cell.locationAway.text = pointOfInterest.getHumanDistance()
         
         cell.poiImage.image = pointOfInterest.image
         
