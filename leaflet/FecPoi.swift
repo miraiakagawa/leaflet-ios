@@ -64,7 +64,7 @@ class FecPoi: NSObject {
             return "You are here!"
         } else {
 //            return "\(Int(self.distance!)) feet away."
-            return "A short walk away,"
+            return "A short walk away!"
         }
     }
     
