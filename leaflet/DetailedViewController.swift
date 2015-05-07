@@ -46,7 +46,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         textView.text = selectedPoi?.content
         imageView.image = selectedPoi?.image
         
-        
+        // if the poi is already visited, set the saved icon
         if contains(saved, selectedPoi!) {
             self.button.setImage(UIImage(named: savedForHomeButtonName), forState: UIControlState.Normal)
         }
@@ -54,10 +54,9 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
-//        createOverlay()
-//        checkRewards()
-        
-//        LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
+        // rewards overlay. // TODO: make this a modal based view
+        createOverlay()
+        checkRewards()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +71,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
                 compassVC.destination = selectedPoi!
             }
         }
+        
     }
     
     @IBAction func backButtonAction(sender: AnyObject) {
@@ -91,7 +91,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     }
     
     func createOverlay() {
-        var name:String = "Fish"
+        var name:String = "Umbrella"
         
         if !UIAccessibilityIsReduceTransparencyEnabled() {
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
@@ -103,6 +103,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
             //                sticker image
             let stickerImage = UIImageView(frame: CGRectMake(0, 100, 150, 150))
             stickerImage.backgroundColor = UIColor(hex: GlobalConstants.darkGreen)
+            stickerImage.image = UIImage(named: name)
             stickerImage.layer.cornerRadius = stickerImage.frame.size.width / 2;
             stickerImage.clipsToBounds = true
             stickerImage.frame.origin.x = CGRectGetMidX(view.bounds) - CGRectGetMidX(stickerImage.bounds)
@@ -157,7 +158,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     }
     
     func checkRewards() {
-        if (visited > 1) {
+        if (visited % 3 == 2) {
             showReward()
         } else {
             dismissReward()
