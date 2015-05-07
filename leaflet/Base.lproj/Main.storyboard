@@ -167,10 +167,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWU-Mp-51M">
-                                <rect key="frame" x="195" y="175" width="210" height="100"/>
+                                <rect key="frame" x="180" y="175" width="240" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="1LL-xt-0Ji">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeOutline" translatesAutoresizingMaskIntoConstraints="NO" id="Iwi-lU-KCY">
+                                        <rect key="frame" x="132" y="0.0" width="100" height="100"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassOutline" translatesAutoresizingMaskIntoConstraints="NO" id="1LL-xt-0Ji">
+                                        <rect key="frame" x="8" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="HO0-JI-ve2"/>
                                             <constraint firstAttribute="height" constant="100" id="Jmp-5M-eaJ"/>
@@ -180,31 +183,22 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Save for Home Outline.png" translatesAutoresizingMaskIntoConstraints="NO" id="2R9-8g-DzK">
-                                        <rect key="frame" x="110" y="0.0" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="0HG-bx-cJb"/>
-                                            <constraint firstAttribute="width" constant="100" id="Vig-8k-uQH"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="75"/>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="6jN-Ga-9I1"/>
-                                    <constraint firstItem="2R9-8g-DzK" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="top" id="FZb-SO-6VK"/>
-                                    <constraint firstAttribute="leading" secondItem="1LL-xt-0Ji" secondAttribute="leading" id="FpI-u7-XlH"/>
-                                    <constraint firstAttribute="bottom" secondItem="2R9-8g-DzK" secondAttribute="bottom" id="bIM-GO-s29"/>
-                                    <constraint firstAttribute="trailing" secondItem="2R9-8g-DzK" secondAttribute="trailing" id="bne-66-1Zi"/>
-                                    <constraint firstAttribute="width" constant="210" id="gKa-QT-vdZ"/>
-                                    <constraint firstItem="1LL-xt-0Ji" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="top" id="mas-G8-bms"/>
-                                    <constraint firstAttribute="bottom" secondItem="1LL-xt-0Ji" secondAttribute="bottom" id="ohV-AV-emT"/>
+                                    <constraint firstAttribute="bottom" secondItem="1LL-xt-0Ji" secondAttribute="bottom" id="23a-SV-jNu"/>
+                                    <constraint firstItem="Iwi-lU-KCY" firstAttribute="top" secondItem="1LL-xt-0Ji" secondAttribute="top" id="6jF-6w-iNY"/>
+                                    <constraint firstItem="1LL-xt-0Ji" firstAttribute="leading" secondItem="SWU-Mp-51M" secondAttribute="leading" constant="8" id="9mW-Cm-VMt"/>
+                                    <constraint firstAttribute="height" constant="100" id="PL7-cL-H5G"/>
+                                    <constraint firstItem="Iwi-lU-KCY" firstAttribute="trailing" secondItem="SWU-Mp-51M" secondAttribute="trailingMargin" id="T6G-gw-Nzx"/>
+                                    <constraint firstAttribute="width" constant="240" id="jAm-4q-2g4"/>
+                                    <constraint firstItem="1LL-xt-0Ji" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="top" id="ogQ-Hx-pST"/>
                                 </constraints>
                             </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
+                                <rect key="frame" x="281" y="538" width="39" height="37"/>
+                            </pageControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-uQ-Yka">
-                                <rect key="frame" x="25" y="300" width="550" height="113"/>
+                                <rect key="frame" x="25" y="310" width="550" height="113"/>
                                 <string key="text">If you ever get lost or want a suggestion for where to go next, you can click the guide icon and it will help you find what you're looking for. 
 
 The FEC has a lot of green features that are useful to homeowners! If you come to any feature that interests you, you can save it in a list to look at later.</string>
@@ -212,15 +206,12 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-WK-1Zg">
-                                <rect key="frame" x="281" y="538" width="39" height="37"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.64705882349999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SWU-Mp-51M" firstAttribute="top" secondItem="wHZ-A9-6lS" secondAttribute="bottom" constant="25" id="6Pf-Vg-lE6"/>
                             <constraint firstItem="FCA-eG-78l" firstAttribute="top" secondItem="0cd-WK-1Zg" secondAttribute="bottom" constant="25" id="Ch9-AU-Oa5"/>
-                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="bottom" constant="25" id="Eov-Bz-H5K"/>
+                            <constraint firstItem="ekA-uQ-Yka" firstAttribute="top" secondItem="SWU-Mp-51M" secondAttribute="bottom" constant="35" id="Eov-Bz-H5K"/>
                             <constraint firstItem="ekA-uQ-Yka" firstAttribute="leading" secondItem="aFd-6r-New" secondAttribute="leading" constant="25" id="Jpb-3c-zXU"/>
                             <constraint firstAttribute="trailing" secondItem="ekA-uQ-Yka" secondAttribute="trailing" constant="25" id="XWN-hV-BID"/>
                             <constraint firstAttribute="centerX" secondItem="wHZ-A9-6lS" secondAttribute="centerX" id="cMa-oH-ff8"/>
@@ -228,13 +219,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                             <constraint firstAttribute="centerX" secondItem="ekA-uQ-Yka" secondAttribute="centerX" id="dBv-R5-UZQ"/>
                             <constraint firstItem="wHZ-A9-6lS" firstAttribute="top" secondItem="eIj-Tc-vpl" secondAttribute="bottom" constant="50" id="dhZ-xd-Tkx"/>
                             <constraint firstAttribute="centerX" secondItem="SWU-Mp-51M" secondAttribute="centerX" id="tyI-69-UU0"/>
-                            <constraint firstItem="0cd-WK-1Zg" firstAttribute="top" secondItem="ekA-uQ-Yka" secondAttribute="bottom" constant="25" id="uha-3h-ihW"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="uha-3h-ihW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oLa-BL-YKu"/>
                     <connections>
@@ -452,7 +437,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                     <constraint firstAttribute="width" constant="200" id="1Ww-Hr-XAm"/>
                                     <constraint firstAttribute="height" constant="200" id="bOS-eg-00Q"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Compass.png">
+                                <state key="normal" backgroundImage="CompassOutline">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -516,7 +501,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                                 <constraint firstAttribute="height" constant="25" id="E3U-on-VKa"/>
                                                 <constraint firstAttribute="width" constant="25" id="IWA-Sg-0cE"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="Cancel.png">
+                                            <state key="normal" title="Button" image="CancelButton">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -708,7 +693,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqN-LF-Jlg">
                                                         <rect key="frame" x="55" y="15" width="50" height="50"/>
-                                                        <state key="normal" image="Compass.png">
+                                                        <state key="normal" image="CompassOutlineSimple">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>
@@ -884,7 +869,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                     <constraint firstAttribute="height" constant="50" id="5Dg-HU-rQZ"/>
                                     <constraint firstAttribute="width" constant="50" id="jak-PJ-Oa3"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Compass Button.png">
+                                <state key="normal" title="Button" image="CompassButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -897,7 +882,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                     <constraint firstAttribute="width" constant="50" id="8WK-8B-YFT"/>
                                     <constraint firstAttribute="height" constant="50" id="bvf-rM-jKi"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Save For Home Button.png">
+                                <state key="normal" title="Button" image="SaveForHomeButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -958,13 +943,14 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         </scene>
     </scenes>
     <resources>
-        <image name="Cancel.png" width="201" height="200"/>
-        <image name="Compass Button.png" width="201" height="200"/>
-        <image name="Compass.png" width="400" height="400"/>
-        <image name="Save For Home Button.png" width="201" height="200"/>
-        <image name="Save for Home Outline.png" width="201" height="200"/>
+        <image name="CancelButton" width="100" height="100"/>
+        <image name="CompassButton" width="100" height="100"/>
+        <image name="CompassOutline" width="200" height="200"/>
+        <image name="CompassOutlineSimple" width="200" height="200"/>
+        <image name="HomeOutline" width="100" height="100"/>
+        <image name="SaveForHomeButton" width="100" height="100"/>
         <image name="back" width="44" height="44"/>
-        <image name="compass" width="44" height="44"/>
+        <image name="compass" width="226" height="214"/>
         <image name="fec_square.jpg" width="270" height="270"/>
         <image name="hamburger" width="44" height="44"/>
         <image name="list" width="44" height="44"/>
@@ -972,7 +958,7 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="a8A-UZ-Wcs"/>
-        <segue reference="ixy-0Y-gts"/>
+        <segue reference="da3-LC-l5e"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

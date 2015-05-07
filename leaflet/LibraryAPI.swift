@@ -74,9 +74,9 @@ class LibraryAPI: NSObject {
         return persistencyManager.getSaved()
     }
     
-    func updateVisited(poi: FecPoi) {
-        persistencyManager.updateVisited(poi)
-    }
+//    func updateVisited(poi: FecPoi) {
+//        persistencyManager.updateVisited(poi)
+//    }
     
     func getVisitedCount() -> Int {
         var allPois = persistencyManager.getPois()

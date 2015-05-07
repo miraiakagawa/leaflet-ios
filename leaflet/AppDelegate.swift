@@ -99,13 +99,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 var title = "Hey there, it seems like  you are near the " + selectedPoi!.title + "!"
                 var alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
                 let cancelAction = UIAlertAction(title: "not now", style: .Cancel) { (action) in
-                    // nothing happens
+                    // actually didn't visit.
+                    selectedPoi?.setVisiting(false)
                 }
                 alert.addAction(cancelAction)
                 
                 let OKAction = UIAlertAction(title: "Learn More", style: .Default) { (action) in
                     self.displayDetailedView(selectedPoi!)
-                    LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
+//                    LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
                 }
                 alert.addAction(OKAction)
 

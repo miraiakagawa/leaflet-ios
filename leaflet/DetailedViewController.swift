@@ -18,6 +18,8 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     
     var backgroundNavColor: UIColor = UIColor(hex: 0x2EA9FC)
     
+    let savedForHomeButtonName = "SavedForHomeButton"
+    
     private var allPois = [FecPoi]()
     private var stories = [Story]()
     private var visited = LibraryAPI.sharedInstance.getVisitedCount()
@@ -33,25 +35,29 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
         stories = LibraryAPI.sharedInstance.getStories()
         allPois = LibraryAPI.sharedInstance.getPois()
         saved = LibraryAPI.sharedInstance.getSaved()
+        
+        // if for some reason the segue didn't register a selected poi, just choose the first one
         if (selectedPoi == nil) {
             selectedPoi = allPois[0]
         }
         
+        // set the content on the page with the selected poi information
         navBar.title = selectedPoi?.title
         textView.text = selectedPoi?.content
         imageView.image = selectedPoi?.image
         
+        
         if contains(saved, selectedPoi!) {
-            self.button.setImage(UIImage(named: "Saved For Home.png"), forState: UIControlState.Normal)
+            self.button.setImage(UIImage(named: savedForHomeButtonName), forState: UIControlState.Normal)
         }
         
         self.sideMenuController()?.sideMenu?.delegate = self
         hideSideMenuView()
         
-        createOverlay()
-        checkRewards()
+//        createOverlay()
+//        checkRewards()
         
-        LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
+//        LibraryAPI.sharedInstance.updateVisited(selectedPoi!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,15 +66,6 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NextPoi" {
-            var index = find(allPois, selectedPoi!)
-            if index != nil && index! + 1 < allPois.count {
-                let detailedViewController = segue.destinationViewController as! DetailedViewController
-                detailedViewController.selectedPoi = allPois[index! + 1]
-            } else {
-                println("end of story")
-            }
-        }
         
         if segue.identifier == "toCompassViewFromPoi" {
             if let var compassVC = segue.destinationViewController as? GGCompassViewController {
@@ -89,7 +86,7 @@ class DetailedViewController: UIViewController, ENSideMenuDelegate {
     @IBAction func savePoi(sender: AnyObject) {
         if (selectedPoi != nil) {
             LibraryAPI.sharedInstance.savePoi(selectedPoi!)
-            self.button.setImage(UIImage(named: "Saved For Home.png"), forState: UIControlState.Normal)
+            self.button.setImage(UIImage(named: savedForHomeButtonName), forState: UIControlState.Normal)
         }
     }
     

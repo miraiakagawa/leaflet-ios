@@ -13,7 +13,7 @@ class PersistencyManager: NSObject {
     private var fecPois = [FecPoi]()
     private var stories = [Story]()
     private var saved = [FecPoi]()
-    private var visited = [FecPoi]()
+//    private var visited = [FecPoi]()
     var httpClient: HTTPClient
     
     override init() {
@@ -23,7 +23,7 @@ class PersistencyManager: NSObject {
 
         fecPois = []
         saved = []
-        visited = []
+//        visited = []
     
         if let jsonUrl = NSURL(string: GlobalConstants.remoteAPIUrl + GlobalConstants.remoteAPIPoisPath) {
             httpClient.getJSONArrayFromUrl(jsonUrl) { data in
@@ -101,14 +101,14 @@ class PersistencyManager: NSObject {
         return saved
     }
     
-    func updateVisited(visitedPoi: FecPoi) {
-        if !contains(visited, visitedPoi) {
-            visited.append(visitedPoi)
-        }
-    }
-    
-    func getVisitedCount() -> Int {
-        return visited.count
-    }
+//    func updateVisited(visitedPoi: FecPoi) {
+//        if !contains(visited, visitedPoi) {
+//            visited.append(visitedPoi)
+//        }
+//    }
+//    
+//    func getVisitedCount() -> Int {
+//        return visited.count
+//    }
 
 }
