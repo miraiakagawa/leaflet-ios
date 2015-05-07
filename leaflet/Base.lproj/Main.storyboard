@@ -677,6 +677,11 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="QwV-y3-5om"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="QwV-y3-5om"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bri-UN-Shd">
                                             <rect key="frame" x="0.0" y="200" width="600" height="80"/>
@@ -691,8 +696,11 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                                             <constraint firstAttribute="height" constant="60" id="Jsi-C1-z9k"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqN-LF-Jlg">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqN-LF-Jlg">
                                                         <rect key="frame" x="55" y="15" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="YcI-vT-y5k"/>
+                                                        </constraints>
                                                         <state key="normal" image="CompassOutlineSimple">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -703,9 +711,12 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="0CC-cc-aRe" firstAttribute="top" secondItem="IhK-KS-yXm" secondAttribute="top" constant="10" id="6TF-LK-qZ3"/>
+                                                    <constraint firstItem="eqN-LF-Jlg" firstAttribute="centerY" secondItem="0CC-cc-aRe" secondAttribute="centerY" id="Fd0-Qq-Ilc"/>
                                                     <constraint firstAttribute="centerY" secondItem="0CC-cc-aRe" secondAttribute="centerY" id="HuJ-4o-fYZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="0CC-cc-aRe" secondAttribute="trailing" constant="50" id="M3A-d5-zxt"/>
                                                     <constraint firstAttribute="bottom" secondItem="0CC-cc-aRe" secondAttribute="bottom" constant="10" id="e6E-Pc-z54"/>
+                                                    <constraint firstItem="eqN-LF-Jlg" firstAttribute="leading" secondItem="IhK-KS-yXm" secondAttribute="leading" constant="55" id="on1-tZ-9Rt"/>
+                                                    <constraint firstItem="eqN-LF-Jlg" firstAttribute="top" secondItem="IhK-KS-yXm" secondAttribute="top" constant="15" id="zkO-YF-E45"/>
                                                 </constraints>
                                             </view>
                                             <constraints>
@@ -713,6 +724,13 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                             </constraints>
                                             <blurEffect style="light"/>
                                         </visualEffectView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IX3-LD-P62">
+                                            <rect key="frame" x="250" y="144" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="ZdE-L9-jqw"/>
+                                                <constraint firstAttribute="height" constant="100" id="je6-Yk-sYm"/>
+                                            </constraints>
+                                        </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82a-bs-Zdw">
                                             <rect key="frame" x="0.0" y="280" width="600" height="120"/>
                                             <color key="backgroundColor" red="0.90569760101010099" green="0.90569760101010099" blue="0.90569760101010099" alpha="1" colorSpace="calibratedRGB"/>
@@ -724,18 +742,10 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IX3-LD-P62">
-                                            <rect key="frame" x="250" y="144" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="ZdE-L9-jqw"/>
-                                                <constraint firstAttribute="height" constant="100" id="je6-Yk-sYm"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="bri-UN-Shd" firstAttribute="top" secondItem="5LU-Ea-e5V" secondAttribute="bottom" constant="-80" id="6EI-hY-P0a"/>
-                                        <constraint firstItem="82a-bs-Zdw" firstAttribute="top" secondItem="bri-UN-Shd" secondAttribute="bottom" id="B6a-C1-uTj"/>
                                         <constraint firstAttribute="trailing" secondItem="bri-UN-Shd" secondAttribute="trailing" id="ByF-8P-SVa"/>
                                         <constraint firstItem="bri-UN-Shd" firstAttribute="leading" secondItem="33V-o1-bQF" secondAttribute="leading" id="FFH-G5-19J"/>
                                         <constraint firstItem="82a-bs-Zdw" firstAttribute="leading" secondItem="33V-o1-bQF" secondAttribute="leading" id="Fha-P6-Ds0"/>
@@ -745,7 +755,6 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                         <constraint firstItem="IX3-LD-P62" firstAttribute="top" secondItem="5LU-Ea-e5V" secondAttribute="bottom" constant="-136" id="Vdg-Hf-xQD"/>
                                         <constraint firstAttribute="trailing" secondItem="5LU-Ea-e5V" secondAttribute="trailing" id="XQo-RE-2nQ"/>
                                         <constraint firstItem="82a-bs-Zdw" firstAttribute="top" secondItem="5LU-Ea-e5V" secondAttribute="bottom" id="gLZ-5H-rEJ"/>
-                                        <constraint firstItem="82a-bs-Zdw" firstAttribute="top" secondItem="IX3-LD-P62" secondAttribute="bottom" constant="36" id="gnA-E0-DYu"/>
                                         <constraint firstAttribute="bottom" secondItem="82a-bs-Zdw" secondAttribute="bottom" id="ikQ-Ls-tyo"/>
                                         <constraint firstItem="5LU-Ea-e5V" firstAttribute="top" secondItem="33V-o1-bQF" secondAttribute="top" id="x7x-pp-br1"/>
                                     </constraints>
@@ -761,21 +770,19 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                                                     <rect key="frame" x="20" y="0.0" width="560" height="69"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xV-Pu-hDN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="69"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="k4L-82-b55"/>
-                                                                <constraint firstAttribute="height" constant="69" id="xgP-bm-Def"/>
-                                                                <constraint firstAttribute="width" constant="69" id="zg0-WE-HPf"/>
+                                                                <constraint firstAttribute="width" constant="70" id="zg0-WE-HPf"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdK-ed-ia5">
-                                                            <rect key="frame" x="77" y="13" width="430" height="21"/>
+                                                            <rect key="frame" x="78" y="13" width="429" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fB3-n9-5az">
-                                                            <rect key="frame" x="77" y="36" width="42" height="21"/>
+                                                            <rect key="frame" x="78" y="36" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -821,10 +828,10 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oSd-iU-RoS" firstAttribute="leading" secondItem="pnz-t9-Jcu" secondAttribute="leading" id="ID5-tv-B55"/>
-                            <constraint firstItem="A3w-mM-fj9" firstAttribute="top" secondItem="oSd-iU-RoS" secondAttribute="bottom" id="di3-xq-kC7"/>
-                            <constraint firstItem="oSd-iU-RoS" firstAttribute="top" secondItem="P89-x0-c4s" secondAttribute="top" id="eIy-1A-sbl"/>
-                            <constraint firstAttribute="trailing" secondItem="oSd-iU-RoS" secondAttribute="trailing" id="f1h-kG-0y6"/>
+                            <constraint firstItem="oSd-iU-RoS" firstAttribute="leading" secondItem="pnz-t9-Jcu" secondAttribute="leading" id="KVv-Ud-6wm"/>
+                            <constraint firstItem="oSd-iU-RoS" firstAttribute="top" secondItem="P89-x0-c4s" secondAttribute="bottom" id="WB5-bY-ek4"/>
+                            <constraint firstAttribute="trailing" secondItem="oSd-iU-RoS" secondAttribute="trailing" id="Ywp-gC-M3C"/>
+                            <constraint firstItem="oSd-iU-RoS" firstAttribute="bottom" secondItem="A3w-mM-fj9" secondAttribute="top" id="cT1-R6-z3w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u9r-cA-KPb">
@@ -862,22 +869,12 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b85-44-dJF">
                                 <rect key="frame" x="0.0" y="20" width="600" height="226"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eZ-Tm-wEf">
-                                <rect key="frame" x="15" y="181" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5Dg-HU-rQZ"/>
-                                    <constraint firstAttribute="width" constant="50" id="jak-PJ-Oa3"/>
+                                    <constraint firstAttribute="height" constant="226" id="xSd-5I-J3d"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="CompassButton">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="c19-Tj-JAq" kind="show" identifier="toCompassViewFromPoi" id="ixy-0Y-gts"/>
-                                </connections>
-                            </button>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2u1-rU-GGh">
-                                <rect key="frame" x="535" y="181" width="50" height="50"/>
+                                <rect key="frame" x="534" y="181" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8WK-8B-YFT"/>
                                     <constraint firstAttribute="height" constant="50" id="bvf-rM-jKi"/>
@@ -891,30 +888,38 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-fz-lUh">
                                 <rect key="frame" x="16" y="256" width="568" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="oPm-0f-CFX"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.90569760099999996" green="0.90569760099999996" blue="0.90569760099999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eZ-Tm-wEf">
+                                <rect key="frame" x="16" y="181" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Dg-HU-rQZ"/>
+                                    <constraint firstAttribute="width" constant="50" id="7IY-5A-NHj"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="CompassButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="c19-Tj-JAq" kind="show" identifier="toCompassViewFromPoi" id="ixy-0Y-gts"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90569760099999996" green="0.90569760099999996" blue="0.90569760099999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="aLW-fz-lUh" firstAttribute="leading" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-584" id="3v1-hx-xiW"/>
-                            <constraint firstItem="2eZ-Tm-wEf" firstAttribute="bottom" secondItem="b85-44-dJF" secondAttribute="bottom" constant="-15" id="5JP-NH-XGS"/>
-                            <constraint firstItem="aLW-fz-lUh" firstAttribute="top" secondItem="b85-44-dJF" secondAttribute="bottom" constant="10" id="5ed-p7-neo"/>
-                            <constraint firstItem="aLW-fz-lUh" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" id="77u-Ag-Q69"/>
-                            <constraint firstItem="aLW-fz-lUh" firstAttribute="trailing" secondItem="Tmm-BH-rkz" secondAttribute="trailingMargin" id="7CT-an-6zJ"/>
-                            <constraint firstItem="b85-44-dJF" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="81A-aD-kRF"/>
-                            <constraint firstItem="jns-8U-vqO" firstAttribute="top" secondItem="aLW-fz-lUh" secondAttribute="bottom" id="Aae-J5-bNH"/>
-                            <constraint firstItem="b85-44-dJF" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="AkA-zR-ZyJ"/>
-                            <constraint firstItem="b85-44-dJF" firstAttribute="leading" secondItem="2eZ-Tm-wEf" secondAttribute="leading" constant="-15" id="NuW-pM-EHe"/>
-                            <constraint firstItem="b85-44-dJF" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" constant="-16" id="d5Z-Sp-XFv"/>
-                            <constraint firstItem="2u1-rU-GGh" firstAttribute="bottom" secondItem="b85-44-dJF" secondAttribute="bottom" constant="-15" id="eu3-KA-P3g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-16" id="fZh-oi-3YQ"/>
-                            <constraint firstItem="2u1-rU-GGh" firstAttribute="trailing" secondItem="b85-44-dJF" secondAttribute="trailing" constant="-15" id="m8H-I2-RI9"/>
+                            <constraint firstItem="b85-44-dJF" firstAttribute="centerX" secondItem="aLW-fz-lUh" secondAttribute="centerX" id="2B6-iv-S8Y"/>
+                            <constraint firstItem="aLW-fz-lUh" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" id="4PO-8B-qhd"/>
+                            <constraint firstItem="aLW-fz-lUh" firstAttribute="top" secondItem="2u1-rU-GGh" secondAttribute="bottom" constant="25" id="4iT-Wo-3Sz"/>
+                            <constraint firstItem="aLW-fz-lUh" firstAttribute="top" secondItem="2eZ-Tm-wEf" secondAttribute="bottom" constant="25" id="JML-M0-gd0"/>
+                            <constraint firstItem="2u1-rU-GGh" firstAttribute="trailing" secondItem="Tmm-BH-rkz" secondAttribute="trailingMargin" id="U4X-cR-ZQm"/>
+                            <constraint firstItem="2eZ-Tm-wEf" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leadingMargin" id="XNE-oM-VIC"/>
+                            <constraint firstItem="aLW-fz-lUh" firstAttribute="bottom" secondItem="jns-8U-vqO" secondAttribute="top" id="p16-sD-pEw"/>
+                            <constraint firstItem="b85-44-dJF" firstAttribute="top" secondItem="5xx-dS-ZVL" secondAttribute="bottom" id="pnD-RV-LJp"/>
+                            <constraint firstItem="aLW-fz-lUh" firstAttribute="top" secondItem="b85-44-dJF" secondAttribute="bottom" constant="10" id="ufz-eI-xME"/>
+                            <constraint firstItem="b85-44-dJF" firstAttribute="leading" secondItem="Tmm-BH-rkz" secondAttribute="leading" id="wKo-fU-R0G"/>
+                            <constraint firstAttribute="trailing" secondItem="b85-44-dJF" secondAttribute="trailing" id="wSp-fm-y3v"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -950,15 +955,15 @@ The FEC has a lot of green features that are useful to homeowners! If you come t
         <image name="HomeOutline" width="100" height="100"/>
         <image name="SaveForHomeButton" width="100" height="100"/>
         <image name="back" width="44" height="44"/>
-        <image name="compass" width="226" height="214"/>
+        <image name="compass" width="44" height="44"/>
         <image name="fec_square.jpg" width="270" height="270"/>
         <image name="hamburger" width="44" height="44"/>
         <image name="list" width="44" height="44"/>
         <image name="rain-veil.jpg" width="640" height="416"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a8A-UZ-Wcs"/>
-        <segue reference="da3-LC-l5e"/>
+        <segue reference="NYu-mA-wCA"/>
+        <segue reference="ixy-0Y-gts"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
