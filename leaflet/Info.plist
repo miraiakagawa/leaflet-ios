@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Using beacons to find POIs</string>
+	<string>The app will enhance your visit by navigating you to Points of Interests!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We can tailor the best visit for you by using your location.</string>
+	<string>The app will enhance your visit by navigating you to Points of Interests!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>

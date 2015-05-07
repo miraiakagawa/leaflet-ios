@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class OnboardingViewController: UIViewController {
     
@@ -16,8 +17,12 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var heading: UILabel!
     @IBOutlet weak var text: UITextView!
     
+    var locationManager: CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager = CLLocationManager()
         
         var swipeLeftGestureRecognizer: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "showNext")
         swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirection.Left
@@ -54,6 +59,9 @@ class OnboardingViewController: UIViewController {
                 self.performSegueWithIdentifier("onboardingToThird", sender: self)
                 break
             case "thirdPage":
+                if locationManager!.respondsToSelector("requestAlwaysAuthorization") {
+                    locationManager!.requestAlwaysAuthorization()
+                }
                 self.performSegueWithIdentifier("onboardingToFourth", sender: self)
                 break
             default:

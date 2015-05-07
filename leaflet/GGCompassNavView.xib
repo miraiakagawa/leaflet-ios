@@ -10,32 +10,43 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Approx Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-tw-8Rc">
-                    <rect key="frame" x="19" y="262" width="138" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Approx Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyG-tw-8Rc">
+                    <rect key="frame" x="8" y="319" width="156" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pointer.png" translatesAutoresizingMaskIntoConstraints="NO" id="oi9-iZ-sgK">
-                    <rect key="frame" x="172" y="510" width="31" height="61"/>
+                    <rect key="frame" x="172" y="567" width="31" height="61"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58J-QJ-JsU">
-                    <rect key="frame" x="19" y="107" width="336" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="58J-QJ-JsU">
+                    <rect key="frame" x="0.0" y="67" width="375" height="224"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="224" id="A6N-x3-U64"/>
+                    </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="compassPOIDot.png" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-zc-IK7">
-                    <rect key="frame" x="175" y="262" width="25" height="25"/>
+                    <rect key="frame" x="175" y="319" width="25" height="25"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUt-nX-COg">
-                    <rect key="frame" x="34" y="47" width="307" height="52"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUt-nX-COg">
+                    <rect key="frame" x="34" y="26" width="307" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trail.png" translatesAutoresizingMaskIntoConstraints="NO" id="VIU-Ak-oPg">
-                    <rect key="frame" x="167" y="314" width="40" height="180"/>
+                    <rect key="frame" x="167" y="371" width="40" height="180"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eUt-nX-COg" secondAttribute="trailing" constant="34" id="24m-gy-wi3"/>
+                <constraint firstItem="58J-QJ-JsU" firstAttribute="top" secondItem="eUt-nX-COg" secondAttribute="bottom" constant="12" id="FMH-8x-wBQ"/>
+                <constraint firstAttribute="trailing" secondItem="58J-QJ-JsU" secondAttribute="trailing" id="ZoH-xO-LMl"/>
+                <constraint firstItem="58J-QJ-JsU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dEn-Oq-Wkv"/>
+                <constraint firstItem="eUt-nX-COg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="uIL-7m-hfJ"/>
+                <constraint firstItem="eUt-nX-COg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="34" id="yud-lg-2Yq"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
                 <outlet property="compassPointerImage" destination="oi9-iZ-sgK" id="49E-jX-OXV"/>

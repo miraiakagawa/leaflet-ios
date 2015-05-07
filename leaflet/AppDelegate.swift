@@ -42,9 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager!.pausesLocationUpdatesAutomatically = false
         
         // ask user permission to use location stuff
-        if locationManager!.respondsToSelector("requestAlwaysAuthorization") {
-            locationManager!.requestAlwaysAuthorization()
-        }
+//        if locationManager!.respondsToSelector("requestAlwaysAuthorization") {
+//            locationManager!.requestAlwaysAuthorization()
+//        }
         
         // set beacon region based on the uuid string constant
         // note that by fixing the uuid and controlling major/minor values, we only need to monitor one region
